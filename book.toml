@@ -1,0 +1,12 @@
+[book]
+authors = ["Danny Ben Shitrit"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Jobly"
+
+[output.html.fold]
+enable = true
+
+[output.html.playpen]
+editable = true
