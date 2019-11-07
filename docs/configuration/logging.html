@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Logging - Jobly</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class=""><a href="../index.html"><strong aria-hidden="true">1.</strong> What is Jobly</a></li><li class=""><a href="../installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class=""><a href="../usage/index.html"><strong aria-hidden="true">3.</strong> Usage</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class=""><a href="../usage/server-side/index.html"><strong aria-hidden="true">3.1.</strong> Server Side</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class=""><a href="../usage/server-side/server.html"><strong aria-hidden="true">3.1.1.</strong> Dashboard and API Server</a></li><li class=""><a href="../usage/server-side/worker.html"><strong aria-hidden="true">3.1.2.</strong> Worker</a></li></ol></li><li class=""><a href="../usage/client-side/index.html"><strong aria-hidden="true">3.2.</strong> Client Side</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class=""><a href="../usage/client-side/running-jobs-with-the-cli.html"><strong aria-hidden="true">3.2.1.</strong> Running Jobs with the CLI</a></li><li class=""><a href="../usage/client-side/running-jobs-with-the-api.html"><strong aria-hidden="true">3.2.2.</strong> Running Jobs with the API</a></li></ol></li></ol></li><li class=""><a href="../examples/index.html"><strong aria-hidden="true">4.</strong> Examples</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class=""><a href="../examples/basic-example.html"><strong aria-hidden="true">4.1.</strong> Basic Example</a></li><li class=""><a href="../examples/job-callbacks-example.html"><strong aria-hidden="true">4.2.</strong> Job Callbacks Example</a></li><li class=""><a href="../examples/docker-compose-example.html"><strong aria-hidden="true">4.3.</strong> Docker Compose Example</a></li><li class=""><a href="../examples/job-in-job-example.html"><strong aria-hidden="true">4.4.</strong> Job in Job Example</a></li><li class=""><a href="../examples/namespaces-example.html"><strong aria-hidden="true">4.5.</strong> Namespaces Example</a></li><li class=""><a href="../examples/options-and-errors-example.html"><strong aria-hidden="true">4.6.</strong> Options and Errors Example</a></li><li class=""><a href="../examples/slack-notifications-example.html"><strong aria-hidden="true">4.7.</strong> Slack Notifications Example</a></li><li class=""><a href="../examples/syslog-example.html"><strong aria-hidden="true">4.8.</strong> Syslog Example</a></li><li class=""><a href="../examples/worker-config-example.html"><strong aria-hidden="true">4.9.</strong> Worker Config Example</a></li><li class=""><a href="../examples/solo-example.html"><strong aria-hidden="true">4.10.</strong> Solo Job Example</a></li><li class=""><a href="../examples/custom-rack-mount-example.html"><strong aria-hidden="true">4.11.</strong> Custom Rack Mount</a></li><li class=""><a href="../examples/basic-auth-example.html"><strong aria-hidden="true">4.12.</strong> Basic Auth Example</a></li></ol></li><li class=""><a href="../building-jobs/index.html"><strong aria-hidden="true">5.</strong> Building Jobs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class=""><a href="../building-jobs/scaffolding.html"><strong aria-hidden="true">5.1.</strong> Scaffolding</a></li><li class=""><a href="../building-jobs/the-job-class.html"><strong aria-hidden="true">5.2.</strong> The Job Class</a></li><li class=""><a href="../building-jobs/job-options.html"><strong aria-hidden="true">5.3.</strong> Job Options</a></li><li class=""><a href="../building-jobs/callbacks.html"><strong aria-hidden="true">5.4.</strong> Job Callbacks</a></li><li class=""><a href="../building-jobs/reporting-job-progress.html"><strong aria-hidden="true">5.5.</strong> Reporting Job Progress</a></li><li class=""><a href="../building-jobs/solo-jobs.html"><strong aria-hidden="true">5.6.</strong> Solo Jobs</a></li><li class=""><a href="../building-jobs/running-shell-commands.html"><strong aria-hidden="true">5.7.</strong> Running Shell Commands</a></li><li class=""><a href="../building-jobs/sending-slack-notifications.html"><strong aria-hidden="true">5.8.</strong> Sending Slack Notifications</a></li><li class=""><a href="../building-jobs/loading-additional-code.html"><strong aria-hidden="true">5.9.</strong> Loading Additional Code</a></li></ol></li><li class="expanded "><a href="../configuration/index.html"><strong aria-hidden="true">6.</strong> Configuration</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class=""><a href="../configuration/jobly-configuraion.html"><strong aria-hidden="true">6.1.</strong> Jobly Configuraion</a></li><li class=""><a href="../configuration/worker-config.html"><strong aria-hidden="true">6.2.</strong> Worker Configuration</a></li><li class="expanded "><a href="../configuration/logging.html" class="active"><strong aria-hidden="true">6.3.</strong> Logging</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Jobly</h1>
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#logging" id="logging">Logging</a></h1>
+<h3><a class="header" href="#logging-from-within-jobs" id="logging-from-within-jobs">Logging from within jobs</a></h3>
+<p>All your code in the <code>./jobs</code> and <code>./app</code> folders have access to a standard Ruby logger.</p>
+<p>{% code-tabs %}
+{% code-tabs-item title=&quot;jobs/hello.rb&quot; %}</p>
+<pre><code class="language-ruby">class Hello &lt; Jobly::Job
+  def execute(name: 'bob')
+    logger.info &quot;said hello to #{name}&quot;
+  end
+end
+</code></pre>
+<p>{% endcode-tabs-item %}
+{% endcode-tabs %}</p>
+<h3><a class="header" href="#configuring-the-logger" id="configuring-the-logger">Configuring the logger</a></h3>
+<p>By default, output is sent to <code>STDOUT</code> but you can provide your own logger and log to a file or to syslog by using the <code>config.log</code> or the <code>config.logger</code> option in <code>./config/jobly.rb</code></p>
+<p>{% code-tabs %}
+{% code-tabs-item title=&quot;config/jobly.rb&quot; %}</p>
+<pre><code class="language-ruby">Jobly.configure do |config|
+  config.log = '/var/log/jobly.log'
+  
+  # same as:
+  # config.log = Logger.new '/var/log/jobly.log'
+
+  config.logger.level = Logger::WARN
+end
+</code></pre>
+<p>{% endcode-tabs-item %}
+{% endcode-tabs %}</p>
+<p>The <code>config.log</code> option controls how logging is handled.</p>
+<ol>
+<li>If left empty (<code>nil</code>), the web server and workers will NOT log anywhere, and your jobs will log to <code>STDOUT</code> whenever you use <code>logger</code>.</li>
+<li>Setting it to <code>config.log = 'stdout'</code> will also instruct the web server and worker to send their logging to <code>STDOUT</code>.</li>
+<li>Setting it to a filename, will log to a file.</li>
+<li>Setting it to a syslog connection string will log to a remote syslog server. </li>
+</ol>
+<h3><a class="header" href="#logging-to-syslog" id="logging-to-syslog">Logging to syslog</a></h3>
+<p>Set <code>config.log</code> to a syslog connection string in the following format:</p>
+<p><code>syslog://system:program@host:port</code></p>
+<p>Omitting any of the options will fall back to a sensible default.</p>
+<p>{% page-ref page=&quot;../examples/syslog-example.md&quot; %}</p>
+<h3><a class="header" href="#separate-log-files-for-each-job-class" id="separate-log-files-for-each-job-class">Separate log files for each job class</a></h3>
+<p>If  <code>Jobly.log</code> contains <code>%s</code> in the file path, it will be replaced with the slug of the job, and will create separate log files for each job class.</p>
+<p>{% code-tabs %}
+{% code-tabs-item title=&quot;config/jobly.rb&quot; %}</p>
+<pre><code class="language-ruby">Jobly.configure do |config|
+  config.log = 'logs/%s.log'
+end
+</code></pre>
+<p>{% endcode-tabs-item %}
+{% endcode-tabs %}</p>
+<h3><a class="header" href="#automatic-syslog-tagging" id="automatic-syslog-tagging">Automatic syslog tagging</a></h3>
+<p>The same <code>%s</code> replacement principle applies when using a syslog connection string. This is intended to allow tagging of syslog messages with the job name.</p>
+<p>{% code-tabs %}
+{% code-tabs-item title=&quot;config/jobly.rb&quot; %}</p>
+<pre><code class="language-ruby">Jobly.configure do |config|
+  config.log = 'syslog://jobserver:%s@localhost:514'
+end
+</code></pre>
+<p>{% endcode-tabs-item %}
+{% endcode-tabs %}</p>
+<h3><a class="header" href="#bring-your-own-logger" id="bring-your-own-logger">Bring your own logger</a></h3>
+<p>The <code>config.log</code> option can also accept any <code>Logger</code> instance, in case you
+wish to provide a custom logger.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../configuration/worker-config.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../configuration/worker-config.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

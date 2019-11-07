@@ -5,6 +5,10 @@ multilingual = false
 src = "src"
 title = "Jobly"
 
+[build]
+build-dir = "docs"
+create-missing = false
+
 [output.html.fold]
 enable = true
 
