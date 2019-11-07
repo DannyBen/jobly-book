@@ -24,9 +24,8 @@ Configuring Jobly can be done by one of two methods:
 
 ## Jobly Configuration File
 
-{% code-tabs %}
-{% code-tabs-item title="config/jobly.rb" %}
 ```ruby
+# config/jobly.rb
 Jobly.configure do |config|
   # Full configuration file. Everything is optional and has defaults.
   # This file is loaded on boot by the server, worker and jobly CLI.
@@ -118,6 +117,3 @@ Jobly.configure do |config|
 
 end
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
-

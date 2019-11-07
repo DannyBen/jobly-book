@@ -33,7 +33,7 @@
   * [Sending Slack Notifications](building-jobs/sending-slack-notifications.md)
   * [Loading Additional Code](building-jobs/loading-additional-code.md)
 * [Configuration](configuration/README.md)
-  * [Jobly Configuraion](configuration/jobly-configuraion.md)
+  * [Jobly Configuration](configuration/jobly-config.md)
   * [Worker Configuration](configuration/worker-config.md)
   * [Logging](configuration/logging.md)
 

@@ -24,5 +24,5 @@ class Deploy < Jobly::Job
 end
 ```
 
-{% page-ref page="solo-jobs.md" %}
+> See Also: [Solo Jobs](solo-jobs.md)
 

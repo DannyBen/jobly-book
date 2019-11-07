@@ -5,7 +5,7 @@ To start processing jobs:
 1. Run `jobly worker`.
 2. That's it.
 
-{% page-ref page="../../configuration/worker-config.md" %}
+> See Also: [Worker Configuration](/configuration/worker-config.md)
 
 
 

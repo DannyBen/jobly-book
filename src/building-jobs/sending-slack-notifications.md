@@ -2,9 +2,8 @@
 
 Jobly comes bundled with [Slack::Notifier](https://github.com/stevenosloan/slack-notifier) which is made available to your jobs using the `#slack` method.
 
-{% code-tabs %}
-{% code-tabs-item title="jobs/greet.job" %}
 ```ruby
+# jobs/greet.job
 class Greet < Job
   # Optional settings (defaults to #debug and Jobly)
   slack_channel '#debug'
@@ -19,6 +18,3 @@ class Greet < Job
   end
 end
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
-
