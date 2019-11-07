@@ -16,19 +16,17 @@ input(type="imudp" port="514")
 
 ## Code
 
-{% code-tabs %}
-{% code-tabs-item title="config/jobly.rb" %}
 ```ruby
+# config/jobly.rb
 Jobly.configure do |config|
   # Log to local syslog and use the system name `jobly` and tag `demo`
   config.log = "syslog://jobly:demo@127.0.0.1:514"
   config.logger.level = Logger::INFO
 end
 ```
-{% endcode-tabs-item %}
 
-{% code-tabs-item title="jobs/hello.rb" %}
 ```ruby
+# jobs/hello.rb
 class Hello < Jobly::Job
   def execute(name: 'bob')
     puts "Hello #{name}"
@@ -36,8 +34,6 @@ class Hello < Jobly::Job
   end
 end
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ## Commands to Try
 

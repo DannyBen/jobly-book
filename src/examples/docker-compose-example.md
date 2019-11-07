@@ -4,18 +4,17 @@ This example demonstrates how to use Jobly inside a docker container and with do
 
 ## Code
 
-{% code-tabs %}
-{% code-tabs-item title="Dockerfile" %}
-```text
+```dockerfile
+# Dockerfile
 FROM dannyben/alpine-ruby
 RUN gem install jobly
 WORKDIR /app
 COPY app .
 ```
-{% endcode-tabs-item %}
 
-{% code-tabs-item title="docker-compose.yml" %}
+
 ```yaml
+# docker-compose.yml
 version: '3'
 
 services:
@@ -47,11 +46,9 @@ services:
     entrypoint: jobly send
     command: Hello
 ```
-{% endcode-tabs-item %}
 
-{% code-tabs-item title="app/jobs/hello.rb" %}
 ```ruby
-
+# app/jobs/hello.rb
 class Hello < Jobly::Job
   def execute(name: 'bob')
     puts "Hello #{name}"
@@ -59,8 +56,7 @@ class Hello < Jobly::Job
   end
 end
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+
 
 ## Commands to Try
 

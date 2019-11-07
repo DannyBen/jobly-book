@@ -151,17 +151,15 @@
                         <h1><a class="header" href="#custom-rack-mount" id="custom-rack-mount">Custom Rack Mount</a></h1>
 <p>This example demonstrates how to ammend the web server so that it also serves any custom rack app.</p>
 <h2><a class="header" href="#code" id="code">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;config/jobly.rb&quot; %}</p>
-<pre><code class="language-ruby">require_relative '../app/my_server'
+<pre><code class="language-ruby"># config/jobly.rb
+require_relative '../app/my_server'
 
 Jobly.configure do |config|
   config.mounts = { &quot;/my&quot; =&gt; MyServer }
 end
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;app/my_Server.rb&quot; %}</p>
-<pre><code class="language-ruby">require &quot;sinatra/base&quot;
+<pre><code class="language-ruby"># app/my_server.rb
+require &quot;sinatra/base&quot;
 
 class MyServer &lt; Sinatra::Base
   get '/' do
@@ -169,8 +167,6 @@ class MyServer &lt; Sinatra::Base
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try" id="commands-to-try">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/custom-rack-mount
 

@@ -4,19 +4,17 @@ This example demonstrates how to ammend the web server so that it also serves an
 
 ## Code
 
-{% code-tabs %}
-{% code-tabs-item title="config/jobly.rb" %}
 ```ruby
+# config/jobly.rb
 require_relative '../app/my_server'
 
 Jobly.configure do |config|
   config.mounts = { "/my" => MyServer }
 end
 ```
-{% endcode-tabs-item %}
 
-{% code-tabs-item title="app/my\_Server.rb" %}
 ```ruby
+# app/my_server.rb
 require "sinatra/base"
 
 class MyServer < Sinatra::Base
@@ -25,8 +23,7 @@ class MyServer < Sinatra::Base
   end
 end
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+
 
 ## Commands to Try
 

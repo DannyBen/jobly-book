@@ -156,9 +156,9 @@
 <li>Spawning the secondary jobs to be executed later by the worker, as separate jobs.</li>
 </ol>
 <h2><a class="header" href="#code" id="code">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;jobs/run_sync.rb&quot; %}</p>
-<pre><code class="language-ruby"># This job will call the other jobs synchronously and display progress
+<pre><code class="language-ruby"># jobs/run_sync.rb
+
+# This job will call the other jobs synchronously and display progress
 # in the dashboard
 
 class RunSync &lt; Jobly::Job
@@ -175,9 +175,9 @@ class RunSync &lt; Jobly::Job
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;jobs/run_async.rb&quot; %}</p>
-<pre><code class="language-ruby"># This job will spawn child threads for the sub jobs.
+<pre><code class="language-ruby"># jobs/run_async.rb
+
+# This job will spawn child threads for the sub jobs.
 # Each of the spawned jobs will have its own progress bar in the dashboard.
 
 class RunAsync &lt; Jobly::Job
@@ -188,17 +188,14 @@ class RunAsync &lt; Jobly::Job
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;jobs/sub_job.rb&quot; %}</p>
-<pre><code class="language-ruby">class SubJob &lt; Jobly::Job
+<pre><code class="language-ruby"># jobs/sub_job.rb
+class SubJob &lt; Jobly::Job
   def execute(number:)
     logger.info &quot;Executing... something... #{number}&quot;
     sleep rand(1..5)
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try" id="commands-to-try">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/job-in-job
 

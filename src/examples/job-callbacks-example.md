@@ -4,9 +4,8 @@ This example illustrates the use of `before`, `after`, `on_skip`, `on_success`, 
 
 ## Code
 
-{% code-tabs %}
-{% code-tabs-item title="jobs/actions.rb" %}
 ```ruby
+# jobs/actions.rb
 class Actions < Jobly::Job
   before { puts "before" }
   after  { puts "after" }
@@ -27,10 +26,9 @@ class Actions < Jobly::Job
   end
 end
 ```
-{% endcode-tabs-item %}
 
-{% code-tabs-item title="jobs/filter.rb" %}
 ```ruby
+# jobs/filter.rb
 class Filter < Jobly::Job
   before do
     puts "before"
@@ -50,8 +48,6 @@ class Filter < Jobly::Job
   end
 end
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ## Commands to Try
 

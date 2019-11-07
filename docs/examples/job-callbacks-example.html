@@ -151,9 +151,8 @@
                         <h1><a class="header" href="#job-callbacks-example" id="job-callbacks-example">Job Callbacks Example</a></h1>
 <p>This example illustrates the use of <code>before</code>, <code>after</code>, <code>on_skip</code>, <code>on_success</code>, and <code>on_failure</code> blocks.</p>
 <h2><a class="header" href="#code" id="code">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;jobs/actions.rb&quot; %}</p>
-<pre><code class="language-ruby">class Actions &lt; Jobly::Job
+<pre><code class="language-ruby"># jobs/actions.rb
+class Actions &lt; Jobly::Job
   before { puts &quot;before&quot; }
   after  { puts &quot;after&quot; }
 
@@ -173,9 +172,8 @@
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;jobs/filter.rb&quot; %}</p>
-<pre><code class="language-ruby">class Filter &lt; Jobly::Job
+<pre><code class="language-ruby"># jobs/filter.rb
+class Filter &lt; Jobly::Job
   before do
     puts &quot;before&quot;
     skip_job
@@ -194,8 +192,6 @@ end
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try" id="commands-to-try">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/before-after-actions
 

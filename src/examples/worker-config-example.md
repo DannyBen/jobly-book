@@ -6,19 +6,17 @@ Note that the same can also be achieved through the command line, without using 
 
 ## Code
 
-{% code-tabs %}
-{% code-tabs-item title="config/worker.yml" %}
 ```yaml
+# config/worker.yml
 :concurrency: 2
 :queues:
 - critical
 - default
 - mundane
 ```
-{% endcode-tabs-item %}
 
-{% code-tabs-item title="jobs/critical.rb" %}
 ```ruby
+# jobs/critical.rb
 class Critical < Jobly::Job
   options queue: 'critical'
 
@@ -27,10 +25,9 @@ class Critical < Jobly::Job
   end
 end
 ```
-{% endcode-tabs-item %}
 
-{% code-tabs-item title="jobs/mundane.rb" %}
 ```ruby
+# jobs/mundane.rb
 class Mundane < Jobly::Job
   options queue: 'mundane'
 
@@ -39,15 +36,13 @@ class Mundane < Jobly::Job
   end
 end
 ```
-{% endcode-tabs-item %}
 
-{% code-tabs-item title="Procfile" %}
 ```text
+# Procfile
 web: jobly server
 worker: jobly worker --config worker
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+
 
 ## Commands to Try
 

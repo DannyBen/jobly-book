@@ -156,15 +156,14 @@
 <li>How additional namespacing is done by putting some jobs under a nested module and (optionally, by convention) putting them inside a subfolder - see the jobs folder.</li>
 </ol>
 <h2><a class="header" href="#code" id="code">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;config/jobly.rb&quot; %}</p>
-<pre><code class="language-ruby">Jobly.configure do |config|
+<pre><code class="language-ruby"># config/jobly.rb
+Jobly.configure do |config|
   config.jobs_namespace = 'Jobs'
 end
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;jobs/hello.rb&quot; %}</p>
-<pre><code class="language-ruby"># Global namespace for all jobs
+<pre><code class="language-ruby"># jobs/hello.rb
+
+# Global namespace for all jobs
 module Jobs
   class Hello &lt; Jobly::Job
     def execute(name: 'bob')
@@ -174,9 +173,8 @@ module Jobs
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;jobs/inner/hi.rb&quot; %}</p>
-<pre><code class="language-ruby">module Jobs
+<pre><code class="language-ruby"># jobs/inner/hi.rb
+module Jobs
   # A nested job, can be executed with Inner::Hi or Inner/Hi
   module Inner
     class Hi &lt; Jobly::Job
@@ -188,8 +186,6 @@ end
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try" id="commands-to-try">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/namespaces
 

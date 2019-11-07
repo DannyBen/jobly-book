@@ -9,9 +9,9 @@ Two approaches are possible:
 
 ## Code
 
-{% code-tabs %}
-{% code-tabs-item title="jobs/run\_sync.rb" %}
 ```ruby
+# jobs/run_sync.rb
+
 # This job will call the other jobs synchronously and display progress
 # in the dashboard
 
@@ -29,10 +29,11 @@ class RunSync < Jobly::Job
   end
 end
 ```
-{% endcode-tabs-item %}
 
-{% code-tabs-item title="jobs/run\_async.rb" %}
+
 ```ruby
+# jobs/run_async.rb
+
 # This job will spawn child threads for the sub jobs.
 # Each of the spawned jobs will have its own progress bar in the dashboard.
 
@@ -44,10 +45,10 @@ class RunAsync < Jobly::Job
   end
 end
 ```
-{% endcode-tabs-item %}
 
-{% code-tabs-item title="jobs/sub\_job.rb" %}
+
 ```ruby
+# jobs/sub_job.rb
 class SubJob < Jobly::Job
   def execute(number:)
     logger.info "Executing... something... #{number}"
@@ -55,8 +56,7 @@ class SubJob < Jobly::Job
   end
 end
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+
 
 ## Commands to Try
 

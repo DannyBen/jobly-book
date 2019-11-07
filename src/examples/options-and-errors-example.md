@@ -4,9 +4,8 @@ This example illustrates setting the job options: `backtrace`, `queue` and `retr
 
 ## Code
 
-{% code-tabs %}
-{% code-tabs-item title="jobs/deploy.rb" %}
 ```ruby
+# jobs/deploy.rb
 class Deploy < Jobly::Job
   # This job runs on the 'critical' queue
   queue 'critical'
@@ -23,8 +22,6 @@ class Deploy < Jobly::Job
   end
 end
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ## Commands to Try
 

@@ -4,9 +4,8 @@ This example demonstrates how to ensure only one instance of the job is executed
 
 ## Code
 
-{% code-tabs %}
-{% code-tabs-item title="jobs/solo.rb" %}
 ```ruby
+# jobs/solo.rb
 class Solo < Jobly::Job
   solo
 
@@ -23,8 +22,7 @@ class Solo < Jobly::Job
   end
 end
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+
 
 ## Commands to Try
 

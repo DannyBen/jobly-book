@@ -151,16 +151,14 @@
                         <h1><a class="header" href="#docker-compose-example" id="docker-compose-example">Docker Compose Example</a></h1>
 <p>This example demonstrates how to use Jobly inside a docker container and with docker compose.</p>
 <h2><a class="header" href="#code" id="code">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;Dockerfile&quot; %}</p>
-<pre><code class="language-text">FROM dannyben/alpine-ruby
+<pre><code class="language-dockerfile"># Dockerfile
+FROM dannyben/alpine-ruby
 RUN gem install jobly
 WORKDIR /app
 COPY app .
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;docker-compose.yml&quot; %}</p>
-<pre><code class="language-yaml">version: '3'
+<pre><code class="language-yaml"># docker-compose.yml
+version: '3'
 
 services:
   redis:
@@ -191,9 +189,7 @@ services:
     entrypoint: jobly send
     command: Hello
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;app/jobs/hello.rb&quot; %}</p>
-<pre><code class="language-ruby">
+<pre><code class="language-ruby"># app/jobs/hello.rb
 class Hello &lt; Jobly::Job
   def execute(name: 'bob')
     puts &quot;Hello #{name}&quot;
@@ -201,8 +197,6 @@ class Hello &lt; Jobly::Job
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try" id="commands-to-try">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/docker-compose
 

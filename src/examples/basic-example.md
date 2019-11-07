@@ -2,9 +2,8 @@
 
 ## Code
 
-{% code-tabs %}
-{% code-tabs-item title="jobs/hello.rb" %}
 ```ruby
+# jobs/hello.rb
 class Hello < Jobly::Job
   def execute(name: 'bob')
     puts "Hello #{name}"
@@ -12,8 +11,6 @@ class Hello < Jobly::Job
   end
 end
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ## Commands to Try
 

@@ -152,17 +152,15 @@
 <p>This example makes use of worker configuration file in order to tell the worker to process two queues (<code>critical</code> and <code>mundane</code>) instead of the <code>default</code> queue.</p>
 <p>Note that the same can also be achieved through the command line, without using a config file.</p>
 <h2><a class="header" href="#code" id="code">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;config/worker.yml&quot; %}</p>
-<pre><code class="language-yaml">:concurrency: 2
+<pre><code class="language-yaml"># config/worker.yml
+:concurrency: 2
 :queues:
 - critical
 - default
 - mundane
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;jobs/critical.rb&quot; %}</p>
-<pre><code class="language-ruby">class Critical &lt; Jobly::Job
+<pre><code class="language-ruby"># jobs/critical.rb
+class Critical &lt; Jobly::Job
   options queue: 'critical'
 
   def execute
@@ -170,9 +168,8 @@
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;jobs/mundane.rb&quot; %}</p>
-<pre><code class="language-ruby">class Mundane &lt; Jobly::Job
+<pre><code class="language-ruby"># jobs/mundane.rb
+class Mundane &lt; Jobly::Job
   options queue: 'mundane'
 
   def execute
@@ -180,13 +177,10 @@ end
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;Procfile&quot; %}</p>
-<pre><code class="language-text">web: jobly server
+<pre><code class="language-text"># Procfile
+web: jobly server
 worker: jobly worker --config worker
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try" id="commands-to-try">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/worker-config
 

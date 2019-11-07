@@ -158,25 +158,21 @@ module(load=&quot;imudp&quot;)
 input(type=&quot;imudp&quot; port=&quot;514&quot;)
 </code></pre>
 <h2><a class="header" href="#code" id="code">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;config/jobly.rb&quot; %}</p>
-<pre><code class="language-ruby">Jobly.configure do |config|
+<pre><code class="language-ruby"># config/jobly.rb
+Jobly.configure do |config|
   # Log to local syslog and use the system name `jobly` and tag `demo`
   config.log = &quot;syslog://jobly:demo@127.0.0.1:514&quot;
   config.logger.level = Logger::INFO
 end
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;jobs/hello.rb&quot; %}</p>
-<pre><code class="language-ruby">class Hello &lt; Jobly::Job
+<pre><code class="language-ruby"># jobs/hello.rb
+class Hello &lt; Jobly::Job
   def execute(name: 'bob')
     puts &quot;Hello #{name}&quot;
     logger.info &quot;said hello to #{name}&quot;
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try" id="commands-to-try">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/syslog
 

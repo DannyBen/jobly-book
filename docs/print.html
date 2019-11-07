@@ -247,23 +247,19 @@
 }
 </code></pre>
 <h1><a class="header" href="#examples" id="examples">Examples</a></h1>
-<p>{% hint style=&quot;info&quot; %}
-These examples are <a href="https://github.com/DannyBen/jobly-examples">available on GitHub</a>.
-{% endhint %}</p>
-<p>The following examples each demonstrate a specific feature or aspect of Jobly.</p>
+<p>The examples in this section are
+<a href="https://github.com/DannyBen/jobly-examples">also available on GitHub</a>.</p>
+<p>Each example demonstrates a specific feature or aspect of Jobly.</p>
 <h1><a class="header" href="#basic-example" id="basic-example">Basic Example</a></h1>
 <h2><a class="header" href="#code" id="code">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;jobs/hello.rb&quot; %}</p>
-<pre><code class="language-ruby">class Hello &lt; Jobly::Job
+<pre><code class="language-ruby"># jobs/hello.rb
+class Hello &lt; Jobly::Job
   def execute(name: 'bob')
     puts &quot;Hello #{name}&quot;
     logger.info &quot;said hello to #{name}&quot;
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try" id="commands-to-try">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/basic
 
@@ -288,9 +284,8 @@ open http://localhost:3000/do/Hello?name=Guest
 <h1><a class="header" href="#job-callbacks-example" id="job-callbacks-example">Job Callbacks Example</a></h1>
 <p>This example illustrates the use of <code>before</code>, <code>after</code>, <code>on_skip</code>, <code>on_success</code>, and <code>on_failure</code> blocks.</p>
 <h2><a class="header" href="#code-1" id="code-1">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;jobs/actions.rb&quot; %}</p>
-<pre><code class="language-ruby">class Actions &lt; Jobly::Job
+<pre><code class="language-ruby"># jobs/actions.rb
+class Actions &lt; Jobly::Job
   before { puts &quot;before&quot; }
   after  { puts &quot;after&quot; }
 
@@ -310,9 +305,8 @@ open http://localhost:3000/do/Hello?name=Guest
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;jobs/filter.rb&quot; %}</p>
-<pre><code class="language-ruby">class Filter &lt; Jobly::Job
+<pre><code class="language-ruby"># jobs/filter.rb
+class Filter &lt; Jobly::Job
   before do
     puts &quot;before&quot;
     skip_job
@@ -331,8 +325,6 @@ end
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try-1" id="commands-to-try-1">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/before-after-actions
 
@@ -348,16 +340,14 @@ jobly run Filter
 <h1><a class="header" href="#docker-compose-example" id="docker-compose-example">Docker Compose Example</a></h1>
 <p>This example demonstrates how to use Jobly inside a docker container and with docker compose.</p>
 <h2><a class="header" href="#code-2" id="code-2">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;Dockerfile&quot; %}</p>
-<pre><code class="language-text">FROM dannyben/alpine-ruby
+<pre><code class="language-dockerfile"># Dockerfile
+FROM dannyben/alpine-ruby
 RUN gem install jobly
 WORKDIR /app
 COPY app .
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;docker-compose.yml&quot; %}</p>
-<pre><code class="language-yaml">version: '3'
+<pre><code class="language-yaml"># docker-compose.yml
+version: '3'
 
 services:
   redis:
@@ -388,9 +378,7 @@ services:
     entrypoint: jobly send
     command: Hello
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;app/jobs/hello.rb&quot; %}</p>
-<pre><code class="language-ruby">
+<pre><code class="language-ruby"># app/jobs/hello.rb
 class Hello &lt; Jobly::Job
   def execute(name: 'bob')
     puts &quot;Hello #{name}&quot;
@@ -398,8 +386,6 @@ class Hello &lt; Jobly::Job
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try-2" id="commands-to-try-2">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/docker-compose
 
@@ -426,9 +412,9 @@ docker-compose run send Hello name:Bobby
 <li>Spawning the secondary jobs to be executed later by the worker, as separate jobs.</li>
 </ol>
 <h2><a class="header" href="#code-3" id="code-3">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;jobs/run_sync.rb&quot; %}</p>
-<pre><code class="language-ruby"># This job will call the other jobs synchronously and display progress
+<pre><code class="language-ruby"># jobs/run_sync.rb
+
+# This job will call the other jobs synchronously and display progress
 # in the dashboard
 
 class RunSync &lt; Jobly::Job
@@ -445,9 +431,9 @@ class RunSync &lt; Jobly::Job
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;jobs/run_async.rb&quot; %}</p>
-<pre><code class="language-ruby"># This job will spawn child threads for the sub jobs.
+<pre><code class="language-ruby"># jobs/run_async.rb
+
+# This job will spawn child threads for the sub jobs.
 # Each of the spawned jobs will have its own progress bar in the dashboard.
 
 class RunAsync &lt; Jobly::Job
@@ -458,17 +444,14 @@ class RunAsync &lt; Jobly::Job
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;jobs/sub_job.rb&quot; %}</p>
-<pre><code class="language-ruby">class SubJob &lt; Jobly::Job
+<pre><code class="language-ruby"># jobs/sub_job.rb
+class SubJob &lt; Jobly::Job
   def execute(number:)
     logger.info &quot;Executing... something... #{number}&quot;
     sleep rand(1..5)
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try-3" id="commands-to-try-3">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/job-in-job
 
@@ -487,15 +470,14 @@ jobly send RunAsync count:10
 <li>How additional namespacing is done by putting some jobs under a nested module and (optionally, by convention) putting them inside a subfolder - see the jobs folder.</li>
 </ol>
 <h2><a class="header" href="#code-4" id="code-4">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;config/jobly.rb&quot; %}</p>
-<pre><code class="language-ruby">Jobly.configure do |config|
+<pre><code class="language-ruby"># config/jobly.rb
+Jobly.configure do |config|
   config.jobs_namespace = 'Jobs'
 end
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;jobs/hello.rb&quot; %}</p>
-<pre><code class="language-ruby"># Global namespace for all jobs
+<pre><code class="language-ruby"># jobs/hello.rb
+
+# Global namespace for all jobs
 module Jobs
   class Hello &lt; Jobly::Job
     def execute(name: 'bob')
@@ -505,9 +487,8 @@ module Jobs
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;jobs/inner/hi.rb&quot; %}</p>
-<pre><code class="language-ruby">module Jobs
+<pre><code class="language-ruby"># jobs/inner/hi.rb
+module Jobs
   # A nested job, can be executed with Inner::Hi or Inner/Hi
   module Inner
     class Hi &lt; Jobly::Job
@@ -519,8 +500,6 @@ end
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try-4" id="commands-to-try-4">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/namespaces
 
@@ -533,9 +512,8 @@ jobly run Inner::Hi
 <h1><a class="header" href="#options-and-errors-example" id="options-and-errors-example">Options and Errors Example</a></h1>
 <p>This example illustrates setting the job options: <code>backtrace</code>, <code>queue</code> and <code>retries</code>.</p>
 <h2><a class="header" href="#code-5" id="code-5">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;jobs/deploy.rb&quot; %}</p>
-<pre><code class="language-ruby">class Deploy &lt; Jobly::Job
+<pre><code class="language-ruby"># jobs/deploy.rb
+class Deploy &lt; Jobly::Job
   # This job runs on the 'critical' queue
   queue 'critical'
 
@@ -551,8 +529,6 @@ jobly run Inner::Hi
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try-5" id="commands-to-try-5">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/options-and-errors
 
@@ -572,9 +548,8 @@ open http://localhost:3000/retries
 <h1><a class="header" href="#slack-notifications-example" id="slack-notifications-example">Slack Notifications Example</a></h1>
 <p>This example illustrates how to send slack notifications from your jobs. Note that for this to work, you need to <a href="https://slack.com/apps/A0F7XDUAZ-incoming-webhooks">set up a web hook in your Slack configuration</a> and then make it available to Jobly by the <code>slack_webhook</code> option or the <code>JOBLY_SLACK_WEBHOOK</code> environment variable.</p>
 <h2><a class="header" href="#code-6" id="code-6">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;jobs/greet.rb&quot; %}</p>
-<pre><code class="language-ruby">class Greet &lt; Jobly::Job
+<pre><code class="language-ruby"># jobs/greet.rb
+class Greet &lt; Jobly::Job
   # Optional settings (defaults to #general and Jobly)
   slack_channel '#debug'
   slack_user 'Greeter'
@@ -588,8 +563,6 @@ open http://localhost:3000/retries
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try-6" id="commands-to-try-6">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/slack-notifications
 
@@ -609,25 +582,21 @@ module(load=&quot;imudp&quot;)
 input(type=&quot;imudp&quot; port=&quot;514&quot;)
 </code></pre>
 <h2><a class="header" href="#code-7" id="code-7">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;config/jobly.rb&quot; %}</p>
-<pre><code class="language-ruby">Jobly.configure do |config|
+<pre><code class="language-ruby"># config/jobly.rb
+Jobly.configure do |config|
   # Log to local syslog and use the system name `jobly` and tag `demo`
   config.log = &quot;syslog://jobly:demo@127.0.0.1:514&quot;
   config.logger.level = Logger::INFO
 end
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;jobs/hello.rb&quot; %}</p>
-<pre><code class="language-ruby">class Hello &lt; Jobly::Job
+<pre><code class="language-ruby"># jobs/hello.rb
+class Hello &lt; Jobly::Job
   def execute(name: 'bob')
     puts &quot;Hello #{name}&quot;
     logger.info &quot;said hello to #{name}&quot;
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try-7" id="commands-to-try-7">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/syslog
 
@@ -647,17 +616,15 @@ jobly send Hello
 <p>This example makes use of worker configuration file in order to tell the worker to process two queues (<code>critical</code> and <code>mundane</code>) instead of the <code>default</code> queue.</p>
 <p>Note that the same can also be achieved through the command line, without using a config file.</p>
 <h2><a class="header" href="#code-8" id="code-8">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;config/worker.yml&quot; %}</p>
-<pre><code class="language-yaml">:concurrency: 2
+<pre><code class="language-yaml"># config/worker.yml
+:concurrency: 2
 :queues:
 - critical
 - default
 - mundane
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;jobs/critical.rb&quot; %}</p>
-<pre><code class="language-ruby">class Critical &lt; Jobly::Job
+<pre><code class="language-ruby"># jobs/critical.rb
+class Critical &lt; Jobly::Job
   options queue: 'critical'
 
   def execute
@@ -665,9 +632,8 @@ jobly send Hello
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;jobs/mundane.rb&quot; %}</p>
-<pre><code class="language-ruby">class Mundane &lt; Jobly::Job
+<pre><code class="language-ruby"># jobs/mundane.rb
+class Mundane &lt; Jobly::Job
   options queue: 'mundane'
 
   def execute
@@ -675,13 +641,10 @@ end
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;Procfile&quot; %}</p>
-<pre><code class="language-text">web: jobly server
+<pre><code class="language-text"># Procfile
+web: jobly server
 worker: jobly worker --config worker
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try-8" id="commands-to-try-8">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/worker-config
 
@@ -697,9 +660,8 @@ jobly send Mundane
 <h1><a class="header" href="#solo-job-example" id="solo-job-example">Solo Job Example</a></h1>
 <p>This example demonstrates how to ensure only one instance of the job is executed at any given time.</p>
 <h2><a class="header" href="#code-9" id="code-9">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;jobs/solo.rb&quot; %}</p>
-<pre><code class="language-ruby">class Solo &lt; Jobly::Job
+<pre><code class="language-ruby"># jobs/solo.rb
+class Solo &lt; Jobly::Job
   solo
 
   on_skip do
@@ -715,8 +677,6 @@ jobly send Mundane
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try-9" id="commands-to-try-9">Commands to Try</a></h2>
 <p>Before running these commands, it is recommended you open the Statuses tab in the web dashboard.</p>
 <pre><code class="language-bash">cd examples/solo
@@ -735,17 +695,15 @@ jobly send Solo name:Bart
 <h1><a class="header" href="#custom-rack-mount" id="custom-rack-mount">Custom Rack Mount</a></h1>
 <p>This example demonstrates how to ammend the web server so that it also serves any custom rack app.</p>
 <h2><a class="header" href="#code-10" id="code-10">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;config/jobly.rb&quot; %}</p>
-<pre><code class="language-ruby">require_relative '../app/my_server'
+<pre><code class="language-ruby"># config/jobly.rb
+require_relative '../app/my_server'
 
 Jobly.configure do |config|
   config.mounts = { &quot;/my&quot; =&gt; MyServer }
 end
 </code></pre>
-<p>{% endcode-tabs-item %}</p>
-<p>{% code-tabs-item title=&quot;app/my_Server.rb&quot; %}</p>
-<pre><code class="language-ruby">require &quot;sinatra/base&quot;
+<pre><code class="language-ruby"># app/my_server.rb
+require &quot;sinatra/base&quot;
 
 class MyServer &lt; Sinatra::Base
   get '/' do
@@ -753,8 +711,6 @@ class MyServer &lt; Sinatra::Base
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try-10" id="commands-to-try-10">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/custom-rack-mount
 

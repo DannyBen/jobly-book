@@ -151,9 +151,8 @@
                         <h1><a class="header" href="#slack-notifications-example" id="slack-notifications-example">Slack Notifications Example</a></h1>
 <p>This example illustrates how to send slack notifications from your jobs. Note that for this to work, you need to <a href="https://slack.com/apps/A0F7XDUAZ-incoming-webhooks">set up a web hook in your Slack configuration</a> and then make it available to Jobly by the <code>slack_webhook</code> option or the <code>JOBLY_SLACK_WEBHOOK</code> environment variable.</p>
 <h2><a class="header" href="#code" id="code">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;jobs/greet.rb&quot; %}</p>
-<pre><code class="language-ruby">class Greet &lt; Jobly::Job
+<pre><code class="language-ruby"># jobs/greet.rb
+class Greet &lt; Jobly::Job
   # Optional settings (defaults to #general and Jobly)
   slack_channel '#debug'
   slack_user 'Greeter'
@@ -167,8 +166,6 @@
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try" id="commands-to-try">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/slack-notifications
 

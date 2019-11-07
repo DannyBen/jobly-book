@@ -150,17 +150,14 @@
                     <main>
                         <h1><a class="header" href="#basic-example" id="basic-example">Basic Example</a></h1>
 <h2><a class="header" href="#code" id="code">Code</a></h2>
-<p>{% code-tabs %}
-{% code-tabs-item title=&quot;jobs/hello.rb&quot; %}</p>
-<pre><code class="language-ruby">class Hello &lt; Jobly::Job
+<pre><code class="language-ruby"># jobs/hello.rb
+class Hello &lt; Jobly::Job
   def execute(name: 'bob')
     puts &quot;Hello #{name}&quot;
     logger.info &quot;said hello to #{name}&quot;
   end
 end
 </code></pre>
-<p>{% endcode-tabs-item %}
-{% endcode-tabs %}</p>
 <h2><a class="header" href="#commands-to-try" id="commands-to-try">Commands to Try</a></h2>
 <pre><code class="language-bash">cd examples/basic
 
