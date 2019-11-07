@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="sidebar-visible no-js ayu">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Jobly</title>
+        <title>Jobly Documentation</title>
         
         <meta name="robots" content="noindex" />
         
@@ -38,7 +38,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -64,7 +64,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('ayu')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -102,11 +102,11 @@
                                 <i class="fa fa-paint-brush"></i>
                             </button>
                             <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
                             </ul>
                             
                             <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
@@ -115,7 +115,7 @@
                             
                         </div>
 
-                        <h1 class="menu-title">Jobly</h1>
+                        <h1 class="menu-title">Jobly Documentation</h1>
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -151,15 +151,13 @@
                 <div id="content" class="content">
                     <main>
                         <div style='text-align: center'>
-<p><a href='/'><img src='/.gitbook/assets/logo.svg' style='max-width: 400px'></a>
+<p><a href='/'><img src='/assets/logo.svg' style='max-width: 400px'></a>
 <br>
 Compact job server with API, CLI, Web UI and a Sidekiq heart.</p>
 </div>
 <hr />
-<h1><a class="header" href="#what-is-jobly" id="what-is-jobly">What is Jobly</a></h1>
+<h1><a class="header" href="#welcome-to-the-jobly-documentation" id="welcome-to-the-jobly-documentation">Welcome to the Jobly Documentation</a></h1>
 <p>Jobly is a sidekiq-based job server with a command line interface, web API and a web dashboard.</p>
-<p><img src=".gitbook/assets/terminal.gif" alt="" /></p>
-<p><img src=".gitbook/assets/screen.gif" alt="" /></p>
 <h2><a class="header" href="#whats-in-the-box" id="whats-in-the-box">What's in the Box</a></h2>
 <ul>
 <li><strong>Command line interface</strong> - for starting the server, starting the worker, and for running jobs.</li>
@@ -168,8 +166,26 @@ Compact job server with API, CLI, Web UI and a Sidekiq heart.</p>
 <li><strong>Remote Syslog Support</strong> - send output to Papertrail or remote syslog.</li>
 <li><strong>Slack Notifications</strong> - report job progress to Slack.</li>
 </ul>
+<h2><a class="header" href="#table-of-contents" id="table-of-contents">Table of Contents</a></h2>
+<ul>
+<li><a href="installation.html">Installation</a></li>
+<li><a href="usage">Usage</a></li>
+<li><a href="examples">Examples</a></li>
+<li><a href="building-jobs">Building Jobs</a></li>
+<li><a href="configuration">Configuration</a></li>
+</ul>
+<h2><a class="header" href="#screencast" id="screencast">Screencast</a></h2>
+<p><img src="/assets/cast.svg" alt="" /></p>
+<h2><a class="header" href="#screenshot" id="screenshot">Screenshot</a></h2>
+<p><img src="/assets/screen.gif" alt="" /></p>
 <h2><a class="header" href="#interactive-demo" id="interactive-demo">Interactive Demo</a></h2>
 <p>For an interactive demo, visit the <a href="https://www.katacoda.com/dannyb/scenarios/jobly">Jobly scenario on Katacoda</a>.</p>
+<h2><a class="header" href="#keyboard-shortcuts-for-this-documentation-site" id="keyboard-shortcuts-for-this-documentation-site">Keyboard Shortcuts for this Documentation Site</a></h2>
+<table><thead><tr><th>Shortcut</th><th>Action</th></tr></thead><tbody>
+<tr><td><strong>s</strong></td><td>Focus the search field</td></tr>
+<tr><td><strong>Up</strong> / <strong>Down</strong></td><td>Navigate in search results</td></tr>
+<tr><td><strong>Right</strong> / <strong>Left</strong></td><td>Navigate to next / previous page</td></tr>
+</tbody></table>
 <h1><a class="header" href="#installation" id="installation">Installation</a></h1>
 <p>Jobly is packaged as a Ruby gem, install it by running:</p>
 <pre><code class="language-text">$ gem install jobly
@@ -197,7 +213,7 @@ Compact job server with API, CLI, Web UI and a Sidekiq heart.</p>
 <h3><a class="header" href="#the-jobly-api-server" id="the-jobly-api-server">The Jobly API Server</a></h3>
 <p>This is a simple web API server that allows you to execute jobs remotely by calling <code>/do/JobName?param=value</code>.</p>
 <blockquote>
-<p>See Also: <a href="usage/server-side//usage/client-side/running-jobs-with-the-api.html">Running Jobs with the API</a></p>
+<p><i class='fa fa-arrow-right'></i> See Also: <a href="usage/server-side//usage/client-side/running-jobs-with-the-api.html">Running Jobs with the API</a></p>
 </blockquote>
 <h1><a class="header" href="#worker" id="worker">Worker</a></h1>
 <p>To start processing jobs:</p>
@@ -206,7 +222,7 @@ Compact job server with API, CLI, Web UI and a Sidekiq heart.</p>
 <li>That's it.</li>
 </ol>
 <blockquote>
-<p>See Also: <a href="usage/server-side//configuration/worker-config.html">Worker Configuration</a></p>
+<p><i class='fa fa-arrow-right'></i> See Also: <a href="usage/server-side//configuration/worker-config.html">Worker Configuration</a></p>
 </blockquote>
 <h1><a class="header" href="#client-side" id="client-side">Client Side</a></h1>
 <ul>
@@ -744,11 +760,11 @@ JOBLY_AUTH=user:pass jobly send Hello
 <h1><a class="header" href="#building-jobs" id="building-jobs">Building Jobs</a></h1>
 <p>In order to build a <strong>jobs workspace</strong>, start in an empty folder and create a <code>./jobs</code> sub folder inside it. All your job classes go in this folder. The name of this folder is configurable.</p>
 <blockquote>
-<p>See Also: <a href="building-jobs//configuration">Configuration</a></p>
+<p><i class='fa fa-arrow-right'></i> See Also: <a href="building-jobs//configuration">Configuration</a></p>
 </blockquote>
 <p>All the Ruby files in the <code>./jobs</code> folder will be loaded by all of Jobly's commands. It is recommended to only keep Job classes in this folder. If you need to load additional code, you can use the <code>./app</code> folder.</p>
 <blockquote>
-<p>See Also: <a href="building-jobs/loading-additional-code.html">Loading Additional Code</a></p>
+<p><i class='fa fa-arrow-right'></i> See Also: <a href="building-jobs/loading-additional-code.html">Loading Additional Code</a></p>
 </blockquote>
 <p>Your job classes should simply inherit from <code>Jobly::Job</code>, like this:</p>
 <pre><code class="language-ruby">class Hello &lt; Jobly::Job
@@ -808,7 +824,7 @@ end
 end
 </code></pre>
 <blockquote>
-<p>See Also: <a href="building-jobs/solo-jobs.html">Solo Jobs</a></p>
+<p><i class='fa fa-arrow-right'></i> See Also: <a href="building-jobs/solo-jobs.html">Solo Jobs</a></p>
 </blockquote>
 <h1><a class="header" href="#job-callbacks" id="job-callbacks">Job Callbacks</a></h1>
 <p>The <code>Jobly::Job</code> class supports these callback methods:</p>
@@ -840,7 +856,7 @@ end
 <p>In order to conditionally skip a job from its <code>before</code> block, you can call <code>skip_job</code>. This will avoid running the job, and will execute the <code>on_skip</code> action and the <code>after</code> action, if present.</p>
 <h1><a class="header" href="#reporting-job-progress" id="reporting-job-progress">Reporting Job Progress</a></h1>
 <p>Jobly comes bundled with <a href="https://github.com/utgarda/sidekiq-status">Sidekiq::Status</a> which that you get a live status dashboard, and a way to report progress in your jobs.</p>
-<p><img src="building-jobs/../.gitbook/assets/screen.gif" alt="" /></p>
+<p><img src="building-jobs//assets/screen.gif" alt="" /></p>
 <p>In order to report progress from your job, use the <code>total</code> and <code>at</code> methods. In addition, you can store arbitrary data related to your job with <code>store</code> and <code>retrieve</code>.</p>
 <pre><code class="language-ruby"># jobs/hello.rb
 class Hello &lt; Jobly::Job
@@ -873,7 +889,7 @@ end
 <p>Solo Jobs (also known as Unique Jobs) will register a lock key in redis before execution, which will prevent subsequent jobs with the same fingerprint from running until the lock is released. The lock will be automatically removed when the job completes (even if it fails), or after a one hour expiration period.</p>
 <p>When a job is skipped due to locking, it will execute the <code>on_skip</code> callback.</p>
 <blockquote>
-<p>See Also: <a href="building-jobs/callbacks.html">Job Callbacks</a></p>
+<p><i class='fa fa-arrow-right'></i> See Also: <a href="building-jobs/callbacks.html">Job Callbacks</a></p>
 </blockquote>
 <h2><a class="header" href="#job-fingerprint" id="job-fingerprint">Job Fingerprint</a></h2>
 <p>By default, the job's fingerprint is built of its class name and its parameters. You can specify a different fingerprint in one of two ways:</p>
@@ -900,7 +916,7 @@ end
 end
 </code></pre>
 <blockquote>
-<p>Tip: The <code>#solo_key</code> method can use any of the job's parameters by accessing
+<p><i class='fa fa-info-circle'></i> Tip: The <code>#solo_key</code> method can use any of the job's parameters by accessing
 the <code>params</code> hash.</p>
 </blockquote>
 <h2><a class="header" href="#lock-expiration-safeguard" id="lock-expiration-safeguard">Lock Expiration Safeguard</a></h2>
@@ -919,10 +935,10 @@ end
 </code></pre>
 <p>You can use <code>seconds</code>, <code>minutes</code>, <code>hours</code> and <code>days</code>.</p>
 <blockquote>
-<p>Note: Expiration timer starts to count down from the moment the job is queued, and <em>not</em> from the moment it is executed.</p>
+<p><i class='fa fa-exclamation-triangle'></i> Note: Expiration timer starts to count down from the moment the job is queued, and <em>not</em> from the moment it is executed.</p>
 </blockquote>
 <blockquote>
-<p>See Also: <a href="building-jobs//examples/solo-example.html">Solo Job Example</a></p>
+<p><i class='fa fa-arrow-right'></i> See Also: <a href="building-jobs//examples/solo-example.html">Solo Job Example</a></p>
 </blockquote>
 <h1><a class="header" href="#running-shell-commands" id="running-shell-commands">Running Shell Commands</a></h1>
 <p>Although you can use any Ruby method to execute shell and system commands from within your jobs, Jobly comes bundled with <a href="https://github.com/piotrmurach/tty-command">TTY::Command</a> which is made available to your jobs by using the <code>#shell</code> method.</p>
@@ -1082,7 +1098,7 @@ end
 <li>Specify additional advanced sidekiq configuration options.</li>
 </ul>
 <blockquote>
-<p>Tip: The worker configuration file is in fact a <a href="https://github.com/mperham/sidekiq/wiki/Advanced-Options">sidekiq configuration file</a>. Refer to the sidekiq documentation if you need more advanced options.</p>
+<p><i class='fa fa-arrow-right'></i> Tip: The worker configuration file is in fact a <a href="https://github.com/mperham/sidekiq/wiki/Advanced-Options">sidekiq configuration file</a>. Refer to the sidekiq documentation if you need more advanced options.</p>
 </blockquote>
 <h2><a class="header" href="#sample-worker-configuration-file" id="sample-worker-configuration-file">Sample Worker Configuration File</a></h2>
 <pre><code class="language-yaml"># config/my-worker.yml
@@ -1095,10 +1111,10 @@ end
 </code></pre>
 <p>Place your YAML config file inside the config folder, and use the <code>jobly worker --config my-worker</code> to use it.</p>
 <blockquote>
-<p>Note: The filename specified with the <code>--config</code> flag must be placed inside the config folder. You do not need to specify the folder name or the <code>.yml</code> extension.</p>
+<p><i class='fa fa-exclamation-triangle'></i> Note: The filename specified with the <code>--config</code> flag must be placed inside the config folder. You do not need to specify the folder name or the <code>.yml</code> extension.</p>
 </blockquote>
 <blockquote>
-<p>See Also: <a href="configuration//examples/worker-config-example.html">Worker Config Example</a></p>
+<p><i class='fa fa-arrow-right'></i> See Also: <a href="configuration//examples/worker-config-example.html">Worker Config Example</a></p>
 </blockquote>
 <h1><a class="header" href="#logging" id="logging">Logging</a></h1>
 <h3><a class="header" href="#logging-from-within-jobs" id="logging-from-within-jobs">Logging from within jobs</a></h3>
@@ -1134,7 +1150,7 @@ end
 <p><code>syslog://system:program@host:port</code></p>
 <p>Omitting any of the options will fall back to a sensible default.</p>
 <blockquote>
-<p>See Also: <a href="configuration//examples/syslog-example.html">Syslog Example</a></p>
+<p><i class='fa fa-arrow-right'></i> See Also: <a href="configuration//examples/syslog-example.html">Syslog Example</a></p>
 </blockquote>
 <h3><a class="header" href="#separate-log-files-for-each-job-class" id="separate-log-files-for-each-job-class">Separate log files for each job class</a></h3>
 <p>If  <code>Jobly.log</code> contains <code>%s</code> in the file path, it will be replaced with the slug of the job, and will create separate log files for each job class.</p>

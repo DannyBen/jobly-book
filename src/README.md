@@ -1,6 +1,6 @@
 <div style='text-align: center'>
 
-<a href='/'><img src='/.gitbook/assets/logo.svg' style='max-width: 400px'></a>
+<a href='/'><img src='/assets/logo.svg' style='max-width: 400px'></a>
 <br>
 Compact job server with API, CLI, Web UI and a Sidekiq heart.
 
@@ -8,14 +8,9 @@ Compact job server with API, CLI, Web UI and a Sidekiq heart.
 
 ---
 
-
-# What is Jobly
+# Welcome to the Jobly Documentation
 
 Jobly is a sidekiq-based job server with a command line interface, web API and a web dashboard.
-
-![](.gitbook/assets/terminal.gif)
-
-![](.gitbook/assets/screen.gif)
 
 ## What's in the Box
 
@@ -25,7 +20,32 @@ Jobly is a sidekiq-based job server with a command line interface, web API and a
 * **Remote Syslog Support** - send output to Papertrail or remote syslog.
 * **Slack Notifications** - report job progress to Slack.
 
+## Table of Contents
+
+* [Installation](installation.md)
+* [Usage](usage)
+* [Examples](examples)
+* [Building Jobs](building-jobs)
+* [Configuration](configuration)
+
+## Screencast
+
+![](/assets/cast.svg)
+
+## Screenshot
+
+![](/assets/screen.gif)
+
 ## Interactive Demo
 
 For an interactive demo, visit the [Jobly scenario on Katacoda](https://www.katacoda.com/dannyb/scenarios/jobly).
+
+
+## Keyboard Shortcuts for this Documentation Site
+
+| Shortcut | Action |
+|---|---|
+| **s** | Focus the search field |
+| **Up** / **Down** | Navigate in search results |
+| **Right** / **Left** | Navigate to next / previous page |
 

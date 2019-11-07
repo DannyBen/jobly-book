@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="sidebar-visible no-js ayu">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>What is Jobly - Jobly</title>
+        <title>What is Jobly - Jobly Documentation</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -36,7 +36,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -62,7 +62,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('ayu')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -100,11 +100,11 @@
                                 <i class="fa fa-paint-brush"></i>
                             </button>
                             <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
                             </ul>
                             
                             <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
@@ -113,7 +113,7 @@
                             
                         </div>
 
-                        <h1 class="menu-title">Jobly</h1>
+                        <h1 class="menu-title">Jobly Documentation</h1>
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -149,15 +149,13 @@
                 <div id="content" class="content">
                     <main>
                         <div style='text-align: center'>
-<p><a href='/'><img src='/.gitbook/assets/logo.svg' style='max-width: 400px'></a>
+<p><a href='/'><img src='/assets/logo.svg' style='max-width: 400px'></a>
 <br>
 Compact job server with API, CLI, Web UI and a Sidekiq heart.</p>
 </div>
 <hr />
-<h1><a class="header" href="#what-is-jobly" id="what-is-jobly">What is Jobly</a></h1>
+<h1><a class="header" href="#welcome-to-the-jobly-documentation" id="welcome-to-the-jobly-documentation">Welcome to the Jobly Documentation</a></h1>
 <p>Jobly is a sidekiq-based job server with a command line interface, web API and a web dashboard.</p>
-<p><img src=".gitbook/assets/terminal.gif" alt="" /></p>
-<p><img src=".gitbook/assets/screen.gif" alt="" /></p>
 <h2><a class="header" href="#whats-in-the-box" id="whats-in-the-box">What's in the Box</a></h2>
 <ul>
 <li><strong>Command line interface</strong> - for starting the server, starting the worker, and for running jobs.</li>
@@ -166,8 +164,26 @@ Compact job server with API, CLI, Web UI and a Sidekiq heart.</p>
 <li><strong>Remote Syslog Support</strong> - send output to Papertrail or remote syslog.</li>
 <li><strong>Slack Notifications</strong> - report job progress to Slack.</li>
 </ul>
+<h2><a class="header" href="#table-of-contents" id="table-of-contents">Table of Contents</a></h2>
+<ul>
+<li><a href="installation.html">Installation</a></li>
+<li><a href="usage">Usage</a></li>
+<li><a href="examples">Examples</a></li>
+<li><a href="building-jobs">Building Jobs</a></li>
+<li><a href="configuration">Configuration</a></li>
+</ul>
+<h2><a class="header" href="#screencast" id="screencast">Screencast</a></h2>
+<p><img src="/assets/cast.svg" alt="" /></p>
+<h2><a class="header" href="#screenshot" id="screenshot">Screenshot</a></h2>
+<p><img src="/assets/screen.gif" alt="" /></p>
 <h2><a class="header" href="#interactive-demo" id="interactive-demo">Interactive Demo</a></h2>
 <p>For an interactive demo, visit the <a href="https://www.katacoda.com/dannyb/scenarios/jobly">Jobly scenario on Katacoda</a>.</p>
+<h2><a class="header" href="#keyboard-shortcuts-for-this-documentation-site" id="keyboard-shortcuts-for-this-documentation-site">Keyboard Shortcuts for this Documentation Site</a></h2>
+<table><thead><tr><th>Shortcut</th><th>Action</th></tr></thead><tbody>
+<tr><td><strong>s</strong></td><td>Focus the search field</td></tr>
+<tr><td><strong>Up</strong> / <strong>Down</strong></td><td>Navigate in search results</td></tr>
+<tr><td><strong>Right</strong> / <strong>Left</strong></td><td>Navigate to next / previous page</td></tr>
+</tbody></table>
 
                     </main>
 

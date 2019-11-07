@@ -7,7 +7,7 @@ The configuration file can be used to:
 * Specify default values for the worker \(instead of specifying them inside the jobs themselves\).
 * Specify additional advanced sidekiq configuration options.
 
-> Tip: The worker configuration file is in fact a [sidekiq configuration file](https://github.com/mperham/sidekiq/wiki/Advanced-Options). Refer to the sidekiq documentation if you need more advanced options.
+> <i class='fa fa-arrow-right'></i> Tip: The worker configuration file is in fact a [sidekiq configuration file](https://github.com/mperham/sidekiq/wiki/Advanced-Options). Refer to the sidekiq documentation if you need more advanced options.
 
 ## Sample Worker Configuration File
 
@@ -24,7 +24,7 @@ The configuration file can be used to:
 
 Place your YAML config file inside the config folder, and use the `jobly worker --config my-worker` to use it.
 
-> Note: The filename specified with the `--config` flag must be placed inside the config folder. You do not need to specify the folder name or the `.yml` extension.
+> <i class='fa fa-exclamation-triangle'></i> Note: The filename specified with the `--config` flag must be placed inside the config folder. You do not need to specify the folder name or the `.yml` extension.
 
-> See Also: [Worker Config Example](/examples/worker-config-example.md)
+> <i class='fa fa-arrow-right'></i> See Also: [Worker Config Example](/examples/worker-config-example.md)
 

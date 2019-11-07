@@ -46,7 +46,7 @@ Set `config.log` to a syslog connection string in the following format:
 
 Omitting any of the options will fall back to a sensible default.
 
-> See Also: [Syslog Example](/examples/syslog-example.md)
+> <i class='fa fa-arrow-right'></i> See Also: [Syslog Example](/examples/syslog-example.md)
 
 ### Separate log files for each job class
 

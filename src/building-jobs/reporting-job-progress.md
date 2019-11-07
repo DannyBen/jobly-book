@@ -2,7 +2,7 @@
 
 Jobly comes bundled with [Sidekiq::Status](https://github.com/utgarda/sidekiq-status) which that you get a live status dashboard, and a way to report progress in your jobs.
 
-![](../.gitbook/assets/screen.gif)
+![](/assets/screen.gif)
 
 In order to report progress from your job, use the `total` and `at` methods. In addition, you can store arbitrary data related to your job with `store` and `retrieve`.
 

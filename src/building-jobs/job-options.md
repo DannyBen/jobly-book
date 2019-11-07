@@ -24,5 +24,5 @@ class Deploy < Jobly::Job
 end
 ```
 
-> See Also: [Solo Jobs](solo-jobs.md)
+> <i class='fa fa-arrow-right'></i> See Also: [Solo Jobs](solo-jobs.md)
 
