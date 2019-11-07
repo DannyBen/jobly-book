@@ -1,3 +1,14 @@
+<div style='text-align: center'>
+
+<a href='/'><img src='/.gitbook/assets/logo.svg' style='max-width: 400px'></a>
+<br>
+Compact job server with API, CLI, Web UI and a Sidekiq heart.
+
+</div>
+
+---
+
+
 # What is Jobly
 
 Jobly is a sidekiq-based job server with a command line interface, web API and a web dashboard.
