@@ -12,6 +12,7 @@ create-missing = false
 [output.html]
 default-theme = "ayu"
 git-repository-url = "https://github.com/dannyben/jobly"
+google-analytics = "UA-6696444-13"
 
 [output.html.fold]
 enable = true
