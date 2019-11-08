@@ -16,6 +16,3 @@ google-analytics = "UA-6696444-13"
 
 [output.html.fold]
 enable = true
-
-[output.html.playpen]
-editable = true

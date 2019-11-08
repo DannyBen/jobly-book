@@ -16,7 +16,7 @@ Solo Jobs \(also known as Unique Jobs\) will register a lock key in redis before
 
 When a job is skipped due to locking, it will execute the `on_skip` callback.
 
-> <i class='fa fa-arrow-right'></i> See Also: [Job Callbacks](callbacks.md)
+> <i class='fa fa-arrow-right'></i> **See Also**: [Job Callbacks](callbacks.md)
 
 ## Job Fingerprint
 
@@ -50,7 +50,7 @@ class Test < Jobly::Job
 end
 ```
 
-> <i class='fa fa-info-circle'></i> Tip: The `#solo_key` method can use any of the job's parameters by accessing
+> <i class='fa fa-info-circle'></i> **Tip**: The `#solo_key` method can use any of the job's parameters by accessing
 > the `params` hash.
 
 
@@ -74,8 +74,8 @@ end
 
 You can use `seconds`, `minutes`, `hours` and `days`.
 
-> <i class='fa fa-exclamation-triangle'></i> Note: Expiration timer starts to count down from the moment the job is queued, and _not_ from the moment it is executed.
+> <i class='fa fa-exclamation-triangle'></i> **Note**: Expiration timer starts to count down from the moment the job is queued, and _not_ from the moment it is executed.
 
 
-> <i class='fa fa-arrow-right'></i> See Also: [Solo Job Example](/examples/solo-example.md)
+> <i class='fa fa-arrow-right'></i> **See Also**: [Solo Job Example](/examples/solo-example.md)
 

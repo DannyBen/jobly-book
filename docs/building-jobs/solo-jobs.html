@@ -165,7 +165,7 @@ end
 <p>Solo Jobs (also known as Unique Jobs) will register a lock key in redis before execution, which will prevent subsequent jobs with the same fingerprint from running until the lock is released. The lock will be automatically removed when the job completes (even if it fails), or after a one hour expiration period.</p>
 <p>When a job is skipped due to locking, it will execute the <code>on_skip</code> callback.</p>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> See Also: <a href="callbacks.html">Job Callbacks</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="callbacks.html">Job Callbacks</a></p>
 </blockquote>
 <h2><a class="header" href="#job-fingerprint" id="job-fingerprint">Job Fingerprint</a></h2>
 <p>By default, the job's fingerprint is built of its class name and its parameters. You can specify a different fingerprint in one of two ways:</p>
@@ -192,7 +192,7 @@ end
 end
 </code></pre>
 <blockquote>
-<p><i class='fa fa-info-circle'></i> Tip: The <code>#solo_key</code> method can use any of the job's parameters by accessing
+<p><i class='fa fa-info-circle'></i> <strong>Tip</strong>: The <code>#solo_key</code> method can use any of the job's parameters by accessing
 the <code>params</code> hash.</p>
 </blockquote>
 <h2><a class="header" href="#lock-expiration-safeguard" id="lock-expiration-safeguard">Lock Expiration Safeguard</a></h2>
@@ -211,10 +211,10 @@ end
 </code></pre>
 <p>You can use <code>seconds</code>, <code>minutes</code>, <code>hours</code> and <code>days</code>.</p>
 <blockquote>
-<p><i class='fa fa-exclamation-triangle'></i> Note: Expiration timer starts to count down from the moment the job is queued, and <em>not</em> from the moment it is executed.</p>
+<p><i class='fa fa-exclamation-triangle'></i> <strong>Note</strong>: Expiration timer starts to count down from the moment the job is queued, and <em>not</em> from the moment it is executed.</p>
 </blockquote>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> See Also: <a href="/examples/solo-example.html">Solo Job Example</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="/examples/solo-example.html">Solo Job Example</a></p>
 </blockquote>
 
                     </main>
@@ -283,12 +283,6 @@ end
         </script>
         
 
-        
-        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
         
 
         

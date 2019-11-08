@@ -217,7 +217,7 @@ Compact job server with API, CLI, Web UI and a Sidekiq heart.</p>
 <h3><a class="header" href="#the-jobly-api-server" id="the-jobly-api-server">The Jobly API Server</a></h3>
 <p>This is a simple web API server that allows you to execute jobs remotely by calling <code>/do/JobName?param=value</code>.</p>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> See Also: <a href="usage/server-side//usage/client-side/running-jobs-with-the-api.html">Running Jobs with the API</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="usage/server-side//usage/client-side/running-jobs-with-the-api.html">Running Jobs with the API</a></p>
 </blockquote>
 <h1><a class="header" href="#worker" id="worker">Worker</a></h1>
 <p>To start processing jobs:</p>
@@ -226,7 +226,7 @@ Compact job server with API, CLI, Web UI and a Sidekiq heart.</p>
 <li>That's it.</li>
 </ol>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> See Also: <a href="usage/server-side//configuration/worker-config.html">Worker Configuration</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="usage/server-side//configuration/worker-config.html">Worker Configuration</a></p>
 </blockquote>
 <h1><a class="header" href="#client-side" id="client-side">Client Side</a></h1>
 <ul>
@@ -764,11 +764,11 @@ JOBLY_AUTH=user:pass jobly send Hello
 <h1><a class="header" href="#building-jobs" id="building-jobs">Building Jobs</a></h1>
 <p>In order to build a <strong>jobs workspace</strong>, start in an empty folder and create a <code>./jobs</code> sub folder inside it. All your job classes go in this folder. The name of this folder is configurable.</p>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> See Also: <a href="building-jobs//configuration">Configuration</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="building-jobs//configuration">Configuration</a></p>
 </blockquote>
 <p>All the Ruby files in the <code>./jobs</code> folder will be loaded by all of Jobly's commands. It is recommended to only keep Job classes in this folder. If you need to load additional code, you can use the <code>./app</code> folder.</p>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> See Also: <a href="building-jobs/loading-additional-code.html">Loading Additional Code</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="building-jobs/loading-additional-code.html">Loading Additional Code</a></p>
 </blockquote>
 <p>Your job classes should simply inherit from <code>Jobly::Job</code>, like this:</p>
 <pre><code class="language-ruby">class Hello &lt; Jobly::Job
@@ -828,7 +828,7 @@ end
 end
 </code></pre>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> See Also: <a href="building-jobs/solo-jobs.html">Solo Jobs</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="building-jobs/solo-jobs.html">Solo Jobs</a></p>
 </blockquote>
 <h1><a class="header" href="#job-callbacks" id="job-callbacks">Job Callbacks</a></h1>
 <p>The <code>Jobly::Job</code> class supports these callback methods:</p>
@@ -893,7 +893,7 @@ end
 <p>Solo Jobs (also known as Unique Jobs) will register a lock key in redis before execution, which will prevent subsequent jobs with the same fingerprint from running until the lock is released. The lock will be automatically removed when the job completes (even if it fails), or after a one hour expiration period.</p>
 <p>When a job is skipped due to locking, it will execute the <code>on_skip</code> callback.</p>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> See Also: <a href="building-jobs/callbacks.html">Job Callbacks</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="building-jobs/callbacks.html">Job Callbacks</a></p>
 </blockquote>
 <h2><a class="header" href="#job-fingerprint" id="job-fingerprint">Job Fingerprint</a></h2>
 <p>By default, the job's fingerprint is built of its class name and its parameters. You can specify a different fingerprint in one of two ways:</p>
@@ -920,7 +920,7 @@ end
 end
 </code></pre>
 <blockquote>
-<p><i class='fa fa-info-circle'></i> Tip: The <code>#solo_key</code> method can use any of the job's parameters by accessing
+<p><i class='fa fa-info-circle'></i> <strong>Tip</strong>: The <code>#solo_key</code> method can use any of the job's parameters by accessing
 the <code>params</code> hash.</p>
 </blockquote>
 <h2><a class="header" href="#lock-expiration-safeguard" id="lock-expiration-safeguard">Lock Expiration Safeguard</a></h2>
@@ -939,10 +939,10 @@ end
 </code></pre>
 <p>You can use <code>seconds</code>, <code>minutes</code>, <code>hours</code> and <code>days</code>.</p>
 <blockquote>
-<p><i class='fa fa-exclamation-triangle'></i> Note: Expiration timer starts to count down from the moment the job is queued, and <em>not</em> from the moment it is executed.</p>
+<p><i class='fa fa-exclamation-triangle'></i> <strong>Note</strong>: Expiration timer starts to count down from the moment the job is queued, and <em>not</em> from the moment it is executed.</p>
 </blockquote>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> See Also: <a href="building-jobs//examples/solo-example.html">Solo Job Example</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="building-jobs//examples/solo-example.html">Solo Job Example</a></p>
 </blockquote>
 <h1><a class="header" href="#running-shell-commands" id="running-shell-commands">Running Shell Commands</a></h1>
 <p>Although you can use any Ruby method to execute shell and system commands from within your jobs, Jobly comes bundled with <a href="https://github.com/piotrmurach/tty-command">TTY::Command</a> which is made available to your jobs by using the <code>#shell</code> method.</p>
@@ -1102,7 +1102,7 @@ end
 <li>Specify additional advanced sidekiq configuration options.</li>
 </ul>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> Tip: The worker configuration file is in fact a <a href="https://github.com/mperham/sidekiq/wiki/Advanced-Options">sidekiq configuration file</a>. Refer to the sidekiq documentation if you need more advanced options.</p>
+<p><i class='fa fa-info-circle'></i> <strong>Tip</strong>: The worker configuration file is in fact a <a href="https://github.com/mperham/sidekiq/wiki/Advanced-Options">sidekiq configuration file</a>. Refer to the sidekiq documentation if you need more advanced options.</p>
 </blockquote>
 <h2><a class="header" href="#sample-worker-configuration-file" id="sample-worker-configuration-file">Sample Worker Configuration File</a></h2>
 <pre><code class="language-yaml"># config/my-worker.yml
@@ -1115,10 +1115,10 @@ end
 </code></pre>
 <p>Place your YAML config file inside the config folder, and use the <code>jobly worker --config my-worker</code> to use it.</p>
 <blockquote>
-<p><i class='fa fa-exclamation-triangle'></i> Note: The filename specified with the <code>--config</code> flag must be placed inside the config folder. You do not need to specify the folder name or the <code>.yml</code> extension.</p>
+<p><i class='fa fa-exclamation-triangle'></i> <strong>Note</strong>: The filename specified with the <code>--config</code> flag must be placed inside the config folder. You do not need to specify the folder name or the <code>.yml</code> extension.</p>
 </blockquote>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> See Also: <a href="configuration//examples/worker-config-example.html">Worker Config Example</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="configuration//examples/worker-config-example.html">Worker Config Example</a></p>
 </blockquote>
 <h1><a class="header" href="#logging" id="logging">Logging</a></h1>
 <h3><a class="header" href="#logging-from-within-jobs" id="logging-from-within-jobs">Logging from within jobs</a></h3>
@@ -1154,7 +1154,7 @@ end
 <p><code>syslog://system:program@host:port</code></p>
 <p>Omitting any of the options will fall back to a sensible default.</p>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> See Also: <a href="configuration//examples/syslog-example.html">Syslog Example</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="configuration//examples/syslog-example.html">Syslog Example</a></p>
 </blockquote>
 <h3><a class="header" href="#separate-log-files-for-each-job-class" id="separate-log-files-for-each-job-class">Separate log files for each job class</a></h3>
 <p>If  <code>Jobly.log</code> contains <code>%s</code> in the file path, it will be replaced with the slug of the job, and will create separate log files for each job class.</p>
@@ -1224,12 +1224,6 @@ wish to provide a custom logger.</p>
         </script>
         
 
-        
-        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
-        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
         
 
         
