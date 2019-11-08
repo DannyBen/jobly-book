@@ -2,51 +2,54 @@
 ; This script generates the demo svg
 ; --------------------------------------------------
 #SingleInstance Force
-SetkeyDelay 0, 10
-
-Commands := []
-Index := 1
+SetkeyDelay 0, 50
 
 ; NOTE: This should be executed in the offline/demo folder
 
-; Commands.Push("rm -rf myjobs {;} rm cast.json {;} asciinema rec cast.json")
-Commands.Push("rm -rf myjobs {;} rm cast.json {;} termtosvg cast.svg -t window_frame_js")
+Return
 
-Commands.Push("jobly")
-
-Commands.Push("{#} Create a minimal jobs workspace")
-Commands.Push("jobly init myjobs --minimal")
-
-Commands.Push("cd ./myjobs")
-Commands.Push("tree")
-Commands.Push("cats jobs/ping.rb")
-
-Commands.Push("{#} Run the job directly (no server)")
-Commands.Push("jobly run Ping")
-
-Commands.Push("{#} ... or with arguments")
-Commands.Push("jobly run Ping response:Bling")
-
-Commands.Push("{#} Start the job server and worker (in the background)")
-Commands.Push("nohup jobly server &>/dev/null &")
-Commands.Push("nohup jobly worker &>/dev/null &")
-
-Commands.Push("{#} Run the job on the server using the CLI")
-Commands.Push("jobly send Ping")
-
-Commands.Push("{#} Run the job on the server using the API")
-Commands.Push("curl http://localhost:3000/do/Ping")
-
-Commands.Push("{#} ... or with arguments")
-Commands.Push("curl http://localhost:3000/do/Ping?response=ThankYou")
-
-Commands.Push("exit")
-; Commands.Push("cat cast.json | svg-term --out cast.svg --window")
+Type(Command, Delay=2000) {
+  Send % Command
+  Sleep 500
+  Send {Enter}
+  Sleep Delay
+}
 
 F12::
-  Send % Commands[Index]
-  Index := Index + 1
-return
+  Type("rm -rf myjobs")
+  Type("termtosvg cast.svg -t window_frame_js")
+
+  Type("jobly", 5000)
+  Type("{#} Create a minimal jobs workspace", 500)
+  Type("jobly init myjobs --minimal", 4000)
+
+  Type("cd ./myjobs")
+  Type("tree")
+  Type("vimcat jobs/ping.rb")
+
+  Type("{#} Run the job directly (no server)", 500)
+  Type("jobly run Ping", 4000)
+
+  Type("{#} ... or with arguments", 500)
+  Type("jobly run Ping response:Bling", 4000)
+
+  Type("{#} Start the job server and worker (in the background)", 500)
+  Type("nohup jobly server &>/dev/null &")
+  Type("nohup jobly worker &>/dev/null &")
+
+  Type("{#} Run the job on the server using the CLI", 500)
+  Type("jobly send Ping", 4000)
+
+  Type("{#} Run the job on the server using the API", 500)
+  Type("curl http://localhost:3000/do/Ping", 2500)
+
+  Type("{#} ... or with arguments", 500)
+  Type("curl http://localhost:3000/do/Ping?response=ThankYou", 2500)
+
+  Type("exit")
+  Type("pkill ruby")
+  Type("pkill sidekiq")
+Return
 
 ^F12::
   Reload
