@@ -2,7 +2,7 @@
 ; This script generates the demo svg
 ; --------------------------------------------------
 #SingleInstance Force
-SetkeyDelay 0, 50
+SetkeyDelay 0, 10
 
 Commands := []
 Index := 1
@@ -16,9 +16,9 @@ Commands.Push("jobly")
 Commands.Push("{#} Create a minimal jobs workspace")
 Commands.Push("jobly init myjobs --minimal")
 
-Commands.Push("cd myjobs")
+Commands.Push("cd ./myjobs")
 Commands.Push("tree")
-Commands.Push("vi jobs/ping.rb")
+Commands.Push("cats jobs/ping.rb")
 
 Commands.Push("{#} Run the job directly (no server)")
 Commands.Push("jobly run Ping")
