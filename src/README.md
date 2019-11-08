@@ -30,7 +30,7 @@ Jobly is a sidekiq-based job server with a command line interface, web API and a
 
 ## Screencast
 
-![](/assets/cast.svg)
+<object data="/assets/cast.svg" style='width:100%'></object>
 
 ## Screenshot
 

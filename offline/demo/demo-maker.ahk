@@ -9,7 +9,8 @@ Index := 1
 
 ; NOTE: This should be executed in the offline/demo folder
 
-Commands.Push("rm -rf myjobs {;} rm cast.json {;} asciinema rec cast.json")
+; Commands.Push("rm -rf myjobs {;} rm cast.json {;} asciinema rec cast.json")
+Commands.Push("rm -rf myjobs {;} rm cast.json {;} termtosvg cast.svg -t window_frame_js")
 
 Commands.Push("jobly")
 
@@ -27,8 +28,8 @@ Commands.Push("{#} ... or with arguments")
 Commands.Push("jobly run Ping response:Bling")
 
 Commands.Push("{#} Start the job server and worker (in the background)")
-Commands.Push("nohup jobly server &")
-Commands.Push("nohup jobly worker &")
+Commands.Push("nohup jobly server &>/dev/null &")
+Commands.Push("nohup jobly worker &>/dev/null &")
 
 Commands.Push("{#} Run the job on the server using the CLI")
 Commands.Push("jobly send Ping")
@@ -40,9 +41,7 @@ Commands.Push("{#} ... or with arguments")
 Commands.Push("curl http://localhost:3000/do/Ping?response=ThankYou")
 
 Commands.Push("exit")
-Commands.Push("cat cast.json | svg-term --out cast.svg --window")
-Commands.Push("jobly run Ping")
-
+; Commands.Push("cat cast.json | svg-term --out cast.svg --window")
 
 F12::
   Send % Commands[Index]
