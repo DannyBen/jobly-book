@@ -45,7 +45,7 @@ class Test < Jobly::Job
   end
 
   def solo_key
-    "Test:#{param[:region]}"
+    "Test:#{params[:region]}"
   end
 end
 ```
