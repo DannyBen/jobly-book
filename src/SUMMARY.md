@@ -3,6 +3,7 @@
 * [What is Jobly](README.md)
 * [Installation](installation.md)
 * [Usage](usage/README.md)
+  * [Quick Start](usage/quick-start/README.md)
   * [Server Side](usage/server-side/README.md)
     * [Dashboard and API Server](usage/server-side/server.md)
     * [Worker](usage/server-side/worker.md)
