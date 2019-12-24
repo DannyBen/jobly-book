@@ -23,7 +23,7 @@ jobly run Hello
 # Start the worker
 jobly worker
 
-# From another terminal, send the job to the owrker
+# From another terminal, send the job to the worker
 jobly run --later Hello name:Jimmy
 
 # Start the API / Dashboard server then visit http://localhost:3000

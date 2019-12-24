@@ -35,7 +35,7 @@ foreman start
 jobly server
 jobly worker --queue critical
 
-# From another terminal, send the job to the owrker
+# From another terminal, send the job to the worker
 jobly send Deploy
 
 # View the failed job and its backtrace in the Retries tab

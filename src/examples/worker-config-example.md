@@ -54,7 +54,7 @@ cd examples/worker-config
 # which points the worker to the `config/worker.yml` configuration file
 foreman start
 
-# From another terminal, send the jobs to the owrker
+# From another terminal, send the jobs to the worker
 jobly send Critical
 jobly send Mundane
 ```

@@ -66,7 +66,7 @@ cd examples/job-in-job
 # Start the server and worker
 foreman start
 
-# From another terminal, send the jobs to the owrker
+# From another terminal, send the jobs to the worker
 jobly send RunSync count:20
 jobly send RunAsync count:10
 ```
