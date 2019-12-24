@@ -334,7 +334,7 @@ jobly run Hello
 # Start the worker
 jobly worker
 
-# From another terminal, send the job to the owrker
+# From another terminal, send the job to the worker
 jobly run --later Hello name:Jimmy
 
 # Start the API / Dashboard server then visit http://localhost:3000
@@ -523,7 +523,7 @@ end
 # Start the server and worker
 foreman start
 
-# From another terminal, send the jobs to the owrker
+# From another terminal, send the jobs to the worker
 jobly send RunSync count:20
 jobly send RunAsync count:10
 </code></pre>
@@ -604,7 +604,7 @@ foreman start
 jobly server
 jobly worker --queue critical
 
-# From another terminal, send the job to the owrker
+# From another terminal, send the job to the worker
 jobly send Deploy
 
 # View the failed job and its backtrace in the Retries tab
@@ -718,7 +718,7 @@ worker: jobly worker --config worker
 # which points the worker to the `config/worker.yml` configuration file
 foreman start
 
-# From another terminal, send the jobs to the owrker
+# From another terminal, send the jobs to the worker
 jobly send Critical
 jobly send Mundane
 </code></pre>
