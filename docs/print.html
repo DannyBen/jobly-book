@@ -195,6 +195,11 @@ Compact job server with API, CLI, Web UI and a Sidekiq heart.</p>
 <pre><code class="language-text">$ gem install jobly
 </code></pre>
 <p>Alternatively, you can download the the official <a href="https://github.com/dannyben/docker-jobly">Jobly docker image</a>.</p>
+<h2><a class="header" href="#prerequisites" id="prerequisites">Prerequisites</a></h2>
+<ul>
+<li>Ruby 2.5 or higher</li>
+<li>Redis server</li>
+</ul>
 <h1><a class="header" href="#usage" id="usage">Usage</a></h1>
 <ul>
 <li><a href="usage/quick-start">Quick Start</a></li>
@@ -1049,6 +1054,9 @@ class Greet &lt; Job
   end
 end
 </code></pre>
+<blockquote>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="building-jobs//examples/slack-notifications-example.html">Slack Notifications Example</a></p>
+</blockquote>
 <h1><a class="header" href="#loading-additional-code" id="loading-additional-code">Loading Additional Code</a></h1>
 <p>In case your jobs require additional functionality, you may create the <code>./app</code> folder as a sibling to the <code>./jobs</code> folder (configurable).</p>
 <p>Any ruby files in this folder (and sub folders) will be automatically loaded and available to your jobs.</p>
@@ -1200,7 +1208,7 @@ end
 </blockquote>
 <h1><a class="header" href="#logging" id="logging">Logging</a></h1>
 <h3><a class="header" href="#logging-from-within-jobs" id="logging-from-within-jobs">Logging from within jobs</a></h3>
-<p>All your code in the <code>./jobs</code> and <code>./app</code> folders have access to a standard Ruby logger.</p>
+<p>All your jobs have access to a standard Ruby logger.</p>
 <pre><code class="language-ruby"># jobs/hello.rb
 class Hello &lt; Jobly::Job
   def execute(name: 'bob')
@@ -1208,8 +1216,22 @@ class Hello &lt; Jobly::Job
   end
 end
 </code></pre>
+<h3><a class="header" href="#logging-from-other-classes" id="logging-from-other-classes">Logging from other classes</a></h3>
+<p>In case you need access to the logger from other classes (that do not
+inherit from <code>Jobly::Job</code>), you may include the <code>Jobly::Logging</code> module.</p>
+<pre><code class="language-ruby"># app/git.rb
+class Git
+  include Jobly::Logging
+
+  def pull(repo)
+    logger.info &quot;pulling #{repo}...&quot;
+  end
+end
+</code></pre>
 <h3><a class="header" href="#configuring-the-logger" id="configuring-the-logger">Configuring the logger</a></h3>
-<p>By default, output is sent to <code>STDOUT</code> but you can provide your own logger and log to a file or to syslog by using the <code>config.log</code> or the <code>config.logger</code> option in <code>./config/jobly.rb</code></p>
+<p>By default, output is sent to <code>STDOUT</code> but you can provide your own logger
+and log to a file or to syslog by using the <code>config.log</code> or the
+<code>config.logger</code> option in <code>./config/jobly.rb</code></p>
 <pre><code class="language-ruby"># config/jobly.rb
 Jobly.configure do |config|
   config.log = '/var/log/jobly.log'

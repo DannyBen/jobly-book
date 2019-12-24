@@ -18,3 +18,5 @@ class Greet < Job
   end
 end
 ```
+
+> <i class='fa fa-arrow-right'></i> **See Also**: [Slack Notifications Example](/examples/slack-notifications-example.md)

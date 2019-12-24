@@ -8,3 +8,7 @@ $ gem install jobly
 
 Alternatively, you can download the the official [Jobly docker image](https://github.com/dannyben/docker-jobly).
 
+## Prerequisites
+
+- Ruby 2.5 or higher
+- Redis server

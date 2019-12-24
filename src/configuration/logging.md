@@ -2,7 +2,7 @@
 
 ### Logging from within jobs
 
-All your code in the `./jobs` and `./app` folders have access to a standard Ruby logger.
+All your jobs have access to a standard Ruby logger.
 
 ```ruby
 # jobs/hello.rb
@@ -14,9 +14,28 @@ end
 ```
 
 
+### Logging from other classes
+
+In case you need access to the logger from other classes (that do not
+inherit from `Jobly::Job`), you may include the `Jobly::Logging` module.
+
+```ruby
+# app/git.rb
+class Git
+  include Jobly::Logging
+
+  def pull(repo)
+    logger.info "pulling #{repo}..."
+  end
+end
+```
+
+
 ### Configuring the logger
 
-By default, output is sent to `STDOUT` but you can provide your own logger and log to a file or to syslog by using the `config.log` or the `config.logger` option in `./config/jobly.rb`
+By default, output is sent to `STDOUT` but you can provide your own logger
+and log to a file or to syslog by using the `config.log` or the
+`config.logger` option in `./config/jobly.rb`
 
 ```ruby
 # config/jobly.rb

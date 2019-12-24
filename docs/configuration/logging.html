@@ -154,7 +154,7 @@
                     <main>
                         <h1><a class="header" href="#logging" id="logging">Logging</a></h1>
 <h3><a class="header" href="#logging-from-within-jobs" id="logging-from-within-jobs">Logging from within jobs</a></h3>
-<p>All your code in the <code>./jobs</code> and <code>./app</code> folders have access to a standard Ruby logger.</p>
+<p>All your jobs have access to a standard Ruby logger.</p>
 <pre><code class="language-ruby"># jobs/hello.rb
 class Hello &lt; Jobly::Job
   def execute(name: 'bob')
@@ -162,8 +162,22 @@ class Hello &lt; Jobly::Job
   end
 end
 </code></pre>
+<h3><a class="header" href="#logging-from-other-classes" id="logging-from-other-classes">Logging from other classes</a></h3>
+<p>In case you need access to the logger from other classes (that do not
+inherit from <code>Jobly::Job</code>), you may include the <code>Jobly::Logging</code> module.</p>
+<pre><code class="language-ruby"># app/git.rb
+class Git
+  include Jobly::Logging
+
+  def pull(repo)
+    logger.info &quot;pulling #{repo}...&quot;
+  end
+end
+</code></pre>
 <h3><a class="header" href="#configuring-the-logger" id="configuring-the-logger">Configuring the logger</a></h3>
-<p>By default, output is sent to <code>STDOUT</code> but you can provide your own logger and log to a file or to syslog by using the <code>config.log</code> or the <code>config.logger</code> option in <code>./config/jobly.rb</code></p>
+<p>By default, output is sent to <code>STDOUT</code> but you can provide your own logger
+and log to a file or to syslog by using the <code>config.log</code> or the
+<code>config.logger</code> option in <code>./config/jobly.rb</code></p>
 <pre><code class="language-ruby"># config/jobly.rb
 Jobly.configure do |config|
   config.log = '/var/log/jobly.log'
