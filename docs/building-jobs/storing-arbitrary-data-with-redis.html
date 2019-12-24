@@ -153,7 +153,10 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#storing-arbitrary-data-with-redis" id="storing-arbitrary-data-with-redis">Storing Arbitrary Data with Redis</a></h1>
-<p>Jobly comes bundled with <a href="https://github.com/utgarda/sidekiq-status">Sidekiq::Status</a> which has a built in ability allowing you to store and use arbitrary data in its Redis database.</p>
+<p>Jobly comes bundled with
+<a href="https://github.com/utgarda/sidekiq-status">Sidekiq::Status</a>
+which has a built in ability allowing you to store and use arbitrary data in
+its Redis database.</p>
 <pre><code class="language-ruby"># jobs/hello.rb
 class Hello &lt; Jobly::Job
   def execute(name: 'bob')

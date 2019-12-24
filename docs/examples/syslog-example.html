@@ -153,9 +153,11 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#syslog-example" id="syslog-example">Syslog Example</a></h1>
-<p>This example illustrates how to configure Jobly to send all logger events to a local or remote syslog.</p>
+<p>This example illustrates how to configure Jobly to send all logger events to
+a local or remote syslog.</p>
 <h3><a class="header" href="#enabling-syslog-udp-connection" id="enabling-syslog-udp-connection">Enabling syslog UDP connection</a></h3>
-<p>Note that for this to work, your syslog must be configured to accept UDP connections.</p>
+<p>Note that for this to work, your syslog must be configured to accept UDP
+connections.</p>
 <p>Edit <code>/etc/rsyslog.conf</code> and uncomment these lines:</p>
 <pre><code class="language-php"># provides UDP syslog reception
 module(load=&quot;imudp&quot;)

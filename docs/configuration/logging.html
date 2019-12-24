@@ -190,8 +190,10 @@ end
 </code></pre>
 <p>The <code>config.log</code> option controls how logging is handled.</p>
 <ol>
-<li>If left empty (<code>nil</code>), the web server and workers will NOT log anywhere, and your jobs will log to <code>STDOUT</code> whenever you use <code>logger</code>.</li>
-<li>Setting it to <code>config.log = 'stdout'</code> will also instruct the web server and worker to send their logging to <code>STDOUT</code>.</li>
+<li>If left empty (<code>nil</code>), the web server and workers will NOT log anywhere,
+and your jobs will log to <code>STDOUT</code> whenever you use <code>logger</code>.</li>
+<li>Setting it to <code>config.log = 'stdout'</code> will also instruct the web server
+and worker to send their logging to <code>STDOUT</code>.</li>
 <li>Setting it to a filename, will log to a file.</li>
 <li>Setting it to a syslog connection string will log to a remote syslog server. </li>
 </ol>
@@ -200,17 +202,21 @@ end
 <p><code>syslog://system:program@host:port</code></p>
 <p>Omitting any of the options will fall back to a sensible default.</p>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="/examples/syslog-example.html">Syslog Example</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>:
+<a href="/examples/syslog-example.html">Syslog Example</a></p>
 </blockquote>
 <h3><a class="header" href="#separate-log-files-for-each-job-class" id="separate-log-files-for-each-job-class">Separate log files for each job class</a></h3>
-<p>If  <code>Jobly.log</code> contains <code>%s</code> in the file path, it will be replaced with the slug of the job, and will create separate log files for each job class.</p>
+<p>If  <code>Jobly.log</code> contains <code>%s</code> in the file path, it will be replaced with the
+slug of the job, and will create separate log files for each job class.</p>
 <pre><code class="language-ruby"># config/jobly.rb
 Jobly.configure do |config|
   config.log = 'logs/%s.log'
 end
 </code></pre>
 <h3><a class="header" href="#automatic-syslog-tagging" id="automatic-syslog-tagging">Automatic syslog tagging</a></h3>
-<p>The same <code>%s</code> replacement principle applies when using a syslog connection string. This is intended to allow tagging of syslog messages with the job name.</p>
+<p>The same <code>%s</code> replacement principle applies when using a syslog connection
+string. This is intended to allow tagging of syslog messages with the job
+name.</p>
 <pre><code class="language-ruby"># config/jobly.rb
 Jobly.configure do |config|
   config.log = 'syslog://jobserver:%s@localhost:514'

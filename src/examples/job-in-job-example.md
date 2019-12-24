@@ -5,7 +5,8 @@ This example demonstrates how to call a job from inside another job.
 Two approaches are possible:
 
 1. Executing secondary jobs synchronously, as part of the parent job.
-2. Spawning the secondary jobs to be executed later by the worker, as separate jobs.
+2. Spawning the secondary jobs to be executed later by the worker, as
+   separate jobs.
 
 ## Code
 

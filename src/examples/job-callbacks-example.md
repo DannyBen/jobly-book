@@ -1,6 +1,7 @@
 # Job Callbacks Example
 
-This example illustrates the use of `before`, `after`, `on_skip`, `on_success`, and `on_failure` blocks.
+This example illustrates the use of `before`, `after`, `on_skip`,
+`on_success`, and `on_failure` blocks.
 
 ## Code
 

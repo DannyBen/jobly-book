@@ -161,7 +161,9 @@
 <tr><td align="left"><code>on_failure</code></td><td align="left">Executes after the job finishes, and only if it fails</td></tr>
 <tr><td align="left"><code>after</code></td><td align="left">Executes after the job finishes, regardless of success or failure</td></tr>
 </tbody></table>
-<p>Each callback method can either be a block or a symbol that points to a local method. WHen using a block, you will have the <code>params</code> variable available, with all the parameteres sent to the job.</p>
+<p>Each callback method can either be a block or a symbol that points to a local
+method. When using a block, you will have the <code>params</code> variable available,
+with all the parameteres sent to the job.</p>
 <p>For example:</p>
 <pre><code class="language-ruby">class Greet &lt; Jobly::Job
   before do
@@ -179,7 +181,9 @@
   end
 end
 </code></pre>
-<p>In order to conditionally skip a job from its <code>before</code> block, you can call <code>skip_job</code>. This will avoid running the job, and will execute the <code>on_skip</code> action and the <code>after</code> action, if present.</p>
+<p>In order to conditionally skip a job from its <code>before</code> block, you can call
+<code>skip_job</code>. This will avoid running the job, and will execute the <code>on_skip</code>
+action and the <code>after</code> action, if present.</p>
 
                     </main>
 

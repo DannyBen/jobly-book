@@ -1,6 +1,7 @@
 # Running Jobs with the API
 
-The API supports running jobs either by GET or by POST in the following URL structure:
+The API supports running jobs either by GET or by POST in the following URL
+structure:
 
 ```text
 http://localhost:3000/do/JobName

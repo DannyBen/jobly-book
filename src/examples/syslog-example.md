@@ -1,10 +1,12 @@
 # Syslog Example
 
-This example illustrates how to configure Jobly to send all logger events to a local or remote syslog.
+This example illustrates how to configure Jobly to send all logger events to
+a local or remote syslog.
 
 ### Enabling syslog UDP connection
 
-Note that for this to work, your syslog must be configured to accept UDP connections.
+Note that for this to work, your syslog must be configured to accept UDP
+connections.
 
 Edit `/etc/rsyslog.conf` and uncomment these lines:
 

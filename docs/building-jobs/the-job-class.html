@@ -154,7 +154,8 @@
                     <main>
                         <h1><a class="header" href="#the-job-class" id="the-job-class">The Job Class</a></h1>
 <p>A job class is a simple Ruby class inheriting from <code>Jobly::Job</code>.</p>
-<p>The only requirement is that your class implements an <code>execute</code> method that optionally accepts keyword arguments (recommended), or a hash.</p>
+<p>The only requirement is that your class implements an <code>execute</code> method that
+optionally accepts keyword arguments (recommended), or a hash.</p>
 <p>Example:</p>
 <pre><code class="language-ruby">class Hello &lt; Jobly::Job
   def execute(name: 'bob')
@@ -163,7 +164,8 @@
   end
 end
 </code></pre>
-<p>Note that these classes are simply Jobly-flavored sidekiq jobs, with these key differences:</p>
+<p>Note that these classes are simply Jobly-flavored sidekiq jobs, with these
+key differences:</p>
 <ul>
 <li>
 <p>You need to implement <code>execute</code> instead of <code>perform</code></p>

@@ -153,9 +153,14 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#reporting-job-progress" id="reporting-job-progress">Reporting Job Progress</a></h1>
-<p>Jobly comes bundled with <a href="https://github.com/utgarda/sidekiq-status">Sidekiq::Status</a> which provides you with a live status dashboard, and a way to report progress in your jobs.</p>
+<p>Jobly comes bundled with
+<a href="https://github.com/utgarda/sidekiq-status">Sidekiq::Status</a>
+which provides you with a live status dashboard, and a way to report
+progress in your jobs.</p>
 <p><img src="/assets/screen.gif" alt="" /></p>
-<p>In order to report progress from your job, use the <code>total</code> and <code>at</code> methods. In addition, you can store arbitrary data related to your job with <code>store</code> and <code>retrieve</code>.</p>
+<p>In order to report progress from your job, use the <code>total</code> and <code>at</code> methods.
+In addition, you can store arbitrary data related to your job with <code>store</code>
+and <code>retrieve</code>.</p>
 <pre><code class="language-ruby"># jobs/hello.rb
 class Hello &lt; Jobly::Job
   def execute(name: 'bob')

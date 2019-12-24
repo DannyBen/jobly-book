@@ -52,8 +52,10 @@ end
 
 The `config.log` option controls how logging is handled.
 
-1. If left empty \(`nil`\), the web server and workers will NOT log anywhere, and your jobs will log to `STDOUT` whenever you use `logger`.
-2. Setting it to `config.log = 'stdout'` will also instruct the web server and worker to send their logging to `STDOUT`.
+1. If left empty \(`nil`\), the web server and workers will NOT log anywhere,
+   and your jobs will log to `STDOUT` whenever you use `logger`.
+2. Setting it to `config.log = 'stdout'` will also instruct the web server
+   and worker to send their logging to `STDOUT`.
 3. Setting it to a filename, will log to a file.
 4. Setting it to a syslog connection string will log to a remote syslog server. 
 
@@ -65,11 +67,13 @@ Set `config.log` to a syslog connection string in the following format:
 
 Omitting any of the options will fall back to a sensible default.
 
-> <i class='fa fa-arrow-right'></i> **See Also**: [Syslog Example](/examples/syslog-example.md)
+> <i class='fa fa-arrow-right'></i> **See Also**:
+> [Syslog Example](/examples/syslog-example.md)
 
 ### Separate log files for each job class
 
-If  `Jobly.log` contains `%s` in the file path, it will be replaced with the slug of the job, and will create separate log files for each job class.
+If  `Jobly.log` contains `%s` in the file path, it will be replaced with the
+slug of the job, and will create separate log files for each job class.
 
 ```ruby
 # config/jobly.rb
@@ -81,7 +85,9 @@ end
 
 ### Automatic syslog tagging
 
-The same `%s` replacement principle applies when using a syslog connection string. This is intended to allow tagging of syslog messages with the job name.
+The same `%s` replacement principle applies when using a syslog connection
+string. This is intended to allow tagging of syslog messages with the job
+name.
 
 ```ruby
 # config/jobly.rb

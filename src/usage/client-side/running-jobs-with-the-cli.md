@@ -2,7 +2,8 @@
 
 There are three ways to run a job from the command line:
 
-Run the job locally, without going through any of the background job processing chain:
+Run the job locally, without going through any of the background job
+processing chain:
 
 ```bash
 $ jobly run JobName param:value

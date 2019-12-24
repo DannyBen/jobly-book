@@ -1,6 +1,7 @@
 # Solo Job Example
 
-This example demonstrates how to ensure only one instance of the job is executed at any given time.
+This example demonstrates how to ensure only one instance of the job is
+executed at any given time.
 
 ## Code
 
@@ -26,7 +27,8 @@ end
 
 ## Commands to Try
 
-Before running these commands, it is recommended you open the Statuses tab in the web dashboard.
+Before running these commands, it is recommended you open the Statuses tab
+in the web dashboard.
 
 ```bash
 cd examples/solo

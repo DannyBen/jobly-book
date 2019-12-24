@@ -153,14 +153,19 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#worker-configuration" id="worker-configuration">Worker Configuration</a></h1>
-<p>The worker options can be configured by command line options or by specifying a worker configuration file when running it.</p>
+<p>The worker options can be configured by command line options or by specifying
+a worker configuration file when running it.</p>
 <p>The configuration file can be used to:</p>
 <ul>
-<li>Specify default values for the worker (instead of specifying them inside the jobs themselves).</li>
+<li>Specify default values for the worker (instead of specifying them inside
+the jobs themselves).</li>
 <li>Specify additional advanced sidekiq configuration options.</li>
 </ul>
 <blockquote>
-<p><i class='fa fa-info-circle'></i> <strong>Tip</strong>: The worker configuration file is in fact a <a href="https://github.com/mperham/sidekiq/wiki/Advanced-Options">sidekiq configuration file</a>. Refer to the sidekiq documentation if you need more advanced options.</p>
+<p><i class='fa fa-info-circle'></i> <strong>Tip</strong>:
+The worker configuration file is in fact a
+<a href="https://github.com/mperham/sidekiq/wiki/Advanced-Options">sidekiq configuration file</a>.
+Refer to the sidekiq documentation if you need more advanced options.</p>
 </blockquote>
 <h2><a class="header" href="#sample-worker-configuration-file" id="sample-worker-configuration-file">Sample Worker Configuration File</a></h2>
 <pre><code class="language-yaml"># config/my-worker.yml
@@ -171,12 +176,16 @@
 - default
 - mundane
 </code></pre>
-<p>Place your YAML config file inside the config folder, and use the <code>jobly worker --config my-worker</code> to use it.</p>
+<p>Place your YAML config file inside the config folder, and use the
+<code>jobly worker --config my-worker</code> to use it.</p>
 <blockquote>
-<p><i class='fa fa-exclamation-triangle'></i> <strong>Note</strong>: The filename specified with the <code>--config</code> flag must be placed inside the config folder. You do not need to specify the folder name or the <code>.yml</code> extension.</p>
+<p><i class='fa fa-exclamation-triangle'></i> <strong>Note</strong>: The filename specified
+with the <code>--config</code> flag must be placed inside the config folder.
+You do not need to specify the folder name or the <code>.yml</code> extension.</p>
 </blockquote>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="/examples/worker-config-example.html">Worker Config Example</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>:
+<a href="/examples/worker-config-example.html">Worker Config Example</a></p>
 </blockquote>
 
                     </main>

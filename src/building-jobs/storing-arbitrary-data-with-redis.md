@@ -1,6 +1,9 @@
 # Storing Arbitrary Data with Redis
 
-Jobly comes bundled with [Sidekiq::Status](https://github.com/utgarda/sidekiq-status) which has a built in ability allowing you to store and use arbitrary data in its Redis database.
+Jobly comes bundled with
+[Sidekiq::Status](https://github.com/utgarda/sidekiq-status)
+which has a built in ability allowing you to store and use arbitrary data in
+its Redis database.
 
 ```ruby
 # jobs/hello.rb

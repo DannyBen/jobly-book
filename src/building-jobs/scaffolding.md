@@ -1,6 +1,7 @@
 # Scaffolding
 
-Jobly comes with a simple scaffolding command to get you started quickly with a proper directory structure for a jobs workspace.
+Jobly comes with a simple scaffolding command to get you started quickly
+with a proper directory structure for a jobs workspace.
 
 Run:
 

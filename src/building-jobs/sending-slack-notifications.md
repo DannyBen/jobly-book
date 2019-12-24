@@ -1,6 +1,8 @@
 # Sending Slack Notifications
 
-Jobly comes bundled with [Slack::Notifier](https://github.com/stevenosloan/slack-notifier) which is made available to your jobs using the `#slack` method.
+Jobly comes bundled with
+[Slack::Notifier](https://github.com/stevenosloan/slack-notifier)
+which is made available to your jobs using the `#slack` method.
 
 ```ruby
 # jobs/greet.job
@@ -19,4 +21,5 @@ class Greet < Job
 end
 ```
 
-> <i class='fa fa-arrow-right'></i> **See Also**: [Slack Notifications Example](/examples/slack-notifications-example.md)
+> <i class='fa fa-arrow-right'></i> **See Also**:
+> [Slack Notifications Example](/examples/slack-notifications-example.md)

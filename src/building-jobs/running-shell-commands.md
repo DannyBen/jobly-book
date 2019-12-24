@@ -1,6 +1,9 @@
 # Running Shell Commands
 
-Although you can use any Ruby method to execute shell and system commands from within your jobs, Jobly comes bundled with [TTY::Command](https://github.com/piotrmurach/tty-command) which is made available to your jobs by using the `#shell` method.
+Although you can use any Ruby method to execute shell and system commands
+from within your jobs, Jobly comes bundled with
+[TTY::Command](https://github.com/piotrmurach/tty-command)
+which is made available to your jobs by using the `#shell` method.
 
 ```ruby
 # jobs/shell.rb

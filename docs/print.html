@@ -161,10 +161,12 @@ Compact job server with API, CLI, Web UI and a Sidekiq heart.</p>
 </div>
 <hr />
 <h1><a class="header" href="#welcome-to-the-jobly-documentation" id="welcome-to-the-jobly-documentation">Welcome to the Jobly Documentation</a></h1>
-<p>Jobly is a sidekiq-based job server with a command line interface, web API and a web dashboard.</p>
+<p>Jobly is a sidekiq-based job server with a command line interface, web API
+and a web dashboard.</p>
 <h2><a class="header" href="#whats-in-the-box" id="whats-in-the-box">What's in the Box</a></h2>
 <ul>
-<li><strong>Command line interface</strong> - for starting the server, starting the worker, and for running jobs.</li>
+<li><strong>Command line interface</strong> - for starting the server, starting the worker,
+and for running jobs.</li>
 <li><strong>Web API</strong> - for executing jobs.</li>
 <li><strong>Web Dashboard</strong> - including job progress and status.</li>
 <li><strong>Remote Syslog Support</strong> - send output to Papertrail or remote syslog.</li>
@@ -183,7 +185,8 @@ Compact job server with API, CLI, Web UI and a Sidekiq heart.</p>
 <h2><a class="header" href="#screenshot" id="screenshot">Screenshot</a></h2>
 <p><img src="/assets/screen.gif" alt="" /></p>
 <h2><a class="header" href="#interactive-demo" id="interactive-demo">Interactive Demo</a></h2>
-<p>For an interactive demo, visit the <a href="https://www.katacoda.com/dannyb/scenarios/jobly">Jobly scenario on Katacoda</a>.</p>
+<p>For an interactive demo, visit the
+<a href="https://www.katacoda.com/dannyb/scenarios/jobly">Jobly scenario on Katacoda</a>.</p>
 <h2><a class="header" href="#keyboard-shortcuts-for-this-documentation-site" id="keyboard-shortcuts-for-this-documentation-site">Keyboard Shortcuts for this Documentation Site</a></h2>
 <table><thead><tr><th>Shortcut</th><th>Action</th></tr></thead><tbody>
 <tr><td><strong>s</strong></td><td>Focus the search field</td></tr>
@@ -194,7 +197,8 @@ Compact job server with API, CLI, Web UI and a Sidekiq heart.</p>
 <p>Jobly is packaged as a Ruby gem, install it by running:</p>
 <pre><code class="language-text">$ gem install jobly
 </code></pre>
-<p>Alternatively, you can download the the official <a href="https://github.com/dannyben/docker-jobly">Jobly docker image</a>.</p>
+<p>Alternatively, you can download the the official
+<a href="https://github.com/dannyben/docker-jobly">Jobly docker image</a>.</p>
 <h2><a class="header" href="#prerequisites" id="prerequisites">Prerequisites</a></h2>
 <ul>
 <li>Ruby 2.5 or higher</li>
@@ -255,13 +259,17 @@ were executed.</p>
 <li>Run <code>jobly server</code> from the command line.</li>
 <li>Open <a href="http://localhost:3000">http://localhost:3000</a> in your browser.</li>
 </ol>
-<p>This will start a server with two primary entry points: Web Dashboard and Jobly API.</p>
+<p>This will start a server with two primary entry points: Web Dashboard and
+Jobly API.</p>
 <h3><a class="header" href="#web-dashboard" id="web-dashboard">Web Dashboard</a></h3>
-<p>This dashboard is available at the root of the web server. It is a sidekiq web dashboard, with additional plugins for job progress and status.</p>
+<p>This dashboard is available at the root of the web server. It is a sidekiq
+web dashboard, with additional plugins for job progress and status.</p>
 <h3><a class="header" href="#the-jobly-api-server" id="the-jobly-api-server">The Jobly API Server</a></h3>
-<p>This is a simple web API server that allows you to execute jobs remotely by calling <code>/do/JobName?param=value</code>.</p>
+<p>This is a simple web API server that allows you to execute jobs remotely by
+calling <code>/do/JobName?param=value</code>.</p>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="usage/server-side//usage/client-side/running-jobs-with-the-api.html">Running Jobs with the API</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>:
+<a href="usage/server-side//usage/client-side/running-jobs-with-the-api.html">Running Jobs with the API</a></p>
 </blockquote>
 <h1><a class="header" href="#worker" id="worker">Worker</a></h1>
 <p>To start processing jobs:</p>
@@ -270,7 +278,8 @@ were executed.</p>
 <li>That's it.</li>
 </ol>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="usage/server-side//configuration/worker-config.html">Worker Configuration</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>:
+<a href="usage/server-side//configuration/worker-config.html">Worker Configuration</a></p>
 </blockquote>
 <h1><a class="header" href="#client-side" id="client-side">Client Side</a></h1>
 <ul>
@@ -279,7 +288,8 @@ were executed.</p>
 </ul>
 <h1><a class="header" href="#running-jobs-with-the-cli" id="running-jobs-with-the-cli">Running Jobs with the CLI</a></h1>
 <p>There are three ways to run a job from the command line:</p>
-<p>Run the job locally, without going through any of the background job processing chain:</p>
+<p>Run the job locally, without going through any of the background job
+processing chain:</p>
 <pre><code class="language-bash">$ jobly run JobName param:value
 </code></pre>
 <p>Run the job locally, but wait for a worker to process it.</p>
@@ -289,7 +299,8 @@ were executed.</p>
 <pre><code class="language-bash">$ jobly send JobName param:value
 </code></pre>
 <h1><a class="header" href="#running-jobs-with-the-api" id="running-jobs-with-the-api">Running Jobs with the API</a></h1>
-<p>The API supports running jobs either by GET or by POST in the following URL structure:</p>
+<p>The API supports running jobs either by GET or by POST in the following URL
+structure:</p>
 <pre><code class="language-text">http://localhost:3000/do/JobName
 </code></pre>
 <h2><a class="header" href="#example" id="example">Example</a></h2>
@@ -352,7 +363,8 @@ jobly send Hello
 open http://localhost:3000/do/Hello?name=Guest
 </code></pre>
 <h1><a class="header" href="#job-callbacks-example" id="job-callbacks-example">Job Callbacks Example</a></h1>
-<p>This example illustrates the use of <code>before</code>, <code>after</code>, <code>on_skip</code>, <code>on_success</code>, and <code>on_failure</code> blocks.</p>
+<p>This example illustrates the use of <code>before</code>, <code>after</code>, <code>on_skip</code>,
+<code>on_success</code>, and <code>on_failure</code> blocks.</p>
 <h2><a class="header" href="#code-1" id="code-1">Code</a></h2>
 <pre><code class="language-ruby"># jobs/actions.rb
 class Actions &lt; Jobly::Job
@@ -408,7 +420,8 @@ jobly run Actions fail:yes
 jobly run Filter
 </code></pre>
 <h1><a class="header" href="#docker-compose-example" id="docker-compose-example">Docker Compose Example</a></h1>
-<p>This example demonstrates how to use Jobly inside a docker container and with docker compose.</p>
+<p>This example demonstrates how to use Jobly inside a docker container and with
+docker compose.</p>
 <h2><a class="header" href="#code-2" id="code-2">Code</a></h2>
 <pre><code class="language-dockerfile"># Dockerfile
 FROM dannyben/alpine-ruby
@@ -479,7 +492,8 @@ docker-compose run send Hello name:Bobby
 <p>Two approaches are possible:</p>
 <ol>
 <li>Executing secondary jobs synchronously, as part of the parent job.</li>
-<li>Spawning the secondary jobs to be executed later by the worker, as separate jobs.</li>
+<li>Spawning the secondary jobs to be executed later by the worker, as
+separate jobs.</li>
 </ol>
 <h2><a class="header" href="#code-3" id="code-3">Code</a></h2>
 <pre><code class="language-ruby"># jobs/run_sync.rb
@@ -536,8 +550,11 @@ jobly send RunAsync count:10
 <p>This example illustrates how to define jobs that are namespaced in modules.</p>
 <p>It illustrates:</p>
 <ol>
-<li>How all jobs can be nested inside a specific module that is used as the default namespace for all jobs - see the config folder.</li>
-<li>How additional namespacing is done by putting some jobs under a nested module and (optionally, by convention) putting them inside a subfolder - see the jobs folder.</li>
+<li>How all jobs can be nested inside a specific module that is used as the
+default namespace for all jobs - see the config folder.</li>
+<li>How additional namespacing is done by putting some jobs under a nested
+module and (optionally, by convention) putting them inside a subfolder -
+see the jobs folder.</li>
 </ol>
 <h2><a class="header" href="#code-4" id="code-4">Code</a></h2>
 <pre><code class="language-ruby"># config/jobly.rb
@@ -580,7 +597,8 @@ jobly run Hello
 jobly run Inner::Hi
 </code></pre>
 <h1><a class="header" href="#options-and-errors-example" id="options-and-errors-example">Options and Errors Example</a></h1>
-<p>This example illustrates setting the job options: <code>backtrace</code>, <code>queue</code> and <code>retries</code>.</p>
+<p>This example illustrates setting the job options: <code>backtrace</code>, <code>queue</code> and
+<code>retries</code>.</p>
 <h2><a class="header" href="#code-5" id="code-5">Code</a></h2>
 <pre><code class="language-ruby"># jobs/deploy.rb
 class Deploy &lt; Jobly::Job
@@ -616,7 +634,11 @@ jobly send Deploy
 open http://localhost:3000/retries
 </code></pre>
 <h1><a class="header" href="#slack-notifications-example" id="slack-notifications-example">Slack Notifications Example</a></h1>
-<p>This example illustrates how to send slack notifications from your jobs. Note that for this to work, you need to <a href="https://slack.com/apps/A0F7XDUAZ-incoming-webhooks">set up a web hook in your Slack configuration</a> and then make it available to Jobly by the <code>slack_webhook</code> option or the <code>JOBLY_SLACK_WEBHOOK</code> environment variable.</p>
+<p>This example illustrates how to send slack notifications from your jobs.
+Note that for this to work, you need to
+<a href="https://slack.com/apps/A0F7XDUAZ-incoming-webhooks">set up a web hook in your Slack configuration</a>
+and then make it available to Jobly by the <code>slack_webhook</code> option or the
+<code>JOBLY_SLACK_WEBHOOK</code> environment variable.</p>
 <h2><a class="header" href="#code-6" id="code-6">Code</a></h2>
 <pre><code class="language-ruby"># jobs/greet.rb
 class Greet &lt; Jobly::Job
@@ -643,9 +665,11 @@ export JOBLY_SLACK_WEBHOOK=https://hooks.slack.com/services/...
 jobly run Greet
 </code></pre>
 <h1><a class="header" href="#syslog-example" id="syslog-example">Syslog Example</a></h1>
-<p>This example illustrates how to configure Jobly to send all logger events to a local or remote syslog.</p>
+<p>This example illustrates how to configure Jobly to send all logger events to
+a local or remote syslog.</p>
 <h3><a class="header" href="#enabling-syslog-udp-connection" id="enabling-syslog-udp-connection">Enabling syslog UDP connection</a></h3>
-<p>Note that for this to work, your syslog must be configured to accept UDP connections.</p>
+<p>Note that for this to work, your syslog must be configured to accept UDP
+connections.</p>
 <p>Edit <code>/etc/rsyslog.conf</code> and uncomment these lines:</p>
 <pre><code class="language-php"># provides UDP syslog reception
 module(load=&quot;imudp&quot;)
@@ -683,8 +707,11 @@ foreman start
 jobly send Hello
 </code></pre>
 <h1><a class="header" href="#worker-config-example" id="worker-config-example">Worker Config Example</a></h1>
-<p>This example makes use of worker configuration file in order to tell the worker to process two queues (<code>critical</code> and <code>mundane</code>) instead of the <code>default</code> queue.</p>
-<p>Note that the same can also be achieved through the command line, without using a config file.</p>
+<p>This example makes use of worker configuration file in order to tell the
+worker to process two queues (<code>critical</code> and <code>mundane</code>) instead of the
+<code>default</code> queue.</p>
+<p>Note that the same can also be achieved through the command line, without
+using a config file.</p>
 <h2><a class="header" href="#code-8" id="code-8">Code</a></h2>
 <pre><code class="language-yaml"># config/worker.yml
 :concurrency: 2
@@ -728,7 +755,8 @@ jobly send Critical
 jobly send Mundane
 </code></pre>
 <h1><a class="header" href="#solo-job-example" id="solo-job-example">Solo Job Example</a></h1>
-<p>This example demonstrates how to ensure only one instance of the job is executed at any given time.</p>
+<p>This example demonstrates how to ensure only one instance of the job is
+executed at any given time.</p>
 <h2><a class="header" href="#code-9" id="code-9">Code</a></h2>
 <pre><code class="language-ruby"># jobs/solo.rb
 class Solo &lt; Jobly::Job
@@ -748,7 +776,8 @@ class Solo &lt; Jobly::Job
 end
 </code></pre>
 <h2><a class="header" href="#commands-to-try-9" id="commands-to-try-9">Commands to Try</a></h2>
-<p>Before running these commands, it is recommended you open the Statuses tab in the web dashboard.</p>
+<p>Before running these commands, it is recommended you open the Statuses tab
+in the web dashboard.</p>
 <pre><code class="language-bash">cd examples/solo
 
 # Start the server and worker
@@ -789,7 +818,8 @@ jobly run Build
 jobly run Build
 </code></pre>
 <h1><a class="header" href="#custom-rack-mount" id="custom-rack-mount">Custom Rack Mount</a></h1>
-<p>This example demonstrates how to ammend the web server so that it also serves any custom rack app.</p>
+<p>This example demonstrates how to ammend the web server so that it also serves
+any custom rack app.</p>
 <h2><a class="header" href="#code-11" id="code-11">Code</a></h2>
 <pre><code class="language-ruby"># config/jobly.rb
 require_relative '../app/my_server'
@@ -832,13 +862,18 @@ jobly send Hello
 JOBLY_AUTH=user:pass jobly send Hello
 </code></pre>
 <h1><a class="header" href="#building-jobs" id="building-jobs">Building Jobs</a></h1>
-<p>In order to build a <strong>jobs workspace</strong>, start in an empty folder and create a <code>./jobs</code> sub folder inside it. All your job classes go in this folder. The name of this folder is configurable.</p>
+<p>In order to build a <strong>jobs workspace</strong>, start in an empty folder and create
+a <code>./jobs</code> sub folder inside it. All your job classes go in this folder.
+The name of this folder is configurable.</p>
 <blockquote>
 <p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="building-jobs//configuration">Configuration</a></p>
 </blockquote>
-<p>All the Ruby files in the <code>./jobs</code> folder will be loaded by all of Jobly's commands. It is recommended to only keep Job classes in this folder. If you need to load additional code, you can use the <code>./app</code> folder.</p>
+<p>All the Ruby files in the <code>./jobs</code> folder will be loaded by all of Jobly's
+commands. It is recommended to only keep Job classes in this folder.
+If you need to load additional code, you can use the <code>./app</code> folder.</p>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="building-jobs/loading-additional-code.html">Loading Additional Code</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>:
+<a href="building-jobs/loading-additional-code.html">Loading Additional Code</a></p>
 </blockquote>
 <p>Your job classes should simply inherit from <code>Jobly::Job</code>, like this:</p>
 <pre><code class="language-ruby">class Hello &lt; Jobly::Job
@@ -848,7 +883,8 @@ JOBLY_AUTH=user:pass jobly send Hello
 end
 </code></pre>
 <h1><a class="header" href="#scaffolding" id="scaffolding">Scaffolding</a></h1>
-<p>Jobly comes with a simple scaffolding command to get you started quickly with a proper directory structure for a jobs workspace.</p>
+<p>Jobly comes with a simple scaffolding command to get you started quickly
+with a proper directory structure for a jobs workspace.</p>
 <p>Run:</p>
 <pre><code class="language-bash">$ jobly init myjobs
 </code></pre>
@@ -858,7 +894,8 @@ end
 <p>for additional options.</p>
 <h1><a class="header" href="#the-job-class" id="the-job-class">The Job Class</a></h1>
 <p>A job class is a simple Ruby class inheriting from <code>Jobly::Job</code>.</p>
-<p>The only requirement is that your class implements an <code>execute</code> method that optionally accepts keyword arguments (recommended), or a hash.</p>
+<p>The only requirement is that your class implements an <code>execute</code> method that
+optionally accepts keyword arguments (recommended), or a hash.</p>
 <p>Example:</p>
 <pre><code class="language-ruby">class Hello &lt; Jobly::Job
   def execute(name: 'bob')
@@ -867,7 +904,8 @@ end
   end
 end
 </code></pre>
-<p>Note that these classes are simply Jobly-flavored sidekiq jobs, with these key differences:</p>
+<p>Note that these classes are simply Jobly-flavored sidekiq jobs, with these
+key differences:</p>
 <ul>
 <li>
 <p>You need to implement <code>execute</code> instead of <code>perform</code></p>
@@ -909,7 +947,9 @@ end
 <tr><td align="left"><code>on_failure</code></td><td align="left">Executes after the job finishes, and only if it fails</td></tr>
 <tr><td align="left"><code>after</code></td><td align="left">Executes after the job finishes, regardless of success or failure</td></tr>
 </tbody></table>
-<p>Each callback method can either be a block or a symbol that points to a local method. WHen using a block, you will have the <code>params</code> variable available, with all the parameteres sent to the job.</p>
+<p>Each callback method can either be a block or a symbol that points to a local
+method. When using a block, you will have the <code>params</code> variable available,
+with all the parameteres sent to the job.</p>
 <p>For example:</p>
 <pre><code class="language-ruby">class Greet &lt; Jobly::Job
   before do
@@ -927,11 +967,18 @@ end
   end
 end
 </code></pre>
-<p>In order to conditionally skip a job from its <code>before</code> block, you can call <code>skip_job</code>. This will avoid running the job, and will execute the <code>on_skip</code> action and the <code>after</code> action, if present.</p>
+<p>In order to conditionally skip a job from its <code>before</code> block, you can call
+<code>skip_job</code>. This will avoid running the job, and will execute the <code>on_skip</code>
+action and the <code>after</code> action, if present.</p>
 <h1><a class="header" href="#reporting-job-progress" id="reporting-job-progress">Reporting Job Progress</a></h1>
-<p>Jobly comes bundled with <a href="https://github.com/utgarda/sidekiq-status">Sidekiq::Status</a> which provides you with a live status dashboard, and a way to report progress in your jobs.</p>
+<p>Jobly comes bundled with
+<a href="https://github.com/utgarda/sidekiq-status">Sidekiq::Status</a>
+which provides you with a live status dashboard, and a way to report
+progress in your jobs.</p>
 <p><img src="building-jobs//assets/screen.gif" alt="" /></p>
-<p>In order to report progress from your job, use the <code>total</code> and <code>at</code> methods. In addition, you can store arbitrary data related to your job with <code>store</code> and <code>retrieve</code>.</p>
+<p>In order to report progress from your job, use the <code>total</code> and <code>at</code> methods.
+In addition, you can store arbitrary data related to your job with <code>store</code>
+and <code>retrieve</code>.</p>
 <pre><code class="language-ruby"># jobs/hello.rb
 class Hello &lt; Jobly::Job
   def execute(name: 'bob')
@@ -944,7 +991,10 @@ class Hello &lt; Jobly::Job
 end
 </code></pre>
 <h1><a class="header" href="#storing-arbitrary-data-with-redis" id="storing-arbitrary-data-with-redis">Storing Arbitrary Data with Redis</a></h1>
-<p>Jobly comes bundled with <a href="https://github.com/utgarda/sidekiq-status">Sidekiq::Status</a> which has a built in ability allowing you to store and use arbitrary data in its Redis database.</p>
+<p>Jobly comes bundled with
+<a href="https://github.com/utgarda/sidekiq-status">Sidekiq::Status</a>
+which has a built in ability allowing you to store and use arbitrary data in
+its Redis database.</p>
 <pre><code class="language-ruby"># jobs/hello.rb
 class Hello &lt; Jobly::Job
   def execute(name: 'bob')
@@ -964,7 +1014,8 @@ to other types when appropriate.</li>
 <li>Stored keys are available across jobs.</li>
 </ol>
 <h1><a class="header" href="#solo-jobs" id="solo-jobs">Solo Jobs</a></h1>
-<p>Jobs can be defined so that they only have one instance running at any given time, by using the <code>solo</code> method.</p>
+<p>Jobs can be defined so that they only have one instance running at any given
+time, by using the <code>solo</code> method.</p>
 <pre><code class="language-ruby">class Test &lt; Jobly::Job
   solo
 
@@ -973,13 +1024,18 @@ to other types when appropriate.</li>
   end
 end
 </code></pre>
-<p>Solo Jobs (also known as Unique Jobs) will register a lock key in redis before execution, which will prevent subsequent jobs with the same fingerprint from running until the lock is released. The lock will be automatically removed when the job completes (even if it fails), or after a one hour expiration period.</p>
+<p>Solo Jobs (also known as Unique Jobs) will register a lock key in redis
+before execution, which will prevent subsequent jobs with the same
+fingerprint from running until the lock is released. The lock will be
+automatically removed when the job completes (even if it fails), or after a
+one hour expiration period.</p>
 <p>When a job is skipped due to locking, it will execute the <code>on_skip</code> callback.</p>
 <blockquote>
 <p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="building-jobs/callbacks.html">Job Callbacks</a></p>
 </blockquote>
 <h2><a class="header" href="#job-fingerprint" id="job-fingerprint">Job Fingerprint</a></h2>
-<p>By default, the job's fingerprint is built of its class name and its parameters. You can specify a different fingerprint in one of two ways:</p>
+<p>By default, the job's fingerprint is built of its class name and its
+parameters. You can specify a different fingerprint in one of two ways:</p>
 <h3><a class="header" href="#option-1---use-the-key-property" id="option-1---use-the-key-property">Option 1 - Use the 'key' property:</a></h3>
 <pre><code class="language-ruby">class Test &lt; Jobly::Job
   solo key: 'my-test-job'
@@ -1003,11 +1059,15 @@ end
 end
 </code></pre>
 <blockquote>
-<p><i class='fa fa-info-circle'></i> <strong>Tip</strong>: The <code>#solo_key</code> method can use any of the job's parameters by accessing
-the <code>params</code> hash.</p>
+<p><i class='fa fa-info-circle'></i> <strong>Tip</strong>: The <code>#solo_key</code> method can use
+any of the job's parameters by accessing the <code>params</code> hash.</p>
 </blockquote>
 <h2><a class="header" href="#lock-expiration-safeguard" id="lock-expiration-safeguard">Lock Expiration Safeguard</a></h2>
-<p>By default, the locks are set to expire after one hour. This is designed as a safeguard to avoid dead locks. Under most circumstances, you do not need to worry about it, since locks are automatically released on job completion, but in case you wish to change the default expiration period, you can use the <code>expire</code> option:</p>
+<p>By default, the locks are set to expire after one hour. This is designed as a
+safeguard to avoid dead locks. Under most circumstances, you do not need to
+worry about it, since locks are automatically released on job completion, but
+in case you wish to change the default expiration period, you can use the
+<code>expire</code> option:</p>
 <pre><code class="language-ruby">class Test &lt; Jobly::Job
   solo expire: 30.minutes
 
@@ -1022,13 +1082,18 @@ end
 </code></pre>
 <p>You can use <code>seconds</code>, <code>minutes</code>, <code>hours</code> and <code>days</code>.</p>
 <blockquote>
-<p><i class='fa fa-exclamation-triangle'></i> <strong>Note</strong>: Expiration timer starts to count down from the moment the job is queued, and <em>not</em> from the moment it is executed.</p>
+<p><i class='fa fa-exclamation-triangle'></i> <strong>Note</strong>: Expiration timer
+starts to count down from the moment the job is queued, and <em>not</em> from the
+moment it is executed.</p>
 </blockquote>
 <blockquote>
 <p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="building-jobs//examples/solo-example.html">Solo Job Example</a></p>
 </blockquote>
 <h1><a class="header" href="#running-shell-commands" id="running-shell-commands">Running Shell Commands</a></h1>
-<p>Although you can use any Ruby method to execute shell and system commands from within your jobs, Jobly comes bundled with <a href="https://github.com/piotrmurach/tty-command">TTY::Command</a> which is made available to your jobs by using the <code>#shell</code> method.</p>
+<p>Although you can use any Ruby method to execute shell and system commands
+from within your jobs, Jobly comes bundled with
+<a href="https://github.com/piotrmurach/tty-command">TTY::Command</a>
+which is made available to your jobs by using the <code>#shell</code> method.</p>
 <pre><code class="language-ruby"># jobs/shell.rb
 class Shell &lt; Jobly::Job
   def execute
@@ -1038,7 +1103,9 @@ end
 </code></pre>
 <p>Using this method automatically sends the STDOUT and STDERR of the command to the configured logging device.</p>
 <h1><a class="header" href="#sending-slack-notifications" id="sending-slack-notifications">Sending Slack Notifications</a></h1>
-<p>Jobly comes bundled with <a href="https://github.com/stevenosloan/slack-notifier">Slack::Notifier</a> which is made available to your jobs using the <code>#slack</code> method.</p>
+<p>Jobly comes bundled with
+<a href="https://github.com/stevenosloan/slack-notifier">Slack::Notifier</a>
+which is made available to your jobs using the <code>#slack</code> method.</p>
 <pre><code class="language-ruby"># jobs/greet.job
 class Greet &lt; Job
   # Optional settings (defaults to #debug and Jobly)
@@ -1055,11 +1122,14 @@ class Greet &lt; Job
 end
 </code></pre>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="building-jobs//examples/slack-notifications-example.html">Slack Notifications Example</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>:
+<a href="building-jobs//examples/slack-notifications-example.html">Slack Notifications Example</a></p>
 </blockquote>
 <h1><a class="header" href="#loading-additional-code" id="loading-additional-code">Loading Additional Code</a></h1>
-<p>In case your jobs require additional functionality, you may create the <code>./app</code> folder as a sibling to the <code>./jobs</code> folder (configurable).</p>
-<p>Any ruby files in this folder (and sub folders) will be automatically loaded and available to your jobs.</p>
+<p>In case your jobs require additional functionality, you may create the
+<code>./app</code> folder as a sibling to the <code>./jobs</code> folder (configurable).</p>
+<p>Any ruby files in this folder (and sub folders) will be automatically
+loaded and available to your jobs.</p>
 <h1><a class="header" href="#configuration" id="configuration">Configuration</a></h1>
 <ul>
 <li><a href="configuration/jobly-config.html">Jobly Configuration</a></li>
@@ -1181,14 +1251,19 @@ Jobly.configure do |config|
 end
 </code></pre>
 <h1><a class="header" href="#worker-configuration" id="worker-configuration">Worker Configuration</a></h1>
-<p>The worker options can be configured by command line options or by specifying a worker configuration file when running it.</p>
+<p>The worker options can be configured by command line options or by specifying
+a worker configuration file when running it.</p>
 <p>The configuration file can be used to:</p>
 <ul>
-<li>Specify default values for the worker (instead of specifying them inside the jobs themselves).</li>
+<li>Specify default values for the worker (instead of specifying them inside
+the jobs themselves).</li>
 <li>Specify additional advanced sidekiq configuration options.</li>
 </ul>
 <blockquote>
-<p><i class='fa fa-info-circle'></i> <strong>Tip</strong>: The worker configuration file is in fact a <a href="https://github.com/mperham/sidekiq/wiki/Advanced-Options">sidekiq configuration file</a>. Refer to the sidekiq documentation if you need more advanced options.</p>
+<p><i class='fa fa-info-circle'></i> <strong>Tip</strong>:
+The worker configuration file is in fact a
+<a href="https://github.com/mperham/sidekiq/wiki/Advanced-Options">sidekiq configuration file</a>.
+Refer to the sidekiq documentation if you need more advanced options.</p>
 </blockquote>
 <h2><a class="header" href="#sample-worker-configuration-file" id="sample-worker-configuration-file">Sample Worker Configuration File</a></h2>
 <pre><code class="language-yaml"># config/my-worker.yml
@@ -1199,12 +1274,16 @@ end
 - default
 - mundane
 </code></pre>
-<p>Place your YAML config file inside the config folder, and use the <code>jobly worker --config my-worker</code> to use it.</p>
+<p>Place your YAML config file inside the config folder, and use the
+<code>jobly worker --config my-worker</code> to use it.</p>
 <blockquote>
-<p><i class='fa fa-exclamation-triangle'></i> <strong>Note</strong>: The filename specified with the <code>--config</code> flag must be placed inside the config folder. You do not need to specify the folder name or the <code>.yml</code> extension.</p>
+<p><i class='fa fa-exclamation-triangle'></i> <strong>Note</strong>: The filename specified
+with the <code>--config</code> flag must be placed inside the config folder.
+You do not need to specify the folder name or the <code>.yml</code> extension.</p>
 </blockquote>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="configuration//examples/worker-config-example.html">Worker Config Example</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>:
+<a href="configuration//examples/worker-config-example.html">Worker Config Example</a></p>
 </blockquote>
 <h1><a class="header" href="#logging" id="logging">Logging</a></h1>
 <h3><a class="header" href="#logging-from-within-jobs" id="logging-from-within-jobs">Logging from within jobs</a></h3>
@@ -1244,8 +1323,10 @@ end
 </code></pre>
 <p>The <code>config.log</code> option controls how logging is handled.</p>
 <ol>
-<li>If left empty (<code>nil</code>), the web server and workers will NOT log anywhere, and your jobs will log to <code>STDOUT</code> whenever you use <code>logger</code>.</li>
-<li>Setting it to <code>config.log = 'stdout'</code> will also instruct the web server and worker to send their logging to <code>STDOUT</code>.</li>
+<li>If left empty (<code>nil</code>), the web server and workers will NOT log anywhere,
+and your jobs will log to <code>STDOUT</code> whenever you use <code>logger</code>.</li>
+<li>Setting it to <code>config.log = 'stdout'</code> will also instruct the web server
+and worker to send their logging to <code>STDOUT</code>.</li>
 <li>Setting it to a filename, will log to a file.</li>
 <li>Setting it to a syslog connection string will log to a remote syslog server. </li>
 </ol>
@@ -1254,17 +1335,21 @@ end
 <p><code>syslog://system:program@host:port</code></p>
 <p>Omitting any of the options will fall back to a sensible default.</p>
 <blockquote>
-<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>: <a href="configuration//examples/syslog-example.html">Syslog Example</a></p>
+<p><i class='fa fa-arrow-right'></i> <strong>See Also</strong>:
+<a href="configuration//examples/syslog-example.html">Syslog Example</a></p>
 </blockquote>
 <h3><a class="header" href="#separate-log-files-for-each-job-class" id="separate-log-files-for-each-job-class">Separate log files for each job class</a></h3>
-<p>If  <code>Jobly.log</code> contains <code>%s</code> in the file path, it will be replaced with the slug of the job, and will create separate log files for each job class.</p>
+<p>If  <code>Jobly.log</code> contains <code>%s</code> in the file path, it will be replaced with the
+slug of the job, and will create separate log files for each job class.</p>
 <pre><code class="language-ruby"># config/jobly.rb
 Jobly.configure do |config|
   config.log = 'logs/%s.log'
 end
 </code></pre>
 <h3><a class="header" href="#automatic-syslog-tagging" id="automatic-syslog-tagging">Automatic syslog tagging</a></h3>
-<p>The same <code>%s</code> replacement principle applies when using a syslog connection string. This is intended to allow tagging of syslog messages with the job name.</p>
+<p>The same <code>%s</code> replacement principle applies when using a syslog connection
+string. This is intended to allow tagging of syslog messages with the job
+name.</p>
 <pre><code class="language-ruby"># config/jobly.rb
 Jobly.configure do |config|
   config.log = 'syslog://jobserver:%s@localhost:514'

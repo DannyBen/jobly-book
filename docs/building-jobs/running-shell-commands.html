@@ -153,7 +153,10 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#running-shell-commands" id="running-shell-commands">Running Shell Commands</a></h1>
-<p>Although you can use any Ruby method to execute shell and system commands from within your jobs, Jobly comes bundled with <a href="https://github.com/piotrmurach/tty-command">TTY::Command</a> which is made available to your jobs by using the <code>#shell</code> method.</p>
+<p>Although you can use any Ruby method to execute shell and system commands
+from within your jobs, Jobly comes bundled with
+<a href="https://github.com/piotrmurach/tty-command">TTY::Command</a>
+which is made available to your jobs by using the <code>#shell</code> method.</p>
 <pre><code class="language-ruby"># jobs/shell.rb
 class Shell &lt; Jobly::Job
   def execute

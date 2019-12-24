@@ -1,8 +1,11 @@
 # Worker Config Example
 
-This example makes use of worker configuration file in order to tell the worker to process two queues \(`critical` and `mundane`\) instead of the `default` queue.
+This example makes use of worker configuration file in order to tell the
+worker to process two queues (`critical` and `mundane`) instead of the
+`default` queue.
 
-Note that the same can also be achieved through the command line, without using a config file.
+Note that the same can also be achieved through the command line, without
+using a config file.
 
 ## Code
 

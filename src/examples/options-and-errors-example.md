@@ -1,6 +1,7 @@
 # Options and Errors Example
 
-This example illustrates setting the job options: `backtrace`, `queue` and `retries`.
+This example illustrates setting the job options: `backtrace`, `queue` and
+`retries`.
 
 ## Code
 
