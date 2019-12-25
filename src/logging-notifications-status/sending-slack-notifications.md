@@ -8,6 +8,7 @@ which is made available to your jobs using the `#slack` method.
 # jobs/greet.job
 class Greet < Job
   # Optional settings (defaults to #debug and Jobly)
+  # Can also be set in the configuration
   slack_channel '#debug'
   slack_user 'Greeter'
 
@@ -17,6 +18,23 @@ class Greet < Job
 
     # Message with attachment
     slack.post attachments: { text: "Good text", color: "good" }
+  end
+end
+```
+
+## Sending notifications from other classes
+
+To include the `slack` helper in other classes (non `Jobly::Job`), you can
+include the `Jobly::Slack` module (or the more inclusive `Jobly::Helpers`
+module).
+
+```ruby
+# app/git.rb
+class Git
+  include Jobly::Slack
+
+  def pull(repo)
+    slack.ping "pulling #{repo}"
   end
 end
 ```

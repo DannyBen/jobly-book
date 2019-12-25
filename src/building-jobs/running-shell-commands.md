@@ -14,5 +14,24 @@ class Shell < Jobly::Job
 end
 ```
 
-Using this method automatically sends the STDOUT and STDERR of the command to the configured logging device.
+Using this method is recommended, since it automatically sends the STDOUT
+and STDERR of the command to the configured logging device, and it will raise
+an exception on failure, which will fail the job.
 
+
+## Accessing the shell helper from other classes
+
+To include the `shell` helper in other classes (non `Jobly::Job`), you can
+include the `Jobly::Shell` module (or the more inclusive `Jobly::Helpers`
+module).
+
+```ruby
+# app/git.rb
+class Git
+  include Jobly::Shell
+
+  def clone(repo)
+    shell.exec "git clone #{repo}"
+  end
+end
+```

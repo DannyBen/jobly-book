@@ -22,14 +22,6 @@ and a web dashboard.
 * **Remote Syslog Support** - send output to Papertrail or remote syslog.
 * **Slack Notifications** - report job progress to Slack.
 
-## Table of Contents
-
-* [Installation](installation.md)
-* [Usage](usage)
-* [Examples](examples)
-* [Building Jobs](building-jobs)
-* [Configuration](configuration)
-
 ## Screencast
 
 <object data="/assets/cast.svg" style='width:100%'></object>

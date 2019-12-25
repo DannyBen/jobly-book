@@ -17,7 +17,8 @@ end
 ### Logging from other classes
 
 In case you need access to the logger from other classes (that do not
-inherit from `Jobly::Job`), you may include the `Jobly::Logging` module.
+inherit from `Jobly::Job`), you can include the `Jobly::Logging` module
+(or the more inclusive `Jobly::Helpers` module).
 
 ```ruby
 # app/git.rb
