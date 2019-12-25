@@ -158,7 +158,7 @@ helper which lets you use custom YAML files for configuring your jobs.</p>
 <h2><a class="header" href="#settings-files" id="settings-files">Settings files</a></h2>
 <ol>
 <li>Place <code>settings.yml</code> in the <code>config</code> folder.</li>
-<li>Optionally, place additional <code>settings.&lt;encuronment&gt;.yml</code> (for example
+<li>Optionally, place additional <code>settings.&lt;environment&gt;.yml</code> (for example
 <code>settings.production.yml</code>) files for each of your environments. These
 files will be loaded based on the <code>JOBLY_ENVIRONMENT</code> configuration.</li>
 </ol>
@@ -233,21 +233,6 @@ end
 
         </div>
 
-        
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://0.0.0.0:3001");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload(true); // force reload from server (not from cache)
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
         
 
         

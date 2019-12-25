@@ -6,7 +6,7 @@ helper which lets you use custom YAML files for configuring your jobs.
 ## Settings files
 
 1. Place `settings.yml` in the `config` folder.
-2. Optionally, place additional `settings.<encuronment>.yml` (for example
+2. Optionally, place additional `settings.<environment>.yml` (for example
    `settings.production.yml`) files for each of your environments. These
    files will be loaded based on the `JOBLY_ENVIRONMENT` configuration.
 
