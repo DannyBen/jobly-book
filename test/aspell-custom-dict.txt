@@ -21,6 +21,7 @@ filename
 filewatcher
 gif
 github
+GitHub
 href
 img
 imudp
