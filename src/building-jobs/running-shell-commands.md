@@ -19,6 +19,12 @@ and STDERR of the command to the configured logging device, and it will raise
 an exception on failure, which will fail the job.
 
 
+## Dry run
+
+When the `JOBLY_SHELL_DRY_RUN` environment variable is set, the `shell.run`
+helper will not run the commands, and instead, only print them to the log.
+
+
 ## Accessing the shell helper from other classes
 
 To include the `shell` helper in other classes (non `Jobly::Job`), you can

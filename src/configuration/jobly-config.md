@@ -21,6 +21,7 @@ Configuring Jobly can be done by one of two methods:
 | `JOBLY_SLACK_CHANNEL` | `#general` |
 | `JOBLY_SLACK_USER` | `Jobly` |
 | `JOBLY_AUTH` | unset |
+| `JOBLY_SHELL_DRY_RUN` | unset |
 
 ## Jobly Configuration File
 
