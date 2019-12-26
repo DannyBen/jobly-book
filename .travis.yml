@@ -3,6 +3,10 @@ language: ruby
 rvm:
 - "2.6"
 
+addons:
+  apt:
+    packages: [aspell]
+
 before_install:
 - gem install bundler
 
