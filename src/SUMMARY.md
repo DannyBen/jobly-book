@@ -42,4 +42,5 @@
   * [Data Store Example](examples/data-store-example.md)
   * [Custom Rack Mount Example](examples/custom-rack-mount-example.md)
   * [Basic Auth Example](examples/basic-auth-example.md)
+  * [GitHub Integration Example](examples/github-integration-example.md)
 

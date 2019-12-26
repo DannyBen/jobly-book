@@ -20,6 +20,7 @@ eu
 filename
 filewatcher
 gif
+github
 href
 img
 imudp
@@ -28,6 +29,7 @@ jobly
 Jobly's
 JobName
 json
+loadrunner
 localhost
 login
 md
@@ -55,6 +57,7 @@ RunAsync
 RunSync
 screencast
 Screenshot
+sha
 ShowSettings
 sidekiq
 sinatra
@@ -73,11 +76,14 @@ udp
 UI
 uncomment
 url
+usr
 veritas
 webhook
+webhooks
 WORKDIR
 workspace
 XPOST
 yaml
 YAML
 yml
+YourGithubUser
