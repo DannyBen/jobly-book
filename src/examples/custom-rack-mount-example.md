@@ -1,6 +1,6 @@
 # Custom Rack Mount Example
 
-This example demonstrates how to ammend the web server so that it also serves
+This example demonstrates how to amend the web server so that it also serves
 any custom rack app.
 
 ## Code

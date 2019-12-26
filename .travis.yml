@@ -1,0 +1,17 @@
+language: ruby
+
+addons:
+  apt:
+    packages:
+    - aspell
+    - aspell-en
+
+install:
+- gem install sla adsf
+
+before_script:
+- "(cd docs && adsf > /dev/null 2>&1 &)"
+- sleep 3
+
+script:
+- test/test.sh
