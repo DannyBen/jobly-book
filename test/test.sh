@@ -32,7 +32,7 @@ fi
 header "Test: Spellcheck"
 for f in src/*.md ; do
   echo "$f"
-  output=$(aspell list --lang=en --personal aspell-custom-dict.txt --home-dir test < "$f")
+  output=$(aspell list --lang=en --personal aspell-custom-dict.txt --home-dir test < "$f" 2>&1)
   if [[ $output ]]; then
     failed=1
     echo "$output"

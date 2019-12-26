@@ -1,11 +1,13 @@
 language: ruby
 
 rvm:
-- "2.6"
+- "2.5"
 
 addons:
   apt:
-    packages: [aspell]
+    packages:
+    - aspell
+    - aspell-en
 
 before_install:
 - gem install bundler
