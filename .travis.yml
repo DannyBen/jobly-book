@@ -1,0 +1,15 @@
+language: ruby
+
+cache: bundler
+
+rvm:
+- "2.6"
+
+before_install:
+- gem install bundler
+
+install:
+- gem install sla
+
+script:
+- test/test.sh
