@@ -7,7 +7,7 @@ for f in $(find src -name '*.md') ; do
   output=$(aspell list --lang=en --personal aspell-custom-dict.txt --home-dir test < "$f" 2>&1)
   printf "\033[2K\r$f"
   if [[ $output ]]; then
-    echo "Typos in $f"
+    echo "- FAILED"
     failed=1
     echo "$output"
   fi

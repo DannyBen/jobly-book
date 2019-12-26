@@ -17,6 +17,7 @@ entrypoint
 env
 ERB
 eu
+filename
 filewatcher
 gif
 href
@@ -28,6 +29,7 @@ Jobly's
 JobName
 json
 localhost
+login
 md
 mdbook
 MyApp
@@ -73,6 +75,7 @@ url
 veritas
 webhook
 WORKDIR
+workspace
 XPOST
 yaml
 YAML
