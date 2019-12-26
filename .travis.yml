@@ -12,7 +12,8 @@ install:
 - gem install sla adsf
 
 before_script:
-- cd docs && adsf
+- cd docs
+- "adsf > /dev/null 2>&1 &"
 
 script:
 - test/test.sh
