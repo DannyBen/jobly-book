@@ -407,7 +407,7 @@ end
 </tbody></table>
 <p>Each callback method can either be a block or a symbol that points to a local
 method. When using a block, you will have the <code>params</code> variable available,
-with all the parameteres sent to the job.</p>
+with all the parameters sent to the job.</p>
 <p>For example:</p>
 <pre><code class="language-ruby">class Greet &lt; Jobly::Job
   before do
@@ -527,7 +527,7 @@ to other types when appropriate.</li>
 <li>When <code>retrieve</code> does not find the key, <code>nil</code> is returned.</li>
 <li>Stored keys are available across jobs.</li>
 </ol>
-<h1><a class="header" href="#loading-settings-from-yanl" id="loading-settings-from-yanl">Loading Settings from YANL</a></h1>
+<h1><a class="header" href="#loading-settings-from-yaml" id="loading-settings-from-yaml">Loading Settings from YAML</a></h1>
 <p>Jobly comes bundled with <a href="https://github.com/dannyben/sting">Sting</a>, which provides you with a <code>settings</code>
 helper which lets you use custom YAML files for configuring your jobs.</p>
 <h2><a class="header" href="#settings-files" id="settings-files">Settings files</a></h2>
@@ -766,7 +766,7 @@ end
 <li><a href="configuration/worker-config.html">Worker Configuration</a></li>
 <li><a href="configuration/logging.html">Logging</a></li>
 </ul>
-<h1><a class="header" href="#jobly-configuraion" id="jobly-configuraion">Jobly Configuraion</a></h1>
+<h1><a class="header" href="#jobly-configuration" id="jobly-configuration">Jobly Configuration</a></h1>
 <p>Configuring Jobly can be done by one of two methods:</p>
 <ol>
 <li>Setting environment variables.</li>
@@ -1449,7 +1449,7 @@ jobly run Build
 jobly run Build
 </code></pre>
 <h1><a class="header" href="#custom-rack-mount-example" id="custom-rack-mount-example">Custom Rack Mount Example</a></h1>
-<p>This example demonstrates how to ammend the web server so that it also serves
+<p>This example demonstrates how to amend the web server so that it also serves
 any custom rack app.</p>
 <h2><a class="header" href="#code-12" id="code-12">Code</a></h2>
 <pre><code class="language-ruby"># config/jobly.rb
