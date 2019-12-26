@@ -1,0 +1,23 @@
+personal_ws-1.1 en 22 
+api
+auth
+br
+cli
+config
+gif
+href
+img
+jobly
+md
+namespaces
+Papertrail
+px
+README
+redis
+Screencast
+sidekiq
+src
+svg
+syslog
+UI
+yaml
