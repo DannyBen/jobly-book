@@ -167,6 +167,9 @@ end
 <p>Using this method is recommended, since it automatically sends the STDOUT
 and STDERR of the command to the configured logging device, and it will raise
 an exception on failure, which will fail the job.</p>
+<h2><a class="header" href="#dry-run" id="dry-run">Dry run</a></h2>
+<p>When the <code>JOBLY_SHELL_DRY_RUN</code> environment variable is set, the <code>shell.run</code>
+helper will not run the commands, and instead, only print them to the log.</p>
 <h2><a class="header" href="#accessing-the-shell-helper-from-other-classes" id="accessing-the-shell-helper-from-other-classes">Accessing the shell helper from other classes</a></h2>
 <p>To include the <code>shell</code> helper in other classes (non <code>Jobly::Job</code>), you can
 include the <code>Jobly::Shell</code> module (or the more inclusive <code>Jobly::Helpers</code>

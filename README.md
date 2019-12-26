@@ -9,15 +9,13 @@ The documentation is generated to [jobly.dannyb.co](https://jobly.dannyb.co)
 Development
 --------------------------------------------------
 
-To run the documentation locally, just run:
+For development and testing, you will need:
 
-    $ foreman start
+- [opcode][opcode].
+- The `foreman`, `filewatcher` and `sla` gems.
+- mdbook.
 
-You will need to have filewatcher and foreman installed. If you don't, run:
 
-    $ gem install foreman
-    $ gem install filewatcher
+---
 
-To generate the doc folder, run
-
-    $ mdbook build
+[opcode]: https://github.com/dannyben/opcode
