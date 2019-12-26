@@ -54,6 +54,7 @@ rsyslog
 RunAsync
 RunSync
 screencast
+Screenshot
 ShowSettings
 sidekiq
 sinatra
