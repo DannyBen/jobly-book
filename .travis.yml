@@ -9,7 +9,10 @@ before_install:
 - gem install bundler
 
 install:
-- gem install sla
+- gem install sla adsf
+
+before_script:
+- cd docs && adsf
 
 script:
 - test/test.sh
