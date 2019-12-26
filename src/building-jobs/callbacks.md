@@ -12,7 +12,7 @@ The `Jobly::Job` class supports these callback methods:
 
 Each callback method can either be a block or a symbol that points to a local
 method. When using a block, you will have the `params` variable available,
-with all the parameteres sent to the job.
+with all the parameters sent to the job.
 
 For example:
 

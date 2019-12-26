@@ -1,16 +1,10 @@
 language: ruby
 
-rvm:
-- "2.5"
-
 addons:
   apt:
     packages:
     - aspell
     - aspell-en
-
-before_install:
-- gem install bundler
 
 install:
 - gem install sla adsf

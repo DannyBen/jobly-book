@@ -1,4 +1,4 @@
-# Jobly Configuraion
+# Jobly Configuration
 
 Configuring Jobly can be done by one of two methods:
 
