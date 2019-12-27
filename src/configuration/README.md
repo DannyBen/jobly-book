@@ -2,4 +2,5 @@
 
 - [Jobly Configuration](jobly-config.md)
 - [Worker Configuration](worker-config.md)
-- [Logging](logging.md)
+- [Custom Settings](custom-settings.md)
+- [Workspace Info](workspace-info.md)

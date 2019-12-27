@@ -1,4 +1,4 @@
-# Loading Settings from YAML
+# Custom Settings
 
 Jobly comes bundled with [Sting][1], which provides you with a `settings`
 helper which lets you use custom YAML files for configuring your jobs.
