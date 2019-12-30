@@ -46,7 +46,7 @@ Jobly.configure do |config|
   # same as:
   # config.log = Logger.new '/var/log/jobly.log'
 
-  config.logger.level = Logger::WARN
+  config.log_level = 'warn'
 end
 ```
 
