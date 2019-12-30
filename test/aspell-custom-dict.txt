@@ -59,6 +59,7 @@ RunSync
 screencast
 Screenshot
 sha
+ShowOptions
 ShowSettings
 sidekiq
 sinatra

@@ -5,7 +5,7 @@ Configuring Jobly can be done by one of two methods:
 1. Setting environment variables.
 2. Adding a `config/jobly.rb` to your jobs workspace.
 
-### Environment Variable Reference
+## Environment variable reference
 
 | Environment Variable | Default |
 | :--- | :--- |
@@ -17,21 +17,22 @@ Configuring Jobly can be done by one of two methods:
 | `JOBLY_STATUS_EXPIRATION` | `30` |
 | `JOBLY_JOBS_NAMESPACE` | unset |
 | `JOBLY_LOG` | unset |
+| `JOBLY_LOG_LEVEL` | `info` |
 | `JOBLY_SLACK_WEBHOOK` | unset |
 | `JOBLY_SLACK_CHANNEL` | `#general` |
 | `JOBLY_SLACK_USER` | `Jobly` |
 | `JOBLY_AUTH` | unset |
 | `JOBLY_SHELL_DRY_RUN` | unset |
 
-## Jobly Configuration File
+## Jobly configuration file
+
+The below configuration file shows all the available options. Everything is
+optional and has defaults. This file is loaded on boot by the server, worker
+and jobly CLI.
 
 ```ruby
 # config/jobly.rb
 Jobly.configure do |config|
-  # Full configuration file. Everything is optional and has defaults.
-  # This file is loaded on boot by the server, worker and jobly CLI.
-  # ---
-
   # environment: development | production
   # Sets the environment for the API Sinatra server and for Sidekiq.
   # Default: ENV['JOBLY_ENVIRONMENT'] || 'development'
@@ -90,6 +91,17 @@ Jobly.configure do |config|
   # Default: ENV['JOBLY_LOG'] || nil (log to STDOUT)
   config.log = 'jobly.log'
 
+  # log_level: string
+  # Sets the logger level.
+  # This can be one of these strings:
+  # - debug
+  # - info
+  # - warn
+  # - error
+  # - fatal
+  # Default: ENV['JOBLY_LOG_level'] || 'info'
+  config.log_level = 'info'
+
   # slack_webhook: url
   # To use the built in slack notifier, set this slack
   # webhook.
@@ -117,4 +129,34 @@ Jobly.configure do |config|
   config.auth = "admin:secret"
 
 end
+```
+
+
+## Accessing options from your code
+
+In case you need to access any of these settings from your code, simply use
+the `Jobly.option_name` syntax or `Jobly.settings` to get a hash of all
+settings.
+
+```ruby
+# job/show_options.rb
+class ShowOptions < Jobly::Job
+  def execute
+    pp Jobly.options
+    pp Jobly.slack_user
+    pp Jobly.root
+  end
+end
+```
+
+
+## Additional read only options
+
+These options can also be accessed from anywhere in your code, as read only:
+
+```ruby
+Jobly.root              # the root path of the workspace
+Jobly.full_app_path     # the full path to Jobly.app_path
+Jobly.full_jobs_path    # the full path to Jobly.jobs_path
+Jobly.full_config_path  # the full path to Jobly.config_path
 ```

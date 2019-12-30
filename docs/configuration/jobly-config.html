@@ -158,7 +158,7 @@
 <li>Setting environment variables.</li>
 <li>Adding a <code>config/jobly.rb</code> to your jobs workspace.</li>
 </ol>
-<h3><a class="header" href="#environment-variable-reference" id="environment-variable-reference">Environment Variable Reference</a></h3>
+<h2><a class="header" href="#environment-variable-reference" id="environment-variable-reference">Environment variable reference</a></h2>
 <table><thead><tr><th align="left">Environment Variable</th><th align="left">Default</th></tr></thead><tbody>
 <tr><td align="left"><code>JOBLY_ENVIRONMENT</code></td><td align="left"><code>development</code></td></tr>
 <tr><td align="left"><code>JOBLY_API_URL</code></td><td align="left"><code>http://localhost:3000/do</code></td></tr>
@@ -168,19 +168,19 @@
 <tr><td align="left"><code>JOBLY_STATUS_EXPIRATION</code></td><td align="left"><code>30</code></td></tr>
 <tr><td align="left"><code>JOBLY_JOBS_NAMESPACE</code></td><td align="left">unset</td></tr>
 <tr><td align="left"><code>JOBLY_LOG</code></td><td align="left">unset</td></tr>
+<tr><td align="left"><code>JOBLY_LOG_LEVEL</code></td><td align="left"><code>info</code></td></tr>
 <tr><td align="left"><code>JOBLY_SLACK_WEBHOOK</code></td><td align="left">unset</td></tr>
 <tr><td align="left"><code>JOBLY_SLACK_CHANNEL</code></td><td align="left"><code>#general</code></td></tr>
 <tr><td align="left"><code>JOBLY_SLACK_USER</code></td><td align="left"><code>Jobly</code></td></tr>
 <tr><td align="left"><code>JOBLY_AUTH</code></td><td align="left">unset</td></tr>
 <tr><td align="left"><code>JOBLY_SHELL_DRY_RUN</code></td><td align="left">unset</td></tr>
 </tbody></table>
-<h2><a class="header" href="#jobly-configuration-file" id="jobly-configuration-file">Jobly Configuration File</a></h2>
+<h2><a class="header" href="#jobly-configuration-file" id="jobly-configuration-file">Jobly configuration file</a></h2>
+<p>The below configuration file shows all the available options. Everything is
+optional and has defaults. This file is loaded on boot by the server, worker
+and jobly CLI.</p>
 <pre><code class="language-ruby"># config/jobly.rb
 Jobly.configure do |config|
-  # Full configuration file. Everything is optional and has defaults.
-  # This file is loaded on boot by the server, worker and jobly CLI.
-  # ---
-
   # environment: development | production
   # Sets the environment for the API Sinatra server and for Sidekiq.
   # Default: ENV['JOBLY_ENVIRONMENT'] || 'development'
@@ -239,6 +239,17 @@ Jobly.configure do |config|
   # Default: ENV['JOBLY_LOG'] || nil (log to STDOUT)
   config.log = 'jobly.log'
 
+  # log_level: string
+  # Sets the logger level.
+  # This can be one of these strings:
+  # - debug
+  # - info
+  # - warn
+  # - error
+  # - fatal
+  # Default: ENV['JOBLY_LOG_level'] || 'info'
+  config.log_level = 'info'
+
   # slack_webhook: url
   # To use the built in slack notifier, set this slack
   # webhook.
@@ -266,6 +277,26 @@ Jobly.configure do |config|
   config.auth = &quot;admin:secret&quot;
 
 end
+</code></pre>
+<h2><a class="header" href="#accessing-options-from-your-code" id="accessing-options-from-your-code">Accessing options from your code</a></h2>
+<p>In case you need to access any of these settings from your code, simply use
+the <code>Jobly.option_name</code> syntax or <code>Jobly.settings</code> to get a hash of all
+settings.</p>
+<pre><code class="language-ruby"># job/show_options.rb
+class ShowOptions &lt; Jobly::Job
+  def execute
+    pp Jobly.options
+    pp Jobly.slack_user
+    pp Jobly.root
+  end
+end
+</code></pre>
+<h2><a class="header" href="#additional-read-only-options" id="additional-read-only-options">Additional read only options</a></h2>
+<p>These options can also be accessed from anywhere in your code, as read only:</p>
+<pre><code class="language-ruby">Jobly.root              # the root path of the workspace
+Jobly.full_app_path     # the full path to Jobly.app_path
+Jobly.full_jobs_path    # the full path to Jobly.jobs_path
+Jobly.full_config_path  # the full path to Jobly.config_path
 </code></pre>
 
                     </main>
