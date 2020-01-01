@@ -561,8 +561,12 @@ end
 <h1><a class="header" href="#loading-additional-code" id="loading-additional-code">Loading Additional Code</a></h1>
 <p>In case your jobs require additional functionality, you may create the
 <code>./app</code> folder as a sibling to the <code>./jobs</code> folder (configurable).</p>
-<p>All ruby files in this folder (and sub folders) will be automatically
-loaded and available to your jobs.</p>
+<ul>
+<li>All ruby files in this folder (and sub folders) will be automatically
+loaded and available to your jobs. Note that files will be <code>required</code> in
+alphabetical order.</li>
+<li>In case there is an <code>app/boot.rb</code> file, it will be loaded first.</li>
+</ul>
 <h2><a class="header" href="#access-job-helpers-from-custom-code" id="access-job-helpers-from-custom-code">Access job helpers from custom code</a></h2>
 <p>Custom code that does not inherit from <code>Jobly::Job</code> will not be able to
 access some job features, such as logging and slack notifications.</p>
@@ -850,6 +854,12 @@ Jobly.configure do |config|
   # auth: user:password string
   # Set basic authentication for the server and client.
   config.auth = &quot;admin:secret&quot;
+
+  # shell_dry_run: boolean
+  # When true, calls to shell.run will print the command to the screen 
+  # instead of executing.
+  # Default: ENV['JOBLY_SHELL_DRY_RUN'] || false
+  config.shell_dry_run = false
 
 end
 </code></pre>

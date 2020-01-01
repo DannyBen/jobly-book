@@ -128,6 +128,12 @@ Jobly.configure do |config|
   # Set basic authentication for the server and client.
   config.auth = "admin:secret"
 
+  # shell_dry_run: boolean
+  # When true, calls to shell.run will print the command to the screen 
+  # instead of executing.
+  # Default: ENV['JOBLY_SHELL_DRY_RUN'] || false
+  config.shell_dry_run = false
+
 end
 ```
 

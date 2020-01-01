@@ -3,8 +3,10 @@
 In case your jobs require additional functionality, you may create the
 `./app` folder as a sibling to the `./jobs` folder (configurable).
 
-All ruby files in this folder (and sub folders) will be automatically
-loaded and available to your jobs.
+- All ruby files in this folder (and sub folders) will be automatically
+  loaded and available to your jobs. Note that files will be `required` in
+  alphabetical order.
+- In case there is an `app/boot.rb` file, it will be loaded first.
 
 ## Access job helpers from custom code
 

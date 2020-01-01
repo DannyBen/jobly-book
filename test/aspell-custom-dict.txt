@@ -3,6 +3,7 @@ api
 async
 auth
 backtrace
+boolean
 Botly
 br
 BuildAndRun
