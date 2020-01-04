@@ -46,7 +46,7 @@ repo = ENV['LOADRUNNER_REPO']
 
 # Execute a Jobly job
 
-Build.execute_async repo: repo, commit: commit
+Build.run_later repo: repo, commit: commit
 
 ```
 

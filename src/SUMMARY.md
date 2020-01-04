@@ -16,6 +16,7 @@
   * [Job Options](building-jobs/job-options.md)
   * [Job Callbacks](building-jobs/callbacks.md)
   * [Solo Jobs](building-jobs/solo-jobs.md)
+  * [Isolated Jobs](building-jobs/isolated-jobs.md)
   * [Storing Arbitrary Data with Redis](building-jobs/storing-arbitrary-data-with-redis.md)
   * [Running Shell Commands](building-jobs/running-shell-commands.md)
   * [Loading Additional Code](building-jobs/loading-additional-code.md)
