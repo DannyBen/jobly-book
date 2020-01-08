@@ -5,8 +5,8 @@ a local or remote syslog.
 
 ### Enabling syslog UDP connection
 
-Note that for this to work, your syslog must be configured to accept UDP
-connections.
+Note that for this example to work, your syslog server must be configured to
+accept UDP connections.
 
 Edit `/etc/rsyslog.conf` and uncomment these lines:
 
