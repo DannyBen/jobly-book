@@ -931,7 +931,7 @@ You do not need to specify the folder name or the <code>.yml</code> extension.</
 </blockquote>
 <h1><a class="header" href="#custom-settings" id="custom-settings">Custom Settings</a></h1>
 <p>Jobly comes bundled with <a href="https://github.com/dannyben/sting">Sting</a>, which provides you with a <code>settings</code>
-helper which lets you use custom YAML files for configuring your jobs.</p>
+helper that lets you use custom YAML files for configuring your jobs.</p>
 <h2><a class="header" href="#settings-files" id="settings-files">Settings files</a></h2>
 <ol>
 <li>Place <code>settings.yml</code> in the <code>config</code> folder.</li>
@@ -946,6 +946,18 @@ use Ruby code in them (for example, to load environment variables):</p>
 host: localhost
 port: &lt;%= ENV['PORT'] || 3000 %&gt;
 </code></pre>
+<h2><a class="header" href="#extended-yaml" id="extended-yaml">Extended YAML</a></h2>
+<p>Your <code>settings*.yml</code> files can use the <code>extends</code> key to load and merge
+additional YAML files:</p>
+<pre><code class="language-yaml"># config/settings.yml
+extends: some-other-file.yml
+host: localhost
+</code></pre>
+<ul>
+<li>The .yml extension is optional.</li>
+<li>You may extend either a single file or an array of files.</li>
+</ul>
+<p>This functionality is provided by <a href="https://github.com/dannyben/extended_yaml">ExtendedYAML</a>.</p>
 <h2><a class="header" href="#using-settings-in-your-jobs" id="using-settings-in-your-jobs">Using settings in your jobs</a></h2>
 <p>Your jobs will have access to a <code>settings</code> object:</p>
 <pre><code class="language-ruby"># jobs/push.rb

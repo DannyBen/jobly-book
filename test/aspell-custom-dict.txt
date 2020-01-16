@@ -18,6 +18,7 @@ entrypoint
 env
 ERB
 eu
+ExtendedYAML
 filename
 filewatcher
 gif

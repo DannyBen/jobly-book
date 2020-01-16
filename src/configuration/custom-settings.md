@@ -1,7 +1,7 @@
 # Custom Settings
 
 Jobly comes bundled with [Sting][1], which provides you with a `settings`
-helper which lets you use custom YAML files for configuring your jobs.
+helper that lets you use custom YAML files for configuring your jobs.
 
 ## Settings files
 
@@ -20,6 +20,23 @@ use Ruby code in them (for example, to load environment variables):
 host: localhost
 port: <%= ENV['PORT'] || 3000 %>
 ```
+
+## Extended YAML
+
+Your `settings*.yml` files can use the `extends` key to load and merge
+additional YAML files:
+
+```yaml
+# config/settings.yml
+extends: some-other-file.yml
+host: localhost
+```
+
+- The .yml extension is optional.
+- You may extend either a single file or an array of files.
+
+This functionality is provided by [ExtendedYAML][2].
+
 
 ## Using settings in your jobs
 
@@ -52,6 +69,7 @@ end
 ```
 
 [1]: https://github.com/dannyben/sting
+[2]: https://github.com/dannyben/extended_yaml
 
 
 > <i class='fa fa-arrow-right'></i> **See Also**:
