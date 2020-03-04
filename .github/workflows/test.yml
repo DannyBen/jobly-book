@@ -1,0 +1,31 @@
+name: Test
+on:
+  pull_request:
+  push: { branches: master }
+
+jobs:
+  test:
+    name: Run test suite
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up Ruby
+      uses: actions/setup-ruby@v1
+      with: { ruby-version: '2.6' }
+
+    - name: Install linux dependencies
+      run: sudo apt install -y aspell aspell-en
+
+    - name: Install gem dependencies
+      run: gem install sla adsf
+
+    - name: Start static site server
+      run: |
+        adsf -rdocs > /dev/null 2>&1 &
+        sleep 3
+
+    - name: Run tests
+      run: test/test.sh
