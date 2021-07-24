@@ -30,3 +30,19 @@ and a web dashboard.
 For an interactive demo, visit the
 [Jobly scenario on Katacoda](https://www.katacoda.com/dannyb/scenarios/jobly).
 
+
+## Installation
+
+Jobly is packaged as a Ruby gem, install it by running:
+
+```text
+$ gem install jobly
+```
+
+Alternatively, you can download the the official
+[Jobly docker image](https://github.com/dannyben/docker-jobly).
+
+## Prerequisites
+
+- Ruby 2.5 or higher
+- Redis server

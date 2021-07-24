@@ -1,5 +1,6 @@
 ---
 order: 100
+icon: rocket
 ---
 
 # Quick Start

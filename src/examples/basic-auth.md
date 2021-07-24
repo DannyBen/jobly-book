@@ -4,6 +4,22 @@ icon: dot
 
 # Basic Auth
 
+## Code
+
+=== jobs/hello.rb
+
+```ruby
+# jobs/hello.rb
+class Hello < Jobly::Job
+  def execute(name: 'bob')
+    puts "Hello #{name}"
+    logger.info "said hello to #{name}"
+  end
+end
+```
+
+===
+
 ## Commands to Try
 
 ```bash

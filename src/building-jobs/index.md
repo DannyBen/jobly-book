@@ -1,5 +1,6 @@
 ---
 order: 80
+icon: workflow
 ---
 
 # Building Jobs
