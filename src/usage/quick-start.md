@@ -28,11 +28,11 @@ $ jobly worker
 
 ==- Step 2: Verify the server is working
 
-Go to <http://localhost:3000> - you should see the Sidekiq dashboard.
+Go to [localhost:3000](http://localhost:3000) - you should see the Sidekiq dashboard.
 
 ==- Step 3: Execute a job through the API
 
-Go to <http://localhost:3000/do/Hello> - you should receive a JSON encoded acknowledgement.
+Go to [localhost:3000/do/Hello](http://localhost:3000/do/Hello) - you should receive a JSON encoded acknowledgement.
 
 Go back to the dashboard and view the job's status.
 
@@ -51,6 +51,6 @@ $ jobly send Ping
 $ jobly send Hello name:Arnold
 ```
 
-Finally, view the <http://localhost:3000/statuses> page to ensure your jobs were executed.
+Finally, view the [localhost:3000/statuses](http://localhost:3000/statuses) page to ensure your jobs were executed.
 
 ===
