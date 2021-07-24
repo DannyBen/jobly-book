@@ -4,10 +4,11 @@ icon: dot
 
 # Settings
 
-This example illustrates how to use the `settings` helper to load custom 
-settings into your jobs.
+This example illustrates how to use the `settings` helper to load custom settings into your jobs.
 
 ## Code
+
+=== jobs/show_settings.rb
 
 ```ruby
 # jobs/show_settings.rb
@@ -28,6 +29,8 @@ class ShowSettings < Jobly::Job
 end
 ```
 
+==- config/settings.yml
+
 ```yaml
 # config/settings.yml
 host: example.com
@@ -42,11 +45,15 @@ login:
   password: <%= ENV['MY_SECRET'] =>
 ```
 
+==- config/settings.development.yml
+
 ```yaml
 # config/settings.development.yml
 host: localhost
 port: 3000
 ```
+
+===
 
 ## Commands to Try
 

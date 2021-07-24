@@ -8,13 +8,12 @@ This example illustrates how to define jobs that are namespaced in modules.
 
 It illustrates:
 
-1. How all jobs can be nested inside a specific module that is used as the
-   default namespace for all jobs - see the config folder.
-2. How additional namespacing is done by putting some jobs under a nested
-   module and (optionally, by convention) putting them inside a subfolder -
-   see the jobs folder.
+1. How all jobs can be nested inside a specific module that is used as the default namespace for all jobs - see the config folder.
+2. How additional namespacing is done by putting some jobs under a nested module and (optionally, by convention) putting them inside a subfolder - see the jobs folder.
 
 ## Code
+
+=== config/jobly.rb
 
 ```ruby
 # config/jobly.rb
@@ -22,6 +21,8 @@ Jobly.configure do |config|
   config.jobs_namespace = 'Jobs'
 end
 ```
+
+==- jobs/hello.rb
 
 ```ruby
 # jobs/hello.rb
@@ -37,6 +38,8 @@ module Jobs
 end
 ```
 
+==- jobs/inner/hi.rb
+
 ```ruby
 # jobs/inner/hi.rb
 module Jobs
@@ -51,6 +54,8 @@ module Jobs
   end
 end
 ```
+
+===
 
 ## Commands to Try
 

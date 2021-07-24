@@ -9,10 +9,11 @@ This example demonstrates how to integrate Jobly with GitHub for:
 - Handling incoming webhooks from GitHub
 - Sending pull request status updates
 
-These features are not built into Jobly, but can be easily implemented by
-adding the [Loadrunner][loadrunner] gem.
+These features are not built into Jobly, but can be easily implemented by adding the [Loadrunner][loadrunner] gem.
 
 ## Code
+
+=== jobs/build.rb
 
 ```ruby
 # jobs/build.rb
@@ -34,8 +35,9 @@ class Build < Jobly::Job
     end
   end
 end
-
 ```
+
+==- hooks/global
 
 ```ruby
 # hooks/global
@@ -51,8 +53,9 @@ repo = ENV['LOADRUNNER_REPO']
 # Execute a Jobly job
 
 Build.run_later repo: repo, commit: commit
-
 ```
+
+==- config/jobly.rb
 
 ```ruby
 # config/jobly.rb
@@ -63,6 +66,8 @@ Jobly.configure do |config|
   config.mounts = { "/github" => Loadrunner::Server }
 end
 ```
+
+===
 
 
 ## Commands to Try

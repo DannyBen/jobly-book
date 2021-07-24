@@ -4,10 +4,11 @@ icon: dot
 
 # Options and Errors
 
-This example illustrates setting the job options: `backtrace`, `queue` and
-`retries`.
+This example illustrates setting the job options: `backtrace`, `queue` and `retries`.
 
 ## Code
+
+=== jobs/deploy.rb
 
 ```ruby
 # jobs/deploy.rb
@@ -27,6 +28,8 @@ class Deploy < Jobly::Job
   end
 end
 ```
+
+===
 
 ## Commands to Try
 

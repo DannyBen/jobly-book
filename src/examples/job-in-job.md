@@ -9,10 +9,11 @@ This example demonstrates how to call a job from inside another job.
 Two approaches are possible:
 
 1. Executing secondary jobs synchronously, as part of the parent job.
-2. Spawning the secondary jobs to be executed later by the worker, as
-   separate jobs.
+2. Spawning the secondary jobs to be executed later by the worker, as separate jobs.
 
 ## Code
+
+=== jobs/run_sync.rb
 
 ```ruby
 # jobs/run_sync.rb
@@ -35,6 +36,7 @@ class RunSync < Jobly::Job
 end
 ```
 
+==- jobs/run_async.rb
 
 ```ruby
 # jobs/run_async.rb
@@ -51,6 +53,8 @@ class RunAsync < Jobly::Job
 end
 ```
 
+==- jobs/sub_job.rb
+
 
 ```ruby
 # jobs/sub_job.rb
@@ -62,6 +66,7 @@ class SubJob < Jobly::Job
 end
 ```
 
+===
 
 ## Commands to Try
 

@@ -9,6 +9,8 @@ docker compose.
 
 ## Code
 
+=== Dockerfile
+
 ```dockerfile
 # Dockerfile
 FROM dannyben/alpine-ruby
@@ -17,11 +19,11 @@ WORKDIR /app
 COPY app .
 ```
 
+==- docker-compose.yml
+
 
 ```yaml
 # docker-compose.yml
-version: '3'
-
 services:
   redis:
     image: redis
@@ -52,6 +54,8 @@ services:
     command: Hello
 ```
 
+==- app/jobs/hello.rb
+
 ```ruby
 # app/jobs/hello.rb
 class Hello < Jobly::Job
@@ -61,6 +65,8 @@ class Hello < Jobly::Job
   end
 end
 ```
+
+===
 
 
 ## Commands to Try

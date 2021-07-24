@@ -6,6 +6,8 @@ icon: dot
 
 ## Code
 
+=== jobs/hello.rb
+
 ```ruby
 # jobs/hello.rb
 class Hello < Jobly::Job
@@ -15,6 +17,8 @@ class Hello < Jobly::Job
   end
 end
 ```
+
+===
 
 ## Commands to Try
 

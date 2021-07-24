@@ -4,10 +4,11 @@ icon: dot
 
 # Custom Rack Mount
 
-This example demonstrates how to amend the web server so that it also serves
-any custom rack app.
+This example demonstrates how to amend the web server so that it also serves any custom rack app.
 
 ## Code
+
+=== config/jobly.rb
 
 ```ruby
 # config/jobly.rb
@@ -17,6 +18,8 @@ Jobly.configure do |config|
   config.mounts = { "/my" => MyServer }
 end
 ```
+
+==- app/my_server.rb
 
 ```ruby
 # app/my_server.rb
@@ -28,6 +31,8 @@ class MyServer < Sinatra::Base
   end
 end
 ```
+
+===
 
 
 ## Commands to Try

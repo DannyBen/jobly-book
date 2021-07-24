@@ -4,10 +4,11 @@ icon: dot
 
 # Job Callbacks
 
-This example illustrates the use of `before`, `after`, `on_skip`,
-`on_success`, and `on_failure` blocks.
+This example illustrates the use of `before`, `after`, `on_skip`, `on_success`, and `on_failure` blocks.
 
 ## Code
+
+=== jobs/actions.rb
 
 ```ruby
 # jobs/actions.rb
@@ -32,6 +33,8 @@ class Actions < Jobly::Job
 end
 ```
 
+==- jobs/filter.rb
+
 ```ruby
 # jobs/filter.rb
 class Filter < Jobly::Job
@@ -53,6 +56,8 @@ class Filter < Jobly::Job
   end
 end
 ```
+
+===
 
 ## Commands to Try
 

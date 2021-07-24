@@ -8,6 +8,8 @@ This example demonstrates how to store and retrieve arbitrary data on redis.
 
 ## Code
 
+=== jobs/build.rb
+
 ```ruby
 # jobs/build.rb
 class Build < Jobly::Job
@@ -25,6 +27,8 @@ class Build < Jobly::Job
   end
 end
 ```
+
+===
 
 
 ## Commands to Try
