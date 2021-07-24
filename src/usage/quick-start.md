@@ -5,10 +5,9 @@ icon: rocket
 
 # Quick Start
 
-These steps are similar (but not identical) to the steps demonstrated in
-the [What is Jobly screencast](/#screencast).
+These steps are similar (but not identical) to the steps demonstrated in the [Jobly screencast](/index.md#screencast).
 
-## Step 1: Setup a Jobly workspace
+=== Step 1: Setup a Jobly workspace
 
 ```bash
 # Create a new workspace (directory)
@@ -27,18 +26,17 @@ $ jobly server
 $ jobly worker
 ```
 
-## Step 2: Verify the server is working
+==- Step 2: Verify the server is working
 
-Go to <http://localhost:3000> - you should see the Sidekiq dashboard
+Go to <http://localhost:3000> - you should see the Sidekiq dashboard.
 
-## Step 3: Execute a job through the API
+==- Step 3: Execute a job through the API
 
-Go to <http://localhost:3000/do/Hello> - you should receive a JSON encoded 
-acknowledgement.
+Go to <http://localhost:3000/do/Hello> - you should receive a JSON encoded acknowledgement.
 
 Go back to the dashboard and view the job's status.
 
-## Step 4: Execute a job through the CLI
+==- Step 4: Execute a job through the CLI
 
 Form the same workspace directory, run:
 
@@ -53,5 +51,6 @@ $ jobly send Ping
 $ jobly send Hello name:Arnold
 ```
 
-Finally, view the <http://localhost:3000/statuses> page to ensure your jobs
-were executed.
+Finally, view the <http://localhost:3000/statuses> page to ensure your jobs were executed.
+
+===
