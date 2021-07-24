@@ -1,8 +1,9 @@
 ---
 icon: dot
+label: Solo Job
 ---
 
-# Solo Job
+# Solo Job Example
 
 This example demonstrates how to ensure only one instance of the job is executed at any given time.
 

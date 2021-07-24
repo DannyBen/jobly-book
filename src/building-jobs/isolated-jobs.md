@@ -5,10 +5,9 @@ icon: dot
 
 # Isolated Jobs
 
-Jobs can be defined so that they are executed in their own temporary 
-directory by using the `isolated` method.
+Jobs can be defined so that they are executed in their own temporary directory by using the `isolated` method.
 
-```ruby
+```ruby Example
 class Test < Jobly::Job
   isolated
 

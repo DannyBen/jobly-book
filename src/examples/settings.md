@@ -1,8 +1,9 @@
 ---
 icon: dot
+label: Settings
 ---
 
-# Settings
+# Settings Example
 
 This example illustrates how to use the `settings` helper to load custom settings into your jobs.
 

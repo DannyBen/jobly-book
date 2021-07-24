@@ -4,7 +4,7 @@
   "cname": "jobly.dannyb.co",
 
   "branding": {
-    "title": "Jobly",
+    "logo": "assets/logo.svg",
     "label": "v0.5.8"
   },
 
@@ -33,7 +33,7 @@
 
   "integrations": {
     "googleAnalytics": {
-      "id": "G-0MC7P9VV8W"
+      "id": "UA-6696444-13"
     }
   },
 

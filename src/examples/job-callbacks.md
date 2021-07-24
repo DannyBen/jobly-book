@@ -1,8 +1,9 @@
 ---
 icon: dot
+label: Job Callbacks
 ---
 
-# Job Callbacks
+# Job Callbacks Example
 
 This example illustrates the use of `before`, `after`, `on_skip`, `on_success`, and `on_failure` blocks.
 

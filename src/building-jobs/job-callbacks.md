@@ -15,13 +15,9 @@ The `Jobly::Job` class supports these callback methods:
 | `on_failure` | Executes after the job finishes, and only if it fails |
 | `after` | Executes after the job finishes, regardless of success or failure |
 
-Each callback method can either be a block or a symbol that points to a local
-method. When using a block, you will have the `params` variable available,
-with all the parameters sent to the job.
+Each callback method can either be a block or a symbol that points to a local method. When using a block, you will have the `params` variable available, with all the parameters sent to the job.
 
-For example:
-
-```ruby
+```ruby Example
 class Greet < Jobly::Job
   before do
     logger.info "Starting with #{params[:message]}"
@@ -39,7 +35,5 @@ class Greet < Jobly::Job
 end
 ```
 
-In order to conditionally skip a job from its `before` block, you can call
-`skip_job`. This will avoid running the job, and will execute the `on_skip`
-action and the `after` action, if present.
+In order to conditionally skip a job from its `before` block, you can call `skip_job`. This will avoid running the job, and will execute the `on_skip` action and the `after` action, if present.
 

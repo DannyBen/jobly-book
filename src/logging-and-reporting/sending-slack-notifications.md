@@ -5,12 +5,9 @@ icon: dot
 
 # Sending Slack Notifications
 
-Jobly comes bundled with
-[Slack::Notifier](https://github.com/stevenosloan/slack-notifier)
-which is made available to your jobs using the `#slack` method.
+Jobly comes bundled with [Slack::Notifier](https://github.com/stevenosloan/slack-notifier) which is made available to your jobs using the `#slack` method.
 
-```ruby
-# jobs/greet.job
+```ruby jobs/greet.job
 class Greet < Job
   # Optional settings (defaults to #debug and Jobly)
   # Can also be set in the configuration
@@ -29,12 +26,9 @@ end
 
 ## Sending notifications from other classes
 
-To include the `slack` helper in other classes (non `Jobly::Job`), you can
-include the `Jobly::Slack` module (or the more inclusive `Jobly::Helpers`
-module).
+To include the `slack` helper in other classes (non `Jobly::Job`), you can include the `Jobly::Slack` module (or the more inclusive `Jobly::Helpers` module).
 
-```ruby
-# app/git.rb
+```ruby app/git.rb
 class Git
   include Jobly::Slack
 
@@ -44,5 +38,7 @@ class Git
 end
 ```
 
-> <i class='fa fa-arrow-right'></i> **See Also**:
-> [Slack Notifications Example](/examples/slack-notifications-example.md)
+See the **Slack Notifications Example** for more details:
+
+[!ref](/examples/slack-notifications.md)
+

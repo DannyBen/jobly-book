@@ -1,8 +1,9 @@
 ---
 icon: dot
+label: Basic
 ---
 
-# Basic
+# Basic Example
 
 ## Code
 

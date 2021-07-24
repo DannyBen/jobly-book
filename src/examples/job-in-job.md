@@ -1,8 +1,9 @@
 ---
 icon: dot
+label: Job in Job
 ---
 
-# Job in Job
+# Job in Job Example
 
 This example demonstrates how to call a job from inside another job.
 

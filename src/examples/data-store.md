@@ -1,8 +1,9 @@
 ---
 icon: dot
+label: Data Store
 ---
 
-# Data Store
+# Data Store Example
 
 This example demonstrates how to store and retrieve arbitrary data on redis.
 

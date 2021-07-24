@@ -1,8 +1,9 @@
 ---
 icon: dot
+label: Namespaces
 ---
 
-# Namespaces
+# Namespaces Example
 
 This example illustrates how to define jobs that are namespaced in modules.
 

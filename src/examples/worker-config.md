@@ -1,8 +1,9 @@
 ---
 icon: dot
+label: Worker Configuration
 ---
 
-# Worker Config
+# Worker Configuration Example
 
 This example makes use of worker configuration file in order to tell the worker to process two queues (`critical` and `mundane`) instead of the `default` queue.
 

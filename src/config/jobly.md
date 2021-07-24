@@ -31,12 +31,9 @@ Configuring Jobly can be done by one of two methods:
 
 ## Jobly configuration file
 
-The below configuration file shows all the available options. Everything is
-optional and has defaults. This file is loaded on boot by the server, worker
-and jobly CLI.
+The below configuration file shows all the available options. Everything is optional and has defaults. This file is loaded on boot by the server, worker and jobly CLI.
 
-```ruby
-# config/jobly.rb
+```ruby config/jobly.rb
 Jobly.configure do |config|
   # environment: development | production
   # Sets the environment for the API Sinatra server and for Sidekiq.
@@ -145,12 +142,9 @@ end
 
 ## Accessing options from your code
 
-In case you need to access any of these settings from your code, simply use
-the `Jobly.option_name` syntax or `Jobly.settings` to get a hash of all
-settings.
+In case you need to access any of these settings from your code, simply use the `Jobly.option_name` syntax or `Jobly.settings` to get a hash of all settings.
 
-```ruby
-# job/show_options.rb
+```ruby job/show_options.rb
 class ShowOptions < Jobly::Job
   def execute
     pp Jobly.options

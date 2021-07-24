@@ -1,8 +1,9 @@
 ---
 icon: dot
+label: Options and Errors
 ---
 
-# Options and Errors
+# Options and Errors Example
 
 This example illustrates setting the job options: `backtrace`, `queue` and `retries`.
 

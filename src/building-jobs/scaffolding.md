@@ -5,22 +5,20 @@ icon: dot
 
 # Scaffolding
 
-Jobly comes with a simple scaffolding command to get you started quickly
-with a proper directory structure for a jobs workspace.
+Jobly comes with a simple scaffolding command to get you started quickly with a proper directory structure for a jobs workspace.
 
-Run:
+In order to create a jobs workspace inside the `myjobs` directory, run:
 
-```bash
+```shell
 $ jobly init myjobs
 ```
 
-in order to create a jobs workspace inside the `myjobs` directory, or:
+For additional options, run:
 
-```bash
+
+```shell
 $ jobly init --help
 ```
-
-for additional options.
 
 
 

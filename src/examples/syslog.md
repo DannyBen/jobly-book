@@ -1,8 +1,9 @@
 ---
 icon: dot
+label: Syslog
 ---
 
-# Syslog
+# Syslog Example
 
 This example illustrates how to configure Jobly to send all logger events to a local or remote syslog.
 

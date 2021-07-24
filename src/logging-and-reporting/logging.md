@@ -5,12 +5,11 @@ icon: dot
 
 # Logging
 
-### Logging from within jobs
+## Logging from within jobs
 
 All your jobs have access to a standard Ruby logger.
 
-```ruby
-# jobs/hello.rb
+```ruby jobs/hello.rb
 class Hello < Jobly::Job
   def execute(name: 'bob')
     logger.info "said hello to #{name}"
@@ -18,15 +17,11 @@ class Hello < Jobly::Job
 end
 ```
 
+## Logging from other classes
 
-### Logging from other classes
+In case you need access to the logger from other classes (that do not inherit from `Jobly::Job`), you can include the `Jobly::Logging` module (or the more inclusive `Jobly::Helpers` module).
 
-In case you need access to the logger from other classes (that do not
-inherit from `Jobly::Job`), you can include the `Jobly::Logging` module
-(or the more inclusive `Jobly::Helpers` module).
-
-```ruby
-# app/git.rb
+```ruby app/git.rb
 class Git
   include Jobly::Logging
 
@@ -36,15 +31,11 @@ class Git
 end
 ```
 
+## Configuring the logger
 
-### Configuring the logger
+By default, output is sent to `STDOUT` but you can provide your own logger and log to a file or to syslog by using the `config.log` or the `config.logger` option in `./config/jobly.rb`
 
-By default, output is sent to `STDOUT` but you can provide your own logger
-and log to a file or to syslog by using the `config.log` or the
-`config.logger` option in `./config/jobly.rb`
-
-```ruby
-# config/jobly.rb
+```ruby config/jobly.rb
 Jobly.configure do |config|
   config.log = '/var/log/jobly.log'
   
@@ -55,55 +46,49 @@ Jobly.configure do |config|
 end
 ```
 
-
 The `config.log` option controls how logging is handled.
 
-1. If left empty \(`nil`\), the web server and workers will NOT log anywhere,
-   and your jobs will log to `STDOUT` whenever you use `logger`.
-2. Setting it to `config.log = 'stdout'` will also instruct the web server
-   and worker to send their logging to `STDOUT`.
+1. If left empty (`nil`), the web server and workers will NOT log anywhere, and your jobs will log to `STDOUT` whenever you use `logger`.
+2. Setting it to `config.log = 'stdout'` will also instruct the web server and worker to send their logging to `STDOUT`.
 3. Setting it to a filename, will log to a file.
 4. Setting it to a syslog connection string will log to a remote syslog server. 
 
-### Logging to syslog
+## Logging to syslog
 
 Set `config.log` to a syslog connection string in the following format:
 
-`syslog://system:program@host:port`
+```ruby
+config.log = "syslog://system:program@host:port"
+```
 
 Omitting any of the options will fall back to a sensible default.
 
-> <i class='fa fa-arrow-right'></i> **See Also**:
-> [Syslog Example](/examples/syslog-example.md)
+See the **Syslog Example** for mode details:
 
-### Separate log files for each job class
+[!ref](/examples/syslog.md)
 
-If  `Jobly.log` contains `%s` in the file path, it will be replaced with the
-slug of the job, and will create separate log files for each job class.
+## Separate log files for each job class
 
-```ruby
-# config/jobly.rb
+If `Jobly.log` contains `%s` in the file path, it will be replaced with the slug of the job, and will create separate log files for each job class.
+
+```ruby config/jobly.rb
 Jobly.configure do |config|
   config.log = 'logs/%s.log'
 end
 ```
 
 
-### Automatic syslog tagging
+## Automatic syslog tagging
 
-The same `%s` replacement principle applies when using a syslog connection
-string. This is intended to allow tagging of syslog messages with the job
-name.
+The same `%s` replacement principle applies when using a syslog connection string. This is intended to allow tagging of syslog messages with the job name.
 
-```ruby
-# config/jobly.rb
+```ruby config/jobly.rb
 Jobly.configure do |config|
   config.log = 'syslog://jobserver:%s@localhost:514'
 end
 ```
 
-### Bring your own logger
+## Bring your own logger
 
-The `config.log` option can also accept any `Logger` instance, in case you
-wish to provide a custom logger.
+The `config.log` option can also accept any `Logger` instance, in case you wish to provide a custom logger.
 

@@ -1,8 +1,9 @@
 ---
 icon: dot
+label: GitHub Integration
 ---
 
-# GitHub Integration
+# GitHub Integration Example
 
 This example demonstrates how to integrate Jobly with GitHub for:
 

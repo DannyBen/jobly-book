@@ -1,8 +1,9 @@
 ---
 icon: dot
+label: Basic Auth
 ---
 
-# Basic Auth
+# Basic Auth Example
 
 ## Code
 
