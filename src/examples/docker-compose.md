@@ -5,8 +5,7 @@ label: Docker Compose
 
 # Docker Compose Example
 
-This example demonstrates how to use Jobly inside a docker container and with
-docker compose.
+This example demonstrates how to use Jobly inside a docker container and with docker compose.
 
 ## Code
 

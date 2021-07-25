@@ -1,8 +1,9 @@
 ---
 icon: dot
+label: Using the CLI
 ---
 
-# Running Jobs with the CLI
+# Running Jobs Using the CLI
 
 There are three ways to run a job from the command line:
 

@@ -5,7 +5,7 @@ label: Welcome
 
 # Welcome to Jobly
 
-Jobly is a sidekiq-based job server with a command line interface, web API and a web dashboard.
+**Jobly** is a sidekiq-based job server with a command line interface, web API and a web dashboard.
 
 ## What's in the Box
 
@@ -40,7 +40,9 @@ Jobly is packaged as a Ruby gem, install it by running:
 $ gem install jobly
 ```
 
-Alternatively, you can download the the official [Jobly docker image](https://github.com/dannyben/docker-jobly).
+Alternatively, you can download the the official [Jobly docker image](https://github.com/dannyben/docker-jobly), or take a look at the **Docker Compose Example**:
+
+[!ref](examples/docker-compose.md)
 
 ## Prerequisites
 

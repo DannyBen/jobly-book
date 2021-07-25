@@ -17,7 +17,7 @@ The `Jobly::Job` class supports these callback methods:
 
 Each callback method can either be a block or a symbol that points to a local method. When using a block, you will have the `params` variable available, with all the parameters sent to the job.
 
-```ruby Example
+```ruby jobs/greet.rb
 class Greet < Jobly::Job
   before do
     logger.info "Starting with #{params[:message]}"

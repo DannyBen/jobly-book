@@ -7,8 +7,7 @@ icon: dot
 
 Jobly comes bundled with [Sidekiq::Status](https://github.com/utgarda/sidekiq-status) which has a built in ability allowing you to store and use arbitrary data in its Redis database.
 
-```ruby Example
-# jobs/hello.rb
+```ruby jobs/hello.rb
 class Hello < Jobly::Job
   def execute(name: 'bob')
     # Store arbitrary data

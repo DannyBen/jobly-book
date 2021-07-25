@@ -1,10 +1,9 @@
 ---
 order: 90
 icon: server
-label: Server Side
 ---
 
-# Server Side
+# Server
 
 The Jobly server side consists of two components:
 

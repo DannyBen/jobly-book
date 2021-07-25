@@ -9,7 +9,7 @@ A job class is a simple Ruby class inheriting from `Jobly::Job`.
 
 The only requirement is that your class implements an `execute` method that optionally accepts keyword arguments (recommended), or a hash.
 
-```ruby Example
+```ruby jobs/hello.rb
 class Hello < Jobly::Job
   def execute(name: 'bob')
     puts "Hello #{name}"

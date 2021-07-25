@@ -7,7 +7,7 @@ icon: dot
 
 Jobs can be defined so that they are executed in their own temporary directory by using the `isolated` method.
 
-```ruby Example
+```ruby jobs/test.rb
 class Test < Jobly::Job
   isolated
 

@@ -7,7 +7,7 @@ icon: dot
 
 Jobs can be defined so that they only have one instance running at any given time, by using the `solo` method.
 
-```ruby Example
+```ruby jobs/test.rb
 class Test < Jobly::Job
   solo
 
@@ -29,7 +29,7 @@ By default, the job's fingerprint is built of its class name and its parameters.
 
 ==- Option 1: Use the `key` property
 
-```ruby 
+```ruby jobs/test.rb
 class Test < Jobly::Job
   solo key: 'my-test-job'
 
@@ -41,7 +41,7 @@ end
 
 ==- Option 2: Define a `solo_key` method in your job
 
-```ruby
+```ruby jobs/test.rb
 class Test < Jobly::Job
   solo
 
@@ -68,7 +68,7 @@ The `#solo_key` method can use any of the job's parameters by accessing the `par
 
 By default, the locks are set to expire after one hour. This is designed as a safeguard to avoid dead locks. Under most circumstances, you do not need to worry about it, since locks are automatically released on job completion, but in case you wish to change the default expiration period, you can use the `expire` option:
 
-```ruby Example
+```ruby jobs/test.rb
 class Test < Jobly::Job
   solo expire: 30.minutes
 

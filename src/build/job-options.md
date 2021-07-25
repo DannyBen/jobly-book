@@ -14,7 +14,7 @@ The `Jobly::Job` class supports these class-level options:
 | `backtrace` | `5` | number of backtrace lines to show in case of failures. Can be `true`, `false` or a number of lines to save. |
 | `solo` | `false` | Specify that this task should only be executed once. If the same job is executed while this job is running, it will be skipped. See [Solo Jobs](solo-jobs.md) for more information. |
 
-```ruby Example
+```ruby jobs/deploy.rb
 class Deploy < Jobly::Job
   solo
   queue 'critical'

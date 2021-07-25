@@ -1,8 +1,9 @@
 ---
 icon: dot
+label: Using the API
 ---
 
-# Running Jobs with the API
+# Running Jobs using the API
 
 The API supports running jobs either by GET or by POST in the following URL structure:
 

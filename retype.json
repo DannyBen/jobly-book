@@ -5,6 +5,7 @@
 
   "branding": {
     "logo": "assets/logo.svg",
+    "logoDark": "assets/logo-dark.svg",
     "label": "v0.5.8"
   },
 
