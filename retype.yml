@@ -1,6 +1,6 @@
 input: src
 output: docs
-cname: jobly.dannyb.co
+url: jobly.dannyb.co
 
 server:
   host: 0.0.0.0
