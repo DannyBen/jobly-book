@@ -6,15 +6,18 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.711175665411">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 2.1">
+    <meta name="generator" content="Retype 2.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Welcome to Jobly | Jobly</title>
     <meta name="title" content="Welcome to Jobly | Jobly">
     <meta name="description" content="Jobly is a sidekiq-based job server with a command line interface, web API and a web dashboard." />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://jobly.dannyb.co/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -32,11 +35,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=2.1.701545188359" rel="stylesheet" data-turbo-track="reload" />
+    <link href="resources/css/retype.css?v=2.4.0.711175665411" rel="stylesheet" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=2.1.701545188359" defer data-turbo-track="reload"></script>
-    <script type="text/javascript" src="/resources/js/retype.js?v=2.1" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=2.1.701545188359" defer></script>
+    <script type="text/javascript" src="resources/js/config.js?v=2.4.0.711175665411" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="resources/js/lunr.js?v=2.4.0.711175665411" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -51,10 +54,10 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="/" class="flex items-center leading-snug text-2xl">
+                        <a id="docs-site-logo" href="" class="flex items-center leading-snug text-2xl">
                             <span class="grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="/assets/logo.svg">
-                                <img class="max-h-10 hidden dark:inline-block" src="/assets/logo-dark.svg">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="assets/logo.svg">
+                                <img class="max-h-10 hidden dark:inline-block" src="assets/logo-dark.svg">
                             </span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v0.5.8</span>
                     </div>
@@ -66,8 +69,8 @@
                     <!-- Top Nav -->
                     <nav class="hidden md:flex">
                         <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
-                            <li class="md:mr-6">
-                                <a class="inline-flex items-center py-2 md:mb-0 text-sm text-gray-400 whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/DannyBen/jobly" target="_blank">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/DannyBen/jobly" target="_blank">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
                                         <g fill="currentColor">
                                             <symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" />
@@ -76,8 +79,8 @@
                                     <span>GitHub</span>
                                 </a>
                             </li>
-                            <li class="md:mr-6">
-                                <a class="inline-flex items-center py-2 md:mb-0 text-sm text-gray-400 whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/DannyBen/jobly/issues" target="_blank">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/DannyBen/jobly/issues" target="_blank">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
                                         <g fill="currentColor">
                                             <path fill-rule="evenodd" d="M2.5 12a9.5 9.5 0 1119 0 9.5 9.5 0 01-19 0zM12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zm0 13a2 2 0 100-4 2 2 0 000 4z"/>
@@ -86,6 +89,7 @@
                                     <span>Issues</span>
                                 </a>
                             </li>
+        
                         </ul>
                     </nav>
         
@@ -162,11 +166,26 @@
                             <nav>
                                 <ul class="flex flex-wrap justify-center items-center">
                                     <li class="mr-6">
-                                        <a class="block py-1 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/DannyBen/jobly">GitHub</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/DannyBen/jobly" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol><use xlink:href="#mark-github-icon-symbol" />
+                                                </g>
+                                            </svg>
+                                            <span>GitHub</span>
+                                        </a>
                                     </li>
                                     <li class="mr-6">
-                                        <a class="block py-1 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/DannyBen/jobly/issues">Issues</a>
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/DannyBen/jobly/issues" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M2.5 12a9.5 9.5 0 1119 0 9.5 9.5 0 01-19 0zM12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zm0 13a2 2 0 100-4 2 2 0 000 4z"/>
+                                                </g>
+                                            </svg>
+                                            <span>Issues</span>
+                                        </a>
                                     </li>
+            
                                 </ul>
                             </nav>
                         </div>
@@ -216,7 +235,7 @@
     </h2>
 </doc-anchor-target>
 <p><object data="/assets/cast.svg" style='width:100%'></object></p>
-<p><a href="/screencast/" class="no-link inline-flex items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-100 hover:bg-blue-200 text-blue-600 px-4 h-10 text-sm rounded-md">
+<p><a href="screencast/" class="no-link inline-flex items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-100 hover:bg-blue-200 text-blue-600 px-4 h-10 text-sm rounded-md">
     <span><svg xmlns="http://www.w3.org/2000/svg" class="mb-px inline-flex mr-2" width="18" height="18" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path fill-rule="evenodd" d="M4.75 4.5a.25.25 0 00-.25.25v3.5a.75.75 0 01-1.5 0v-3.5C3 3.784 3.784 3 4.75 3h3.5a.75.75 0 010 1.5h-3.5zM15 3.75a.75.75 0 01.75-.75h3.5c.966 0 1.75.784 1.75 1.75v3.5a.75.75 0 01-1.5 0v-3.5a.25.25 0 00-.25-.25h-3.5a.75.75 0 01-.75-.75zM3.75 15a.75.75 0 01.75.75v3.5c0 .138.112.25.25.25h3.5a.75.75 0 010 1.5h-3.5A1.75 1.75 0 013 19.25v-3.5a.75.75 0 01.75-.75zm16.5 0a.75.75 0 01.75.75v3.5A1.75 1.75 0 0119.25 21h-3.5a.75.75 0 010-1.5h3.5a.25.25 0 00.25-.25v-3.5a.75.75 0 01.75-.75z"/></g></svg></span>
     <span>Enlarge Screencast</span>
 </a></p>
@@ -227,7 +246,7 @@
     </h2>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="/assets/screen.gif" alt="" />
+    <img src="assets/screen.gif" alt="" />
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
@@ -262,9 +281,9 @@
         <span class="inline-block font-medium ml-2">Docker Compose</span>
     </div>
     <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
-        <span>/examples/docker-compose/</span>
+        <span>examples/docker-compose/</span>
     </div>
-    <a href="/examples/docker-compose/" class="absolute block inset-0"></a>
+    <a href="examples/docker-compose/" class="absolute block inset-0"></a>
 </div>
 </p>
 <doc-anchor-target id="prerequisites">
@@ -295,7 +314,7 @@
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/usage/quick-start/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="usage/quick-start/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
                                                 <span class="block mt-1">Quick Start</span>
@@ -345,6 +364,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Welcome", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Welcome", isRoot: true, level: 0, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
