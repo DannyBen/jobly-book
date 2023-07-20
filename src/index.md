@@ -46,5 +46,5 @@ Alternatively, you can download the the official [Jobly docker image](https://gi
 
 ## Prerequisites
 
-- Ruby 2.5 or higher
+- Ruby
 - Redis server
