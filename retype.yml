@@ -10,7 +10,7 @@ serve:
 branding:
   logo: assets/logo.svg
   logoDark: assets/logo-dark.svg
-  label: v1.0.0
+  label: v1.0.1
 
 meta:
   title: " | Jobly"
